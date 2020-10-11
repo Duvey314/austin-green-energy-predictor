@@ -25,3 +25,6 @@ Duvey (github) - blurb and role
 * [Thermostat Contol](https://data.austintexas.gov/Utilities-and-City-Services/Power-Partner-Thermostat-Program/7jgb-hbdr) - Could be used to interpolate the peak demand.
 * [Grid Mix](https://austinenergy.com/ae/about/environment/renewable-power-generation) - Widget containing grid mix. Webscraper could collect this data.
 * Weather https://www.goes.noaa.gov/
+
+Austin Energy System Peak Demand
+* https://data.austintexas.gov/resource/a6pm-qynf.json
