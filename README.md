@@ -6,6 +6,11 @@
 
 ## Overview
 The problem statement is, "To determine the cleanest time to use energy as a consumer in Austin based on peak power generation", The idea is to combine weather data, power generation peak outputs, renewable energy contribution to the peak power generation and tell consumers when the energy on the grid will be the "cleanest."
+Need to answer:
+* Selected topic
+* Reason they selected the topic
+* Description of the source of data
+* Questions they hope to answer with the data
 
 ## Team
 
