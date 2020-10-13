@@ -28,3 +28,6 @@ Duvey (github) - blurb and role
 
 Austin Energy System Peak Demand
 * https://data.austintexas.gov/resource/a6pm-qynf.json
+
+A popular weather API seems to be the below
+https://rapidapi.com/community/api/open-weather-map?endpoint=apiendpoint_9efd93b5-a454-4619-9ff8-bd3465aeebe1
