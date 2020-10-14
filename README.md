@@ -16,6 +16,21 @@ This project is meant to both identify the effect of weather on renewable energy
 ## Data
 There are two main sources of data for this project. The first is weather data forcast for the Austin area. We will be using the [ National Weather Service public data API](https://weather-gov.github.io/api/) to gather key weather data features that effect both solar photo voltaic (PV) panel and wind turbine energy production. To train the model we will need historic weather data as well. The source for this data has not been identified. The second source of data is information on the grid mix for Austin energy. This will come from raw data provided by Austin energy or creating a web scraper to scrape the data from AE's website.
 
+Wind
+Potential Wind gusts
+Air Density
+Temp
+Wind Speed
+
+Solar
+Temp
+Cloud Cover
+Wind Speed
+Humidity
+Sky Cover
+Weather Type
+Sun Angle
+Sunrise, Sunset Times
 
 ## Team
 
