@@ -34,7 +34,7 @@ Sunrise, Sunset Times
 
 ## Team
 
-Oshadi (github) - blurb and role
+Oshadi (github) - Front End
 
 Mel (github) - Analysis / 
 
