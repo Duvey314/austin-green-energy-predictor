@@ -56,3 +56,5 @@ Austin Energy System Peak Demand
 
 A popular weather API seems to be the below
 https://rapidapi.com/community/api/open-weather-map?endpoint=apiendpoint_9efd93b5-a454-4619-9ff8-bd3465aeebe1
+
+http://www.ercot.com/gridinfo/generation
