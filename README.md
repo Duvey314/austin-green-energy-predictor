@@ -36,7 +36,7 @@ Sunrise, Sunset Times
 
 Oshadi (github) - blurb and role
 
-Mel (github) - blurb and role
+Mel (github) - Analysis / 
 
 Rahul (github) - blurb and role
 
