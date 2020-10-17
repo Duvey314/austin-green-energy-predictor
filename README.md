@@ -29,7 +29,7 @@ Collin (github) - blurb and role
 
 Shayna (github) - blurb and role
 
-Duvey (github) - Updated
+Duvey (github.com/Duvey314/) - Database administrator
 
 ## Datasets
 * [Thermostat Contol](https://data.austintexas.gov/Utilities-and-City-Services/Power-Partner-Thermostat-Program/7jgb-hbdr) - Could be used to interpolate the peak demand.
