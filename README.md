@@ -16,7 +16,7 @@ Need to answer:
 
 Oshadi (github) - blurb and role
 
-Mel (github) - Analysis / 
+Mel (https://github.com/msindrasena) - Analysis
 
 Rahul (github) - blurb and role
 
