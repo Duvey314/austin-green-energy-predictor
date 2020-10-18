@@ -28,3 +28,6 @@ Duvey (github) - blurb and role
 
 Austin Energy System Peak Demand
 * https://data.austintexas.gov/resource/a6pm-qynf.json
+
+## Supplemental Information
+Turbines used for harnessing wind energy come in various "sizes", based on the output rating. To caluclate the MW output of a turbine, a power curve is used based on a function of the area of the rudders and the velocity. As velocity increasesm the power output of a turbine increases by a factor of 3. However, the turbines are unable to send all of the energy generated to the grid, as there is a max efficiency range of 45-55%. If the wind speed is too high, the turbine will shut off (this speed is called the cut-off speed). There is also a minimum wind speed to generate power.
