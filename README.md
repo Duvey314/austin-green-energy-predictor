@@ -13,7 +13,7 @@ Need to answer:
 * Questions they hope to answer with the data
 
 mels edits: 
-The goal of this project is to determine the cleanest time to use renewable energy sources in Austin by predicting short term wind power per Wind Power Plant. We would like to use historical data- such as wind power and wind direction- as well as geographical plant factors to train an unsupervised neural network to predict the output of wind energy. We will use Huckbery Farms- a large wind power plant in North Texas as a model and then extrapolate it to all farms that Austin Energy encompasses. Using weather forecasts, we should be able to use our model to determine the output of power and what time that will peak.
+The goal of this project is to determine the cleanest time to use renewable energy sources in Austin by predicting short term wind power per Wind Power Plant. We would like to use historical data- such as wind power and wind direction- as well as geographical plant factors to train an unsupervised neural network and predict the output of wind energy. We will use Huckbery Farms- a large wind power plant in North Texas as a model, and then extrapolate it to all farms that Austin Energy encompasses. Using weather forecasts, we should be able to use our model to determine the output of power and what time that will peak.
 
 We called on a weather API, used geographic coordinates specifically for Huckberry Farms, and will apply this directly into the neural network to help predict wind power.  
 
