@@ -9,7 +9,7 @@ The problem statement is, "To determine the cleanest time to use energy as a con
 
 As the world is moving towards greener energy resources, it is important to understand that energy of all forms is not tuned to be generated at demand.  Energy companies estimate the energy needs and trade energy based on a general demand requirements.  The energy source provided by Austin Energy, an energy provider in Texas is predominantly from fossil fuels.  However, there is a rise in renewable resources in their portfolio which are derived from wind and solar.
 
-These energy resources are generated when the sources which are wind and daylight are in reasonbale amounts.  As such, it is important to predict the time of day when the energy produced from wind and solar sources are peak during the day.  This is because it enables the consumer to use most of their energy requirements during this time.  For example, operating the pool pump on a schedule, charging of electric vehicles, and use of consumer goods around peak output times.
+Energy is generated when the sources (which are wind and daylight) are in reasonable amounts.  As such, it is important to predict the time of day when the energy produced from wind and solar sources peak during the day.  This is because it enables the consumer to use or automate their energy consumption during this time.  For example, operating the pool pump on a schedule, charging of electric vehicles, and use of consumer electronics around peak output times.
 
 
 ## Team
