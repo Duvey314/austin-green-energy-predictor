@@ -9,7 +9,7 @@ The problem statement is, "To determine the cleanest time to use energy as a con
 
 ## Team
 
-Oshadi (github) - blurb and role
+Oshadi (github) - Front End
 
 Mel (github) - blurb and role
 
@@ -28,3 +28,5 @@ Duvey (github) - blurb and role
 
 Austin Energy System Peak Demand
 * https://data.austintexas.gov/resource/a6pm-qynf.json
+
+
