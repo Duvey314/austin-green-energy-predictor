@@ -5,14 +5,7 @@
 * [Datasets](#datasets)
 
 ## Overview
-The problem statement is, "To determine the cleanest time to use energy as a consumer in Austin based on peak power generation", The idea is to combine weather data, power generation peak outputs, renewable energy contribution to the peak power generation and tell consumers when the energy on the grid will be the "cleanest."
-Need to answer:
-* Selected topic
-* Reason they selected the topic
-* Description of the source of data
-* Questions they hope to answer with the data
 
-mels edits: 
 The goal of this project is to determine the cleanest time to use renewable energy sources in Austin by predicting short term wind power per Wind Power Plant. We would like to use historical data- such as wind power and wind direction- as well as geographical plant factors to train an unsupervised neural network and predict the output of wind energy. We will use Huckbery Farms- a large wind power plant in North Texas as a model, and then extrapolate it to all farms that Austin Energy encompasses. Using weather forecasts, we should be able to use our model to determine the output of power and what time that will peak.
 
 We called on a weather API, used geographic coordinates specifically for Huckberry Farms, and will apply this directly into the neural network to help predict wind power.  
