@@ -15,17 +15,17 @@ Although we are studying only one specific plant, we can eventually use this mod
 
 ## Team
 
-Oshadi (github) - blurb and role
+Oshadi (github) - Circle, Front End & Market/Techology Research on Wind Power Plant in Texas
 
-Mel (https://github.com/msindrasena) - Analysis
+Mel (https://github.com/msindrasena) - Analysis and Support- pull weather data from API and formatted/presented into a DF
 
-Rahul (github) - blurb and role
+Rahul (https://github.com/madarahr)- Square, Performed ETL Process on weather data, ETL on Hackberry Wind Farm & merged dataframe and applied machine learning algorithm
 
-Collin (github) - blurb and role
+Collin (github) - X, relationship graphs and presentation organizer
 
-Shayna (github) - blurb and role
+Shayna (github) -Triange- pulled weather data from API and formatted/presented into a DF
 
-Duvey (github) - blurb and role
+Duvey (github.com/Duvey314/) - Square, Database administrator, Market/Tech Research with Austin Energy
 
 ## Datasets
 * [Thermostat Contol](https://data.austintexas.gov/Utilities-and-City-Services/Power-Partner-Thermostat-Program/7jgb-hbdr) - Could be used to interpolate the peak demand.
