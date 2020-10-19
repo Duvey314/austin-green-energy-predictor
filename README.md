@@ -22,20 +22,42 @@ Although we are studying only one specific plant, we can eventually use this mod
 ## Data
 There are two main sources of data for this project. The first is weather data forcast for the Austin area. We will be using the [ National Weather Service public data API](https://weather-gov.github.io/api/) to gather key weather data features that effect both solar photo voltaic (PV) panel and wind turbine energy production. To train the model we will need historic weather data as well. The source for this data has not been identified. The second source of data is information on the grid mix for Austin energy. This will come from raw data provided by Austin energy or creating a web scraper to scrape the data from AE's website.
 
+## Technologies Used
+-Pandas
+
+-Numphy
+
+-DateTime
+
+-MatPotLib
+
+-Imblearn
+
+-Pathlib
+
+-MongoDB
+
+-Python
 
 ## Team
 
 Oshadi (github) - Circle, Front End & Market/Techology Research on Wind Power Plant in Texas
 
-Mel (https://github.com/msindrasena) - Analysis and Support- pull weather data from API and formatted/presented into a DF
+Mel (https://github.com/msindrasena) - Triangle, Analysis and Support- pull weather data from API and formatted/presented into a DF
 
 Rahul (https://github.com/madarahr)- Square, Performed ETL Process on weather data, ETL on Hackberry Wind Farm & merged dataframe and applied machine learning algorithm
 
-Collin (github) - X, relationship graphs and presentation organizer
+Collin (github) - X, ERD relationship graphs and presentation organizer
 
 Shayna (github) -Triange- pulled weather data from API and formatted/presented into a DF
 
 Duvey (github.com/Duvey314/) - Square, Database administrator, Market/Tech Research with Austin Energy
+
+## Description of Communication Protocall
+
+We have weekly zoom calls every Monday to discuss our individual progress. We committ to our individual branches and then assigned David as the master branch coordinator. 
+Collin had created a presentation in which we document our weekly work. We use Trello as a project management tool to help us stay on course. 
+We are using an agile project management methodology for this project. 
 
 ## Datasets
 * [Thermostat Contol](https://data.austintexas.gov/Utilities-and-City-Services/Power-Partner-Thermostat-Program/7jgb-hbdr) - Could be used to interpolate the peak demand.
