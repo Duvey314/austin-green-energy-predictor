@@ -13,6 +13,10 @@ We called on a weather API, used geographic coordinates specifically for Huckber
 We believe this information to be vital to consumers as they will have a better understanding of when to use high-energy products, when renewable energy production is at its highest, and also where they may find options of saving money by reducing power usage. We also believe this is vital for energy companies, such as Austin Energy, as they will have a better understanding of when to schedule power generation and can use this model to help forecast energy production from other plants.
 Although we are studying only one specific plant, we can eventually use this model to predict power generation from other plants. This project is meant to both identify the effect of weather on renewable energy generation in Austin as well as provide a tool for Austin Energy customers to make informed decisions on when and how they use energy based on the grid mix of Austin.
 
+Linear Regression based on Wind Direction 
+
+  ![](https://github.com/Duvey314/austin-green-energy-predictor/blob/Melina/image%20(9).png)
+
 ## Team
 
 Oshadi (github) - Circle, Front End & Market/Techology Research on Wind Power Plant in Texas
