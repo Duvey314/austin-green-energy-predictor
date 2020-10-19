@@ -35,7 +35,7 @@ Sunrise, Sunset Times
 
 ## Team
 
-Oshadi (github) - Circle, Front End & Market/Techology Research on Wind Power Plant in Texas
+Oshadi (https://github.com/oshadiw) - Circle, Front End & Market/Techology Research on Wind Power Plant in Texas
  
 Mel (https://github.com/msindrasena) - Analysis and Support- pull weather data from API and formatted/presented into a DF
 
