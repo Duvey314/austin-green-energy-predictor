@@ -35,17 +35,18 @@ Sunrise, Sunset Times
 
 ## Team
 
-Oshadi (github) - Front End
+Oshadi (github) - Circle, Front End & Market/Techology Research on Wind Power Plant in Texas
+ 
+Mel (https://github.com/msindrasena) - Analysis and Support- pull weather data from API and formatted/presented into a DF
 
-Mel (https://github.com/msindrasena) - Analysis and Support
+Rahul (https://github.com/madarahr)- Square, Performed ETL Process on weather data, ETL on Hackberry Wind Farm
+ & merged dataframe and applied machine learning algorithm 
+ 
+Collin (github) - X, relationship graphs and presentation organizer
 
-Rahul (github) - blurb and role
+Shayna (github) -Triange- pulled weather data from API and formatted/presented into a DF
 
-Collin (github) - blurb and role.  Test
-
-Shayna (github) - blurb and role
-
-Duvey (github.com/Duvey314/) - Database administrator
+Duvey (github.com/Duvey314/) - Square, Database administrator, Market/Tech Research with Austin Energy 
 
 ## Datasets
 * [Thermostat Contol](https://data.austintexas.gov/Utilities-and-City-Services/Power-Partner-Thermostat-Program/7jgb-hbdr) - Could be used to interpolate the peak demand.
