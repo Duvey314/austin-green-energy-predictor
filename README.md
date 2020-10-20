@@ -1,39 +1,18 @@
 # Austin Energy Predictor
 
-- [Austin Energy Predictor](#austin-energy-predictor)
-  - [Overview](#overview)
-  - [Data](#data)
-  - [Team](#team)
-  - [Datasets](#datasets)
+* [Overview](#overview)
+* [Team](#team)
+* [Datasets](#datasets)
 
 ## Overview
-The goal of this project is to determine the cleanest time to use energy as a consumer in Austin. The idea is to combine weather data and power generation peak outputs from renewable energy contribution predict during what time each day the power grid in Austin will contain the highest percentage of renewable energy.
+The problem statement is, "To determine the cleanest time to use energy as a consumer in Austin based on peak power generation", The idea is to combine weather data, power generation peak outputs, renewable energy contribution to the peak power generation and tell consumers when the energy on the grid will be the "cleanest."
 
-The idea for the project is based off of the EcoBee thermostat. This product makes slight temperature adjustments to the owners thermostat when electricity demand in their community peaks. This reduces strain on the grid and saves the users money by reducing power usage when the grid power is more expensive. The project aims to complement this model by allowing home owners to also base their power usage on when the grid is producing the largest percentage of its energy from renewable sources.
+As the world is moving towards greener energy resources, it is important to understand that energy of all forms is not tuned to be generated at demand.  Energy companies estimate the energy needs and trade energy based on a general demand requirements.  The energy source provided by Austin Energy, an energy provider in Texas is predominantly from fossil fuels.  However, there is a rise in renewable resources in their portfolio which are derived from wind and solar.
 
-This project is meant to both identify the effect of weather on renewable energy generation in Austin as well as provide a tool for Austin Energy customers to make informed decisions on when and how they use energy based on the grid mix of Austin.
-
-## Data
-There are two main sources of data for this project. The first is weather data forcast for the Austin area. We will be using the [ National Weather Service public data API](https://weather-gov.github.io/api/) to gather key weather data features that effect both solar photo voltaic (PV) panel and wind turbine energy production. To train the model we will need historic weather data as well. The source for this data has not been identified. The second source of data is information on the grid mix for Austin energy. This will come from raw data provided by Austin energy or creating a web scraper to scrape the data from AE's website.
-
-Wind
-Potential Wind gusts
-Air Density
-Temp
-Wind Speed
-
-Solar
-Temp
-Cloud Cover
-Wind Speed
-Humidity
-Sky Cover
-Weather Type
-Sun Angle
-Sunrise, Sunset Times
+Energy is generated when the sources (which are wind and daylight) are in reasonable amounts.  As such, it is important to predict the time of day when the energy produced from wind and solar sources peak during the day.  This is because it enables the consumer to use or automate their energy consumption during this time.  For example, operating the pool pump on a schedule, charging of electric vehicles, and use of consumer electronics around peak output times.
 
 
-## Team
+
 
 Oshadi (https://github.com/oshadiw) - Circle, Front End & Market/Techology Research on Wind Power Plant in Texas
  
@@ -59,6 +38,12 @@ Austin Energy System Peak Demand
 
 A popular weather API seems to be the below
 https://rapidapi.com/community/api/open-weather-map?endpoint=apiendpoint_9efd93b5-a454-4619-9ff8-bd3465aeebe1
+
+An option for weather data which appears to be quite popular is
+https://rapidapi.com/community/api/open-weather-map?endpoint=apiendpoint_9efd93b5-a454-4619-9ff8-bd3465aeebe1
+
+
+
 
 http://www.ercot.com/gridinfo/generation
 
