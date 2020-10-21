@@ -120,7 +120,8 @@ Duvey (github.com/Duvey314/) - Square, Database administrator, Market/Tech Resea
 
 ---
 # Acknowledgements
-Kasun Chandrarathna- Electrical Engineer at Excel Energy; provided information on how wind turbines are made and how power is generated. 
+Kasun Chandrarathna (Oshadi's cousin)- Electrical Engineer at Excel Energy; provided information on how wind turbines are made and how power is generated and coverted to the grid. 
+
 Austin Energy
 
 # Resources
