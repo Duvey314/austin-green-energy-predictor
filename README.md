@@ -1,7 +1,9 @@
 # Austin Energy Predictor
 
 ![Austin Energy](https://media-exp1.licdn.com/dms/image/C560BAQFwCAuAfk5AqA/company-logo_200_200/0?e=1611187200&v=beta&t=r1dOWcgLGes2ZNJEx7RSXYUk1JmWB3vaRIcpxES6s2M)
+
 ---
+
 # Table of Contents
 * [Overview](#overview)
 * [Data](#data)
@@ -18,7 +20,9 @@ The goal of this project is to determine the peak renewable energy output in the
 We called on a weather API, used geographic coordinates specifically for Hackberry Farms, and will apply this directly into the neural network to help predict wind power.  
 
 We believe this information will be vital for Austin Energy, as the idea is to create a report that can look at a particular Wind Farm and then predict the output of energy a particular plant produces. Austin Energy will have a better understanding of when to schedule power generation and can use this model to help forecast energy production from their various plants.  Down the line, this information can be vital to consumers as they will have a better understanding of when to use high-energy products, when renewable energy production is at its highest, and also where they may find options of saving money by reducing power usage. 
+
 ---
+
 # Data
 There are two types of data we will primarily be using for this project. The first is weather data that will be used as the independent variables for this model. The second is the output of the solar and wind farm in megawatt hour(Mwh) which will be our dependent variable that we are trying to predict. 
 
@@ -33,6 +37,25 @@ We have been very fortunate to work with Austin Energy on this project and they 
 ![Gen Map](https://github.com/Duvey314/austin-green-energy-predictor/blob/master/Resources/Gen%20Map.png)
 
 Both of these data sets are provided directly by Austin Energy and contain the hourly output of the wind/solar farm in Mwh.
+
+[Hackberry Wind Farm](https://www.thewindpower.net/windfarm_en_4012_hackberry.php) -
+* City: Albany, Shackelford
+* Commissioning: 2008
+* 72 turbines: Siemens SWT-2.3-93 (power 2 300 kW, diameter 93 m)
+* Hub height: 80 m
+* Total nominal power: 165,600 kW
+* Latitude: 32° 46' 34"
+* Longitude: -99° 28' 35.2"
+
+[Webberville Solar Farm](http://webbervillesolar.com/) -
+* City: Manor, Texas
+* Commissioning: 2012
+* 127,278 PV panels
+* Total nominal power: 35,000 kw
+* Latitude: 30° 14' 18"
+* Longitude: -97° 30' 31"
+
+
 
 ### Database
 The database
@@ -58,6 +81,8 @@ http://www.ercot.com/gridinfo/generation
 
 # Methodology
 
+### Machine Learning Model
+The machine learning model we are using is a neural network from the Scikit learn module. There will be two seperate models, one will be trained for the wind farm and the other on the solar farm. 
 
 ---
 # Administrative
