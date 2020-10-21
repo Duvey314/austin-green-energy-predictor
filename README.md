@@ -15,7 +15,7 @@ We believe this information will be vital for Austin Energy, as the idea is to c
 
 
 
-# Technologies Used (Example in Module)
+# Technologies Used
 ## Data Cleaning and Analysis
 Pandas will be used to clean the data and perform an exploratory analysis. Further analysis will be completed using Python.
 
@@ -23,10 +23,10 @@ Pandas will be used to clean the data and perform an exploratory analysis. Furth
 Mongo is the database we intend to use, and we will integrate Flask to display the data.
 
 ## Machine Learning
-SciKitLearn is the ML library we'll be using to create a classifier. Our training and testing setup is ___. Extra ML verbiage here.
+SciKitLearn is the ML library we'll be using to create a classifier. 
 
 ## Dashboard
-In addition to using a Flask template, we will also integrate D3.js for a fully functioning and interactive dashboard. It will be hosted on ___. 
+We are thinking about using Github pages or Heroku to help with database hosting, integration with the repository, and also the server environment. 
 
 ## Technologies Used
 -Pandas
@@ -74,7 +74,6 @@ We are using an agile project management methodology for this project.
 
 Austin Energy System Peak Demand
 * https://data.austintexas.gov/resource/a6pm-qynf.json
-
 
 A popular weather API seems to be the below
 https://rapidapi.com/community/api/open-weather-map?endpoint=apiendpoint_9efd93b5-a454-4619-9ff8-bd3465aeebe1
