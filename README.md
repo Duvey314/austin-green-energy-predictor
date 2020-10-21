@@ -25,8 +25,9 @@ Mongo is the database we intend to use, and we will integrate Flask to display t
 ## Machine Learning
 SciKitLearn is the ML library we'll be using to create a classifier. 
 
-## Dashboard
-We are thinking about using Github pages or Heroku to help with database hosting, integration with the repository, and also the server environment. 
+## Dashboard & Presentation
+We are thinking about using Github pages or Heroku to help with database hosting, integration with the repository, and also the server environment.
+GoogleSlides:  https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS5LJlWrjyJesHR8705s/edit#slide=id.ga1bdb9328c_0_10
 
 ## Technologies Used
 -Pandas
@@ -54,7 +55,7 @@ Mel (https://github.com/msindrasena) - Triangle, Analysis and Support- pull weat
 
 Rahul (https://github.com/madarahr)- Square, Performed ETL Process on weather data, ETL on Hackberry Wind Farm & merged dataframe and applied machine learning algorithm
 
-Collin (github) - X, ERD relationship graphs and presentation organizer. Git Test
+Collin (https://github.com/collinsculley) - X, ERD relationship graphs and presentation organizer, front end dashboard.
 
 Shayna (github) -Triange- pulled weather data from API and formatted/presented into a DF
 
@@ -64,7 +65,7 @@ Duvey (github.com/Duvey314/) - Square, Database administrator, Market/Tech Resea
 
 We have weekly zoom calls every Monday to discuss our individual progress. We committ to our individual branches and then assigned David as the master branch coordinator. 
 Collin had created a presentation in which we document our weekly work. We use Trello as a project management tool to help us stay on course. 
-We are using an agile project management methodology for this project. 
+We are using an agile project management methodology for this project.
 
 
 ## Datasets
