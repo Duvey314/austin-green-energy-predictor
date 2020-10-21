@@ -58,24 +58,7 @@ Both of these data sets are provided directly by Austin Energy and contain the h
 
 
 ### Database
-The database
-
-* [Thermostat Contol](https://data.austintexas.gov/Utilities-and-City-Services/Power-Partner-Thermostat-Program/7jgb-hbdr) - Could be used to interpolate the peak demand.
-* [Grid Mix](https://austinenergy.com/ae/about/environment/renewable-power-generation) - Widget containing grid mix. Webscraper could collect this data.
-* Weather https://www.goes.noaa.gov/
-
-Austin Energy System Peak Demand
-* https://data.austintexas.gov/resource/a6pm-qynf.json
-
-A popular weather API seems to be the below
-https://rapidapi.com/community/api/open-weather-map?endpoint=apiendpoint_9efd93b5-a454-4619-9ff8-bd3465aeebe1
-
-An option for weather data which appears to be quite popular is
-https://rapidapi.com/community/api/open-weather-map?endpoint=apiendpoint_9efd93b5-a454-4619-9ff8-bd3465aeebe1
-
-
-
-http://www.ercot.com/gridinfo/generation
+The database we will be using for this project is a Mongodb Atlas database hosted on an AWS server. The historic weather data and the energy output data are cleaned and merged on the datetime stamp before being inserted into the database. The main database is the wind-solar-database. This houses two collections, a wind data collection and a solar data collection. These collection are accessed using the pymongo driver and a connection string with a username and password generated for each team member.
 
 ---
 
@@ -143,3 +126,22 @@ Duvey (github.com/Duvey314/) - Square, Database administrator, Market/Tech Resea
 Oshadi's Brother
 Austin Energy
 
+# Resources
+
+
+* [Thermostat Contol](https://data.austintexas.gov/Utilities-and-City-Services/Power-Partner-Thermostat-Program/7jgb-hbdr) - Could be used to interpolate the peak demand.
+* [Grid Mix](https://austinenergy.com/ae/about/environment/renewable-power-generation) - Widget containing grid mix. Webscraper could collect this data.
+* Weather https://www.goes.noaa.gov/
+
+Austin Energy System Peak Demand
+* https://data.austintexas.gov/resource/a6pm-qynf.json
+
+A popular weather API seems to be the below
+https://rapidapi.com/community/api/open-weather-map?endpoint=apiendpoint_9efd93b5-a454-4619-9ff8-bd3465aeebe1
+
+An option for weather data which appears to be quite popular is
+https://rapidapi.com/community/api/open-weather-map?endpoint=apiendpoint_9efd93b5-a454-4619-9ff8-bd3465aeebe1
+
+
+
+http://www.ercot.com/gridinfo/generation
