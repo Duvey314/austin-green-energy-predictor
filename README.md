@@ -14,6 +14,21 @@ We believe this information will be vital for Austin Energy, as the idea is to c
 
 This project is meant to both identify the effect of weather on renewable energy generation in Austin as well as provide a tool for Austin Energy customers to make informed decisions on when and how they use energy based on the grid mix of Austin.
 
+
+# Technologies Used Example in Module
+## Data Cleaning and Analysis
+Pandas will be used to clean the data and perform an exploratory analysis. Further analysis will be completed using Python.
+
+## Database Storage
+Mongo is the database we intend to use, and we will integrate Flask to display the data.
+
+## Machine Learning
+SciKitLearn is the ML library we'll be using to create a classifier. Our training and testing setup is ___. Extra ML verbiage here.
+
+## Dashboard
+In addition to using a Flask template, we will also integrate D3.js for a fully functioning and interactive dashboard. It will be hosted on ___. 
+
+
 ## Team
 
 Oshadi (https://github.com/oshadiw) - Circle, Front End & Market/Techology Research on Wind Power Plant in Texas
@@ -42,7 +57,6 @@ https://rapidapi.com/community/api/open-weather-map?endpoint=apiendpoint_9efd93b
 
 An option for weather data which appears to be quite popular is
 https://rapidapi.com/community/api/open-weather-map?endpoint=apiendpoint_9efd93b5-a454-4619-9ff8-bd3465aeebe1
-
 
 
 
