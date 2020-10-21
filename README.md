@@ -15,7 +15,7 @@ We believe this information will be vital for Austin Energy, as the idea is to c
 This project is meant to both identify the effect of weather on renewable energy generation in Austin as well as provide a tool for Austin Energy customers to make informed decisions on when and how they use energy based on the grid mix of Austin.
 
 
-# Technologies Used Example in Module
+# Technologies Used (Example in Module)
 ## Data Cleaning and Analysis
 Pandas will be used to clean the data and perform an exploratory analysis. Further analysis will be completed using Python.
 
