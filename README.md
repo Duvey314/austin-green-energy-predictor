@@ -65,7 +65,7 @@ Mel (https://github.com/msindrasena) - Triangle, Analysis and Support- pull weat
 
 Rahul (https://github.com/madarahr)- Square, Performed ETL Process on weather data, ETL on Hackberry Wind Farm & merged dataframe and applied machine learning algorithm
 
-Collin (github) - X, ERD relationship graphs and presentation organizer
+Collin (github) - X, ERD relationship graphs and presentation organizer. Git Test
 
 Shayna (github) -Triange- pulled weather data from API and formatted/presented into a DF
 
