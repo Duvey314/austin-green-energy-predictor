@@ -1,7 +1,7 @@
 # Austin Energy Predictor
 
 ![Austin Energy](https://media-exp1.licdn.com/dms/image/C560BAQFwCAuAfk5AqA/company-logo_200_200/0?e=1611187200&v=beta&t=r1dOWcgLGes2ZNJEx7RSXYUk1JmWB3vaRIcpxES6s2M)
-
+---
 # Table of Contents
 * [Overview](#overview)
 * [Data](#data)
@@ -10,7 +10,7 @@
 * [Team](#team)
 * [Acknowledgements](#acknowledgements)
 
-
+---
 # Overview
 
 The goal of this project is to determine the peak renewable energy output in the grid, for both wind and solar. We are  going to create a predictor to calculate the mega watt output per farm. We are currently analyzing weather data from Hackberry Farm, a wind Power Plant in Northern Texas. The idea is to take historical data- such as wind poewr and wind direction- as well as geographical plant factors to train an unsupervised neural network and predict the output of wind energy. Using this as a model, we can then extrapolate it to all farms that Austin Energy encompasses. Using weather forecasts, we should be able to use our model to determine the output of power and what time that will peak.
@@ -18,14 +18,25 @@ The goal of this project is to determine the peak renewable energy output in the
 We called on a weather API, used geographic coordinates specifically for Hackberry Farms, and will apply this directly into the neural network to help predict wind power.  
 
 We believe this information will be vital for Austin Energy, as the idea is to create a report that can look at a particular Wind Farm and then predict the output of energy a particular plant produces. Austin Energy will have a better understanding of when to schedule power generation and can use this model to help forecast energy production from their various plants.  Down the line, this information can be vital to consumers as they will have a better understanding of when to use high-energy products, when renewable energy production is at its highest, and also where they may find options of saving money by reducing power usage. 
-
+---
 # Data
-The goal of this pro
+There are two types of data we will primarily be using for this project. The first is weather data that will be used as the independent variables for this model. The second is the output of the solar and wind farm in megawatt hour(Mwh) which will be our dependent variable that we are trying to predict. 
 
 ### Weather
+The model uses two form of weather data. The first is historic weather data that we will use to train our model. This data is pulled from the [Open Weather API](https://openweathermap.org/api). From this API we can pull historaical weather data from any location given a data range and geographic coordinates. We pulled two data sets from this API, one for our wind farm location and one for our solar farm location. The time frame of these datasets is the same as the datasets from Austin Energy to make the data merge easier. These data sets will be split into training and test sets by using all of the 2019 data as a test set and the 2020 data as the training set. 
 
+Once we have our model trained, we will be making calls to the open weather api to get predicted weather data. This will be used to make predictions for the output of the wind and solar farms over that time frame.
 
 ### Energy Output
+We have been very fortunate to work with Austin Energy on this project and they have been kind enough to give us access to the output data from two of their energy farms for Texas. These two locations are the Hackberry windfarm west of Dallas and the Webberville solar farm just outside of Austin.
+
+![Gen Map](https://github.com/Duvey314/austin-green-energy-predictor/blob/master/Resources/Gen%20Map.png)
+
+Both of these data sets are provided directly by Austin Energy and contain the hourly output of the wind/solar farm in Mwh.
+
+### Database
+The database
+
 * [Thermostat Contol](https://data.austintexas.gov/Utilities-and-City-Services/Power-Partner-Thermostat-Program/7jgb-hbdr) - Could be used to interpolate the peak demand.
 * [Grid Mix](https://austinenergy.com/ae/about/environment/renewable-power-generation) - Widget containing grid mix. Webscraper could collect this data.
 * Weather https://www.goes.noaa.gov/
@@ -43,10 +54,12 @@ https://rapidapi.com/community/api/open-weather-map?endpoint=apiendpoint_9efd93b
 
 http://www.ercot.com/gridinfo/generation
 
+---
+
 # Methodology
 
 
-
+---
 # Administrative
 
 ### Description of Communication Protocall
@@ -85,6 +98,7 @@ GoogleSlides:  https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS
 
 -Python
 
+---
 # Team
 
 Oshadi (github) - Circle, Front End & Market/Techology Research on Wind Power Plant in Texas
@@ -99,6 +113,7 @@ Shayna (github) -Triange- pulled weather data from API and formatted/presented i
 
 Duvey (github.com/Duvey314/) - Square, Database administrator, Market/Tech Research with Austin Energy
 
+---
 # Acknowledgements
 Oshadi's Brother
 Austin Energy
