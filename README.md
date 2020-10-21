@@ -15,7 +15,7 @@
 ---
 # Overview
 
-The goal of this project is to determine the peak renewable energy output in the grid, for both wind and solar. We are  going to create a predictor to calculate the mega watt output per farm. We are currently analyzing weather data from Hackberry Farm, a wind Power Plant in Northern Texas. The idea is to take historical data- such as wind poewr and wind direction- as well as geographical plant factors to train an unsupervised neural network and predict the output of wind energy. Using this as a model, we can then extrapolate it to all farms that Austin Energy encompasses. Using weather forecasts, we should be able to use our model to determine the output of power and what time that will peak.
+The goal of this project is to determine the peak renewable energy output in the grid, for both wind and solar. We are  going to create a predictor to calculate the mega watt output per farm. We are currently analyzing weather data from Hackberry Farm, a wind Power Plant in Northern Texas. The idea is to take historical data- such as wind power and wind direction- as well as geographical plant factors to train an unsupervised neural network and predict the output of wind energy. Using this as a model, we can then extrapolate it to all farms that Austin Energy encompasses. Using weather forecasts, we should be able to use our model to determine the output of power and what time that will peak.
 
 We called on a weather API, used geographic coordinates specifically for Hackberry Farms, and will apply this directly into the neural network to help predict wind power.  
 
@@ -70,7 +70,7 @@ The machine learning model we are using is a neural network from the Scikit lear
 ---
 # Administrative
 
-### Description of Communication Protocall
+### Description of Communication Protocol
 
 We have weekly zoom calls every Monday to discuss our individual progress. We committ to our individual branches and then assigned David as the master branch coordinator. 
 Collin had created a presentation in which we document our weekly work. We use [Trello](https://trello.com/b/S5ONp84B/ut-bootcamp-capstone) as a project management tool to help us stay on course. 
@@ -106,7 +106,7 @@ GoogleSlides:  https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS
 ---
 # Team
 
-Oshadi (github) - Circle, Front End & Market/Techology Research on Wind Power Plant in Texas
+Oshadi (https://github.com/oshadiw) - Circle, Front End & Market/Techology Research on Wind Power Plant in Texas
 
 Mel (https://github.com/msindrasena) - Triangle, Analysis and Support- pull weather data from API and formatted/presented into a DF
 
@@ -120,7 +120,7 @@ Duvey (github.com/Duvey314/) - Square, Database administrator, Market/Tech Resea
 
 ---
 # Acknowledgements
-Oshadi's Brother
+Kasun Chandrarathna- Electrical Engineer at Excel Energy; provided information on how wind turbines are made and how power is generated. 
 Austin Energy
 
 # Resources
