@@ -79,9 +79,6 @@ We are using an agile project management methodology for this project.
 ### Data Cleaning and Analysis
 Pandas will be used to clean the data and perform an exploratory analysis. Further analysis will be completed using Python.
 
-### Database Storage
-Mongo is the database we intend to use, and we will integrate Flask to display the data.
-
 ### Machine Learning
 SciKitLearn is the ML library we'll be using to create a classifier. 
 
@@ -92,7 +89,7 @@ GoogleSlides:  https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS
 ### Technologies Used
 -Pandas
 
--Numphy
+-Numpy
 
 -DateTime
 
@@ -102,7 +99,7 @@ GoogleSlides:  https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS
 
 -Pathlib
 
--MongoDB
+-MongoDB Atlas
 
 -Python
 
