@@ -1,0 +1,2 @@
+[1020/194812.910:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Shayna\AppData\Local\Microsoft\Edge\User Data\Crashpad\attachments\d22aea02-61f0-46da-8271-b34df4045759: The system cannot find the path specified. (0x3)
+[1020/194812.914:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
