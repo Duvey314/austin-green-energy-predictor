@@ -40,6 +40,8 @@ The machine learning model uses two forms of weather data. The first is historic
 
 Using the [Local Historical Weather API](https://www.worldweatheronline.com/developer/api/docs/local-city-town-weather-api.aspx), historical weather data can be pulled from any location given a date range and geographic coordinates. Multiple calls were made to the World Weather Online server using APIs to collect hourly historical weather data for the Hackberry Wind Farm and Webberville Solar Farm locations. To ease merging the weather datasets of each farm with the respective energy output datasets, the time frames of these datasets are the same. Therefore, the data collected extends from January 1, 2019 - July 31, 2020. 
 
+To Create your Own API Key, Visit this link: https://www.worldweatheronline.com/developer/my/analytics.aspx?key_id=222419
+
 ## Energy Output (Mwh) Data
 Our team is very fortunate for this opportunity to work with Austin Energy on this project. Austin Energy has given the team access to energy output (Mwh) data for two of their renewable energy farms in Texas - Hackberry Wind Farm and Webberville Solar Farm. 
 
