@@ -208,7 +208,7 @@ https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS5LJlWrjyJesHR87
 
 # Technologies
 --- 
-## Acquiring and Cleaning the Dataset 
+## ETL: Extract, Transform, Load
 * Python
     * Tools:
         * Pandas
@@ -222,14 +222,14 @@ https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS5LJlWrjyJesHR87
         * Pandas
     * Libraries:
         * MatPotLib
-## Machine Learning Preprocessing 
+## Preprocessing 
 * Python
     * Tools:
         * Pandas
     * Libraries:
         * Imblearn
         * SciKitLearn
-## Machine Learning Model
+## Machine Learning 
 * Python
     * Tools:
         * Pandas
