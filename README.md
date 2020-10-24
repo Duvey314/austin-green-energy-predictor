@@ -11,7 +11,7 @@
 * [Model](#model)
 * [Dashboard](#dashboard)
 * [Team](#team)
-* [Technologies/Tools](#Technologies/Tools)
+* [Technologies](#technologies)
 * [Acknowledgements](#acknowledgements)
 * [Resources](#resources)
 
@@ -75,10 +75,12 @@ The database used for this project is a MongoDB Atlas database hosted on an AWS 
 
 ## Collections
 * wind_data collection
+
 The wind_data collection consists of the cleaned historical wind weather data merged with the cleaned Hackberry Wind Farm data. The data ranges from January 1, 2019 - July 31, 2020. 
 
 * solar_data
-The wind_data collection consists of the cleaned historical wind weather data merged with the cleaned Webberville Solar Farm data. The data ranges from January 1, 2019 - July 31, 2020. 
+
+The solar_data collection consists of the cleaned historical solar weather data merged with the cleaned Webberville Solar Farm data. The data ranges from January 1, 2019 - July 31, 2020. 
 
 ## Connection String
 - Insert description of connection string HERE
@@ -204,7 +206,7 @@ https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS5LJlWrjyJesHR87
 * [Trello](https://trello.com/b/S5ONp84B/ut-bootcamp-capstone), a project management tool, is used collectively by all team members to keep track of progress and aid the team in staying on course. 
 * The team is using an agile project methodology for this project. 
 
-# Technologies/Tools
+# Technologies
 --- 
 ## Acquiring and Cleaning the Dataset 
 * Python
