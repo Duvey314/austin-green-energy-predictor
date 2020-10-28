@@ -70,7 +70,7 @@ Both of these datasets (found under "Resources") are provided directly by Austin
 
 # Database 
 ---
-The database used for this project is a MongoDB Atlas database hosted on an AWS server. The historical weather data and renewable energy outputs (Mwh) have been cleaned and merged on a DateTime stamp before inerting the data into the database. The main database is the wind-solar-database, which houses two collections - a wind data collection and a solar data collection. These collections can be accessed using the PyMongo driver and a connection string along with a username and password. 
+The database used for this project is a MongoDB Atlas database hosted on an AWS server. The historical weather data and renewable energy outputs (Mwh) have been cleaned and merged on a DateTime stamp before inerting the data into the database. The main database is the wind-solar-database, which houses two collections - a wind data collection and a solar data collection. These collections can be accessed using the PyMongo driver and a connection string along with a username and password given to each member of the team.
 
 ## Schema
 - Insert Schema HERE
@@ -85,7 +85,7 @@ The wind_data collection consists of the cleaned historical wind weather data me
 The solar_data collection consists of the cleaned historical solar weather data merged with the cleaned Webberville Solar Farm data. The data ranges from January 1, 2019 - July 31, 2020. 
 
 ## Connection String
-- Insert description of connection string HERE
+The connection string is 
 
 # Methodology
 ---
