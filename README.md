@@ -121,7 +121,9 @@ Below is the evolution of the machine learning models trained and tested by the 
 The machine learning model we are using is a neural network from the Scikit learn module. There will be two seperate models, one will be trained for the wind farm and the other on the solar farm.
 
 ## Limitations
-- Description of limitations
+- Turbine maintenance,
+- Temperatures for solar data
+- UV index for solar data
 
 ## Benefits
 - Description of Benefits
