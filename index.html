@@ -8,115 +8,138 @@
   <title>Austin Green Energy Predictor</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!-- Custom styles for this template -->
-  <link href="jumbotron.css" rel="stylesheet">
+  <link href="static/css/jumbotron.css" rel="stylesheet">
 </head>
 
 <body>
-
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <!-- FIXED NavBar -->
+    <div class="navbar-wrapper">
         <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#model">Model</a></li>
-                <li><a href="#team">Team</a></li>
-                <!-- Optional Source Dropdown.  See dropdowns.html & proper js files that need to be added at end of </body> -->
-                <li class="dropdown">
-                    <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        Sources
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="drop1">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <a class="navbar-brand" href="#">Austin Green Energy Project</a>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-    </nav>
 
-    <!-- Static Header -->
-    <!-- <div class="container">
-        <div class="header clearfix">
-            <nav>
-                <ul class="nav nav-pills pull-right">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#home">
-                            HOME
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">
-                            ABOUT
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#model">
-                            MODEL
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#team">
-                            TEAM
-                        </a>
-                    </li>
-                </ul>
+
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#home">HOME</a></li>
+                            <li><a href="#about">ABOUT</a></li>
+                            <li><a href="#model">MODEL</a></li>
+                            <li><a href="#team">TEAM</a></li>
+                            <!-- Optional Source Dropdown.  See dropdowns.html & proper js files that need to be added at end of </body> -->
+                            <li class="dropdown">
+                                <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    SOURCES
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="drop1">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li class="dropdown-header">Nav header</li>
+                                    <li><a href="#">Separated link</a></li>
+                                    <li><a href="#">One more separated link</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <a class="navbar-brand" href="#">Austin Green Energy Project</a>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
             </nav>
-            <h3 class="text-muted">AUSTIN GREEN ENERGY PROJECT</h3>
-        </div> -->
 
-        <div id="home" class="jumbotron">
+        </div>
+    </div>
+
+
+    <!-- Rotating Image CAROUSEL -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img class="first-slide" src="static/img/hackberryFarm.jpg" alt="First slide">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Hackberry Wind Farm</h1>
+                        <!-- <p>Hackberry Wind Farm</p> -->
+                        <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img class="second-slide" src="static/img/webbervilleFarm.jpg" alt="Second slide">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Webberville Solar Farm</h1>
+                        <!-- <p>Webberville Solar Farm</p> -->
+                        <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img class="third-slide" src="static/img/AEmap.png" alt="Third slide">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Austin Energy Sources</h1>
+                        <!-- <p>Austin Energy Sources</p> -->
+                        <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div> <!-- End Carousel -->
+
+
+
+    <!-- TAB SOURCES -->
+    <div>
+        <!-- HOME SECTION -->
+        <div id="home" class="jumbotron"> 
             <h1>Austin Green Energy Predictor</h1>
-            <p class="lead">Intro Text To Project</p>
+            <p class="lead">Project Introduction.  Question and Outcome.</p>
             <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
         </div>
 
+        <!-- ABOUT SECTION -->
         <div id="about" class="jumbotron">
             <h1>About The Project</h1>
-            <p class="lead">About Project Text</p>
-            <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
+            <p class="lead">Question & Outcome.</p>
         </div>
 
+        <!-- MODEL SECTION -->
         <div id="model" class="jumbotron">
             <h1>Model Details</h1>
-            <p class="lead">Description of the Model and methods used</p>
-            <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
+            <p class="lead">Description of the Model and methods used.</p>
         </div>
 
+        <!-- TEAM SECTION -->
         <div id="team" class="jumbotron">
             <h1>5 Star Team</h1>
             <p class="lead">Headshot/info/contributions/etc.</p>
-            <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
         </div>
 
     </div>
 </body>
 </html>
 
-<!-- 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 jumbotron text-center">
-            <h1>Austin Green Energy Predictor</h1>
-            <p>Find out when your energy will be the cleanest!</p>
-        </div>
-    </div> -->
