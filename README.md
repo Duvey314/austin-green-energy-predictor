@@ -15,6 +15,38 @@
 * [Acknowledgements](#acknowledgements)
 * [Resources](#resources)
 
+# NEEDS FOR DELIVERABLE # 2
+
+
+-Machine learning needs to go from mockup to functioning
+-database needs to be integrated
+-create an outline for final dashboard: storyboard capturing main visualizations and other aspects of dashboard
+presentation
+	-topic, reason, description of data, questions team wants to answer with data, description of data exploration, description of analysis phase
+github
+	-includes master branch with all code necessary to perform exploratory analysis
+	-some code necessary to complete ML portion of project
+readme
+	-description of communication protocalls
+	-outline of project
+individuals
+	-four committs for this segment
+machine learning
+	-description of preliminary data preprocessing
+	-description of preliminary feature engineering and preliminary feature selection- decision making process
+	-description of how data was split into training and testing
+	-explanation of model choice with limitations and benefits
+databse integration
+	-database stores static data
+	-database interfaces with project
+	-includes at least two tables
+	-at least one joing- not including any joins in panadas
+	-includes at least one connection string
+dashboard
+	-blueprint should include storyboard on google slides
+	-description of tools that iwll be use to create final dashboard
+	-description of interactive elements
+
 # Overview
 --- 
 The objective of the Austin Energy Predictor is to determine energy output (megawatt-hour, Mwh) per renewable energy farm, specifically wind and solar. Our team is collaborating with [Austin Energy](https://austinenergy.com/ae/about) to help produce vital data insights into their renewable energy farms. By utilizing a machine learning model, Austin Energy will have a more refined understanding of its overall energy output. Therefore, Austin Energy can forecast energy production from their various plants and thus better schedule power generation.
