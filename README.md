@@ -16,7 +16,9 @@
 * [Resources](#resources)
 
 
-##
+## Project Outline for Dashboard
+https://docs.google.com/document/d/1zy57lRIQJ1UBqlNrTapLSL0aPm6nbZYgNquwGzL_J9k/edit
+
 
 Deliverabless for #2
 
