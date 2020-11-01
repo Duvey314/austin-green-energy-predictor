@@ -179,14 +179,14 @@ The machine learning model we are using is a neural network from the Scikit lear
 
 # Dashboard
 ---
-- Insert overview of Dashboard HERE
+- Preliminary Dashboard Deployed via Heroku:  https://austin-green-energy-predictor.herokuapp.com/
 
 ## Tools Used
-- Insert description of the tools used HERE:
-    - We are thinking about using Github pages or Heroku to help with database hosting, integration with the repository, and also the server environment.
+- HTML, Bootstrap, CSS, FLASK
+- Next step is connecting Mongo with Heroku
 
 ## Interactive Elements
-- Insert description of interactive elements HERE
+- Google Map with Aus. green energy locations mapped.  Popup markers contain additonal details on plant/farm
 
 ## GoogleSlides
 Access the GoogleSlides at the link below:
