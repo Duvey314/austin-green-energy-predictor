@@ -20,7 +20,7 @@
 https://docs.google.com/document/d/1zy57lRIQJ1UBqlNrTapLSL0aPm6nbZYgNquwGzL_J9k/edit
 
 
-Deliverabless for #2
+## Deliverabless for #2
 
 
 -Machine learning needs to go from mockup to functioning
