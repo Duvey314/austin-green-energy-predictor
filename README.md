@@ -187,6 +187,8 @@ https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS5LJlWrjyJesHR87
         * Created a simple machine learning model (multiple linear regression model)
     * X Role:
         * Performed Research on wind farm power generation factors
+    * Circle:
+        * Refine the analysis using weather forcast to generate plots for display in presentation
 
 * [Collin](https://github.com/collinsculley)
     * Circle Role: 
