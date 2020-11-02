@@ -150,7 +150,7 @@ The wind model has a mean absolute error of about 25 MWH. This means that the da
 The biggest limitation is the amount of historical data we have. It only has one data point for each date and so having more data would help this greatly. This would also help to take into account the degradation of the solar panels to make the model more accurate for future years.
 
 ## Benefits
-- Description of Benefits
+- Neural Network can be used by Austin Energy to test other farms they own with forecasted weather data to predict power generation. 
 
 # Dashboard
 ---
@@ -183,6 +183,8 @@ https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS5LJlWrjyJesHR87
     * X Role:
         * Performed Technology Research on which resources are best for historical and forecasted weather API calls
         * Performed as team leader to ensure group is staying on track with project deliverables 
+    * Circle Role:
+        * Generating three images to use in presentation with dashboard for exploratory analysis
 
 * [Rahul](https://github.com/madarahr)
     * Square Role:
@@ -277,7 +279,7 @@ https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS5LJlWrjyJesHR87
 
 # Acknowledgements
 ---
-* Kasun Chandrarathna (Oshadi's cousin):
+* Kasun Chandrarathna (Xcel Employee):
     * Electrical Engineer at [Xcel Energy](https://www.xcelenergy.com/)
     * Provided information on how wind turbines are made and how power is generated and coverted to the grid.
 * [Austin Energy](https://austinenergy.com/ae/about)
