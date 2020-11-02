@@ -265,6 +265,7 @@ https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS5LJlWrjyJesHR87
 * HTML
 * CSS
 * GoogleSlides
+* Microsoft Power Bi
 
 # Acknowledgements
 ---
