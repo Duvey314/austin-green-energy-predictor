@@ -103,8 +103,13 @@ The team performed the following steps to create an accurate machine learning mo
 - How were missing values identifed and handles?
 
 ## Exploratory Analysis
-- Description of the analysis phase of the project
-- Pandas will be used to clean the data and perform an exploratory analysis. Further analysis will be completed using Python.
+- During our exploratory analysis, we used Microsoft Power Bi and Python for solar and wind energy. 
+- Graphs can be found in Google Slides! 
+
+Two graphs were created for:
+    -Average MWH vs Features by Month - Solar
+    -Average MWH vs Features by Hour - Solar
+    -Which month had the most sunhours- Solar
 
 ## Preprocessing
 The data is largely already preprocessed. The only thing to do is to drop the \_id column which is an artifact of the mongodb atlas storage and encod the weather description using one hot encoding.
