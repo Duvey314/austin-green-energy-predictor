@@ -90,7 +90,7 @@ The wind_data collection consists of the cleaned historical wind weather data me
 The solar_data collection consists of the cleaned historical solar weather data merged with the cleaned Webberville Solar Farm data. The data ranges from January 1, 2019 - July 31, 2020. 
 
 ## Connection String
-The connection string is 
+The connection string is copied from the mongo db atlas databse. The username and password are stored in a seperate config file. The default database is set to the wind_solar_data database.
 
 # Methodology
 ---
@@ -107,6 +107,10 @@ The team performed the following steps to create an accurate machine learning mo
 - Pandas will be used to clean the data and perform an exploratory analysis. Further analysis will be completed using Python.
 
 ## Preprocessing
+The data is largely already preprocessed. The only thing to do is to drop the \_id column which is an artifact of the mongodb atlas storage and encod the weather description using one hot encoding.
+
+The data is split by using the 2019 data to train and the 2020 data to test. The data is then scaled using sklearn standard scaler.
+
 - Description of Preprocessing
 - Takes in data from database
 - Output label for input data
@@ -115,20 +119,27 @@ The team performed the following steps to create an accurate machine learning mo
 - Scaling 
 - How data was split into training / testing sets
 
-## Machine Learning Model Selection Process
-Below is the evolution of the machine learning models trained and tested by the team. 
-
-### Multiple Linear Regression
-- SciKitLearn is the ML library we'll be using to create a regression model. 
-
 # Model
 ---
-The machine learning model we are using is a neural network from the Scikit learn module. There will be two seperate models, one will be trained for the wind farm and the other on the solar farm.
+### Machine Learning Model Selection Process
+The goal of the project is to predict the energy generation of renewable energy farms using weather forcast data. This means that we are looking for a model with a continuous output and therefore need some type of regression model. The two we have decided to use are a multiple linear regression and a neural network. Both models will be trained on the solar and wind data sperately.
 
-## Limitations
-- Turbine maintenance,
-- Temperatures for solar data
-- UV index for solar data
+## Multiple Linear Regression
+The linear regression model we are using is the linear model from sklearn. This allows us to perform a multiple linear regression on the weather data to predict a continuous output. This model is good at handling linear relationships between data but cannot handle other types of relationships without more data preprocessing. This resulted in a low accuracy for both models. The loss metric is the mean absolute error.
+
+The solar linear regression acheived an accuracy of ~60%. This closely resembled the shape of the data but could not predict the value of the power generated very well. This is likey because the relationship between the data points is more complicated than the regression model can handle. In addition, the linear regression can output negative values. This is problematic because this is impossible for a solar panel. To compensate for this all negative values have been coerced to 0. The optimizer used is a stocastic gradient decent (SGD). There are three hidden layers to the model all using a RELU activation function.
+
+The wind linear regression acheived an accuracy of ~30% and had many of the same pitfalls of the solar regression. The output of the regression gave an imporession of the shape but did not get close to the correct values. The output of the wind farm is not as easily predicted as the solar farm likey due to the major impact of the sun on the solar panels. The optimizer used is ADAM. There are 2 hidden layers allusing an activation function.
+
+## Neural Network
+The neural network we are using is the sequential model from tensor flow. This is able to handle more complex relationships between the data. The two models are very similar. Both use a relu function output to ensure that the output is continuous and non negative. This is particularly important for the solar data because it has more values close to zero because it is not generating at night.
+
+The solar model has a mean absolute error of about 1.5 MWH. It can predict very well the output during the day and is nearly perfect at predicting when the panels will start producing.
+
+The wind model has a mean absolute error of about 25 MWH. This means that the data take the shape of the output well but sometime is off my a fair amount.
+
+### Limitations
+The biggest limitation is the amount of historical data we have. It only has one data point for each date and so having more data would help this greatly. This would also help to take into account the degradation of the solar panels to make the model more accurate for future years.
 
 ## Benefits
 - Description of Benefits
