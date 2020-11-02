@@ -107,8 +107,11 @@ The team performed the following steps to create an accurate machine learning mo
 - Graphs can be found in Google Slides! 
 
 Two graphs were created for:
+
     -Average MWH vs Features by Month - Solar
+    
     -Average MWH vs Features by Hour - Solar
+    
     -Which month had the most sunhours- Solar
 
 ## Preprocessing
