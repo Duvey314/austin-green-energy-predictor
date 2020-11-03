@@ -247,7 +247,10 @@ Flat files containing, historical hourly power generated from Hackbarry Wind Far
 
 A similar process was followed in converting the historical hourly power from Hackbarry Wind Farm and Webberville Solar Farm to prepare the dataframe in the datetime format.  These two dataframes could then be easily merged on the datetime to create a single dataframe with all the weather parameters needed for analysis along with the power generation in Mega Watt Hour (MWH).  Once merged, the datetime was split into year, month, day and hour as a final dataframe for Exploratory Analysis, Preprocessing and Machine Learning. The dataframe was converted to JSON format and stored in MongoDB.
 
+### Hackberry Wind MWH DataFrame
 ![](Resources/HackberryWindMWH.png)
+
+### Webberville Solar MWH DataFrame
 ![](Resources/WebbervilleSolarMWH.png)
 
 ## Exploratory Analysis 
@@ -261,7 +264,9 @@ A similar process was followed in converting the historical hourly power from Ha
 The focus of the exploratory analysis initially was to determine the obvious relationship between various weather parameters to the power generated.
 
 ### Wind Exploratory Analysis
-It cab be seen that relationship between wind speed to the power generated had some linear relationship however, wind speed coupled with southerly/northerly wind direction had a bigger impact on power generation.  Wind gusts also seemed to have a have some level of linear relationship.
+It cab be seen that relationship between wind speed to the power generated had some linear relationship however, wind speed coupled with southerly/northerly wind direction had a bigger impact on power generation.
+
+Wind gusts also seemed to have a have some level of linear relationship.
 
 The time of day that had the best power output was between 9 AM to 4 AM and the least power generated was between Noon and 8 PM.
 
