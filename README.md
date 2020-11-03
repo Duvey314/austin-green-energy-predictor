@@ -16,51 +16,9 @@
 * [Resources](#resources)
 
 
-##
+## Project Outline for Dashboard
+https://docs.google.com/document/d/1zy57lRIQJ1UBqlNrTapLSL0aPm6nbZYgNquwGzL_J9k/edit
 
-Deliverabless for #2
-
-
--Machine learning needs to go from mockup to functioning
--database needs to be integrated
--create an outline for final dashboard: storyboard capturing main visualizations and other aspects of dashboard
-presentation
-	-topic, reason, description of data, questions team wants to answer with data, description of data exploration, description of analysis phase
-    
-    
-github
-	-includes master branch with all code necessary to perform exploratory analysis
-	-some code necessary to complete ML portion of project
-    
-    
-readme
-	-description of communication protocalls
-	-outline of project
-    
-    
-individuals
-	-four committs for this segment
-    
-    
-machine learning
-	-description of preliminary data preprocessing
-	-description of preliminary feature engineering and preliminary feature selection- decision making process
-	-description of how data was split into training and testing
-	-explanation of model choice with limitations and benefits
-    
-    
-databse integration
-	-database stores static data
-	-database interfaces with project
-	-includes at least two tables
-	-at least one joing- not including any joins in panadas
-	-includes at least one connection string
-    
-    
-dashboard
-	-blueprint should include storyboard on google slides
-	-description of tools that iwll be use to create final dashboard
-	-description of interactive elements
     
 # Overview
 --- 
@@ -132,7 +90,7 @@ The wind_data collection consists of the cleaned historical wind weather data me
 The solar_data collection consists of the cleaned historical solar weather data merged with the cleaned Webberville Solar Farm data. The data ranges from January 1, 2019 - July 31, 2020. 
 
 ## Connection String
-The connection string is 
+The connection string is copied from the mongo db atlas databse. The username and password are stored in a seperate config file. The default database is set to the wind_solar_data database.
 
 # Methodology
 ---
@@ -145,10 +103,22 @@ The team performed the following steps to create an accurate machine learning mo
 - How were missing values identifed and handles?
 
 ## Exploratory Analysis
-- Description of the analysis phase of the project
-- Pandas will be used to clean the data and perform an exploratory analysis. Further analysis will be completed using Python.
+- During our exploratory analysis, we used Microsoft Power Bi and Python for solar and wind energy. 
+- Graphs can be found in Google Slides! 
+
+Two graphs were created for:
+
+    -Average MWH vs Features by Month - Solar
+    
+    -Average MWH vs Features by Hour - Solar
+    
+    -Which month had the most sunhours- Solar
 
 ## Preprocessing
+The data is largely already preprocessed. The only thing to do is to drop the \_id column which is an artifact of the mongodb atlas storage and encod the weather description using one hot encoding.
+
+The data is split by using the 2019 data to train and the 2020 data to test. The data is then scaled using sklearn standard scaler.
+
 - Description of Preprocessing
 - Takes in data from database
 - Output label for input data
@@ -157,34 +127,41 @@ The team performed the following steps to create an accurate machine learning mo
 - Scaling 
 - How data was split into training / testing sets
 
-## Machine Learning Model Selection Process
-Below is the evolution of the machine learning models trained and tested by the team. 
-
-### Multiple Linear Regression
-- SciKitLearn is the ML library we'll be using to create a regression model. 
-
 # Model
 ---
-The machine learning model we are using is a neural network from the Scikit learn module. There will be two seperate models, one will be trained for the wind farm and the other on the solar farm.
+### Machine Learning Model Selection Process
+The goal of the project is to predict the energy generation of renewable energy farms using weather forcast data. This means that we are looking for a model with a continuous output and therefore need some type of regression model. The two we have decided to use are a multiple linear regression and a neural network. Both models will be trained on the solar and wind data sperately.
 
-## Limitations
-- Turbine maintenance,
-- Temperatures for solar data
-- UV index for solar data
+## Multiple Linear Regression
+The linear regression model we are using is the linear model from sklearn. This allows us to perform a multiple linear regression on the weather data to predict a continuous output. This model is good at handling linear relationships between data but cannot handle other types of relationships without more data preprocessing. This resulted in a low accuracy for both models. The loss metric is the mean absolute error.
+
+The solar linear regression acheived an accuracy of ~60%. This closely resembled the shape of the data but could not predict the value of the power generated very well. This is likey because the relationship between the data points is more complicated than the regression model can handle. In addition, the linear regression can output negative values. This is problematic because this is impossible for a solar panel. To compensate for this all negative values have been coerced to 0. The optimizer used is a stocastic gradient decent (SGD). There are three hidden layers to the model all using a RELU activation function.
+
+The wind linear regression acheived an accuracy of ~30% and had many of the same pitfalls of the solar regression. The output of the regression gave an imporession of the shape but did not get close to the correct values. The output of the wind farm is not as easily predicted as the solar farm likey due to the major impact of the sun on the solar panels. The optimizer used is ADAM. There are 2 hidden layers allusing an activation function.
+
+## Neural Network
+The neural network we are using is the sequential model from tensor flow. This is able to handle more complex relationships between the data. The two models are very similar. Both use a relu function output to ensure that the output is continuous and non negative. This is particularly important for the solar data because it has more values close to zero because it is not generating at night.
+
+The solar model has a mean absolute error of about 1.5 MWH. It can predict very well the output during the day and is nearly perfect at predicting when the panels will start producing.
+
+The wind model has a mean absolute error of about 25 MWH. This means that the data take the shape of the output well but sometime is off my a fair amount.
+
+### Limitations
+The biggest limitation is the amount of historical data we have. It only has one data point for each date and so having more data would help this greatly. This would also help to take into account the degradation of the solar panels to make the model more accurate for future years.
 
 ## Benefits
-- Description of Benefits
+- Neural Network can be used by Austin Energy to test other farms they own with forecasted weather data to predict power generation. 
 
 # Dashboard
 ---
-- Insert overview of Dashboard HERE
+- Preliminary Dashboard Deployed via Heroku:  https://austin-green-energy-predictor.herokuapp.com/
 
 ## Tools Used
-- Insert description of the tools used HERE:
-    - We are thinking about using Github pages or Heroku to help with database hosting, integration with the repository, and also the server environment.
+- HTML, Bootstrap, CSS, FLASK
+- Next step is connecting Mongo with Heroku
 
 ## Interactive Elements
-- Insert description of interactive elements HERE
+- Google Map with Aus. green energy locations mapped.  Popup markers contain additonal details on plant/farm
 
 ## GoogleSlides
 Access the GoogleSlides at the link below:
@@ -206,6 +183,8 @@ https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS5LJlWrjyJesHR87
     * X Role:
         * Performed Technology Research on which resources are best for historical and forecasted weather API calls
         * Performed as team leader to ensure group is staying on track with project deliverables 
+    * Circle Role:
+        * Generating three images to use in presentation with dashboard for exploratory analysis
 
 * [Rahul](https://github.com/madarahr)
     * Square Role:
@@ -218,15 +197,18 @@ https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS5LJlWrjyJesHR87
         * Created a simple machine learning model (multiple linear regression model)
     * X Role:
         * Performed Research on wind farm power generation factors
+    * Circle:
+        * Refine the analysis using weather forcast to generate plots for display in presentation
 
 * [Collin](https://github.com/collinsculley)
-    * Circle Role: 
-        * Generated ERD relationship graph
-        * Created dashboard layout and attributes 
+    * Circle Role:
+        * Created dashboard layout with HTML, Bootstrap, CSS
+        * Created Flask app route and index.html template connection
+        * Created Procfile for Heroku connection
     * X Role:
         * Created preliminary project Flow Chart
         * Organized GoogleSlides presentation
-        * Performed Technology Research on which visualization tools (i.e., FlaskApp, GitHub Pages, Heroku) will be best to display project
+        * Deployed Dashboard via Heroku
 
 * [Shayna](https://github.com/shayna-UT)
     * Square Role:
@@ -260,19 +242,48 @@ https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS5LJlWrjyJesHR87
 # Technologies
 --- 
 ## ETL: Extract, Transform, Load
-* Python
-    * Tools:
-        * Pandas
-        * Numpy
-        * DateTime
-    * Libraries:
-        * Requests 
+
+Flat files containing, historical hourly power generated from Hackbarry Wind Farm and Webberville Solar Farm was been provided by Austin Energy.  Based on the historical dates of the power data, an API call was made at https://www.worldweatheronline.com/ to extract the historical weather data in an hourly format into a dataframe.  The date and hourly time were merged in preparation of the dataframe in the datetime format (YYYY-MM-DD HH:MM:SS).  The weather parameters were further cleaned up to convert them to integers.
+
+A similar process was followed in converting the historical hourly power from Hackbarry Wind Farm and Webberville Solar Farm to prepare the dataframe in the datetime format.  These two dataframes could then be easily merged on the datetime to create a single dataframe with all the weather parameters needed for analysis along with the power generation in Mega Watt Hour (MWH).  Once merged, the datetime was split into year, month, day and hour as a final dataframe for Exploratory Analysis, Preprocessing and Machine Learning. The dataframe was converted to JSON format and stored in MongoDB.
+
+### Hackberry Wind MWH DataFrame
+![](Resources/HackberryWindMWH.png)
+
+### Webberville Solar MWH DataFrame
+![](Resources/WebbervilleSolarMWH.png)
+
 ## Exploratory Analysis 
-* Python
-    * Tools:
-        * Pandas
-    * Libraries:
-        * MatPotLib
+
+The focus of the exploratory analysis initially was to determine the obvious relationship between various weather parameters to the power generated.
+
+### Wind Exploratory Analysis
+It can be seen that relationship between wind speed to the power generated had some linear relationship however, wind speed coupled with southerly/northerly wind direction had a bigger impact on power generation.
+
+#### South West Wind vs MWH
+![](Resources/SouthWestWind.png)
+
+#### North North West Wind vs MWH 
+![](Resources/NorthNorthWestWind.png)
+
+#### Wind Compass Direction vs MWH
+![](Resources/windCompass.png)
+
+Wind gusts also seemed to have a have some level of linear relationship.
+#### Wind Gust vs MWH
+![](Resources/windGust.png)
+
+The time of day that had the best power output was between 9 AM to 4 AM and the least power generated was between Noon and 8 PM.
+#### Wind Speed and Time vs MWH
+![](Resources/SpeedTimeMWH.png)
+
+#### Hourly MWH
+![](Resources/HourlyMWH.png)
+
+### Solar Exploratory Analysis
+The months of June, July, August and September generated the most power due to longer sunny days.
+* Cloud cover vs MWH ??
+
 ## Preprocessing 
 * Python
     * Tools:
@@ -294,10 +305,11 @@ https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS5LJlWrjyJesHR87
 * HTML
 * CSS
 * GoogleSlides
+* Microsoft Power Bi
 
 # Acknowledgements
 ---
-* Kasun Chandrarathna (Oshadi's cousin):
+* Kasun Chandrarathna (Xcel Employee):
     * Electrical Engineer at [Xcel Energy](https://www.xcelenergy.com/)
     * Provided information on how wind turbines are made and how power is generated and coverted to the grid.
 * [Austin Energy](https://austinenergy.com/ae/about)
