@@ -270,9 +270,10 @@ It can be seen that relationship between wind speed to the power generated had s
 ![](Resources/windCompass.png)
 
 Wind gusts also seemed to have a have some level of linear relationship.
+#### Wind Gust vs MWH
+![](Resources/windGust.png)
 
 The time of day that had the best power output was between 9 AM to 4 AM and the least power generated was between Noon and 8 PM.
-
 #### Wind Speed and Time vs MWH
 ![](Resources/SpeedTimeMWH.png)
 
