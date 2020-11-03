@@ -201,13 +201,14 @@ https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS5LJlWrjyJesHR87
         * Refine the analysis using weather forcast to generate plots for display in presentation
 
 * [Collin](https://github.com/collinsculley)
-    * Circle Role: 
-        * Generated ERD relationship graph
-        * Created dashboard layout and attributes 
+    * Circle Role:
+        * Created dashboard layout with HTML, Bootstrap, CSS
+        * Created Flask app route and index.html template connection
+        * Created Procfile for Heroku connection
     * X Role:
         * Created preliminary project Flow Chart
         * Organized GoogleSlides presentation
-        * Performed Technology Research on which visualization tools (i.e., FlaskApp, GitHub Pages, Heroku) will be best to display project
+        * Deployed Dashboard via Heroku
 
 * [Shayna](https://github.com/shayna-UT)
     * Square Role:
