@@ -254,21 +254,30 @@ A similar process was followed in converting the historical hourly power from Ha
 ![](Resources/WebbervilleSolarMWH.png)
 
 ## Exploratory Analysis 
-* Python
-    * Tools:
-        * Pandas
-        * numpy
-    * Libraries:
-        * MatPotLib
-        * hvplot
+
 The focus of the exploratory analysis initially was to determine the obvious relationship between various weather parameters to the power generated.
 
 ### Wind Exploratory Analysis
-It cab be seen that relationship between wind speed to the power generated had some linear relationship however, wind speed coupled with southerly/northerly wind direction had a bigger impact on power generation.
+It can be seen that relationship between wind speed to the power generated had some linear relationship however, wind speed coupled with southerly/northerly wind direction had a bigger impact on power generation.
+
+#### South West Wind vs MWH
+![](Resources/SouthWestWind.png)
+
+#### North North West Wind vs MWH 
+![](Resources/NorthNorthWestWind.png)
+
+#### Wind Compass Direction vs MWH
+![](Resources/WebbervilleSolarMWH.png)
 
 Wind gusts also seemed to have a have some level of linear relationship.
 
 The time of day that had the best power output was between 9 AM to 4 AM and the least power generated was between Noon and 8 PM.
+
+#### Wind Speed and Time vs MWH
+![](Resources/SpeedTimeMWH.png)
+
+#### Hourly MWH
+![](Resources/HourlyMWH.png)
 
 ### Solar Exploratory Analysis
 The months of June, July, August and September generated the most power due to longer sunny days.
