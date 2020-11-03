@@ -267,7 +267,7 @@ It can be seen that relationship between wind speed to the power generated had s
 ![](Resources/NorthNorthWestWind.png)
 
 #### Wind Compass Direction vs MWH
-![](Resources/WebbervilleSolarMWH.png)
+![](Resources/windCompass.png)
 
 Wind gusts also seemed to have a have some level of linear relationship.
 
