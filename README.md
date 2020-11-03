@@ -242,19 +242,29 @@ https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS5LJlWrjyJesHR87
 # Technologies
 --- 
 ## ETL: Extract, Transform, Load
-* Python
-    * Tools:
-        * Pandas
-        * Numpy
-        * DateTime
-    * Libraries:
-        * Requests 
+
+Flat files containing, historical hourly power generated from Hackbarry Wind Farm and Webberville Solar Farm was been provided by Austin Energy.  Based on the historical dates of the power data, an API call was made at https://www.worldweatheronline.com/ to extract the historical weather data in an hourly format into a dataframe.  The date and hourly time were merged in preparation of the dataframe in the datetime format (YYYY-MM-DD HH:MM:SS).  The weather parameters were further cleaned up to convert them to integers.
+A similar process was followed in converting the historical hourly power from Hackbarry Wind Farm and Webberville Solar Farm to prepare the dataframe in the datetime format.  These two dataframes could then be easily merged on the datetime to create a single dataframe with all the weather parameters needed for analysis along with the power generation in Mega Watt Hour (MWH).  Once merged, the datetime was split into year, month, day and hour as a final dataframe for Exploratory Analysis, Preprocessing and Machine Learning. The dataframe was converted to JSON format and stored in MongoDB.
+
 ## Exploratory Analysis 
 * Python
     * Tools:
         * Pandas
+        * numpy
     * Libraries:
         * MatPotLib
+        * hvplot
+The focus of the exploratory analysis initially was to determine the obvious relationship between various weather parameters to the power generated.
+
+### Wind Exploratory Analysis
+It cab be seen that relationship between wind speed to the power generated had some linear relationship however, wind speed coupled with southerly/northerly wind direction had a bigger impact on power generation.  Wind gusts also seemed to have a have some level of linear relationship.
+
+The time of day that had the best power output was between 9 AM to 4 AM and the least power generated was between Noon and 8 PM.
+
+### Solar Exploratory Analysis
+The months of June, July, August and September generated the most power due to longer sunny days.
+* Cloud cover vs MWH ??
+
 ## Preprocessing 
 * Python
     * Tools:
