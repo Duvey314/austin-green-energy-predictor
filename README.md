@@ -255,34 +255,22 @@ A similar process was followed in converting the historical hourly power from Ha
 
 ## Exploratory Analysis 
 
-The focus of the exploratory analysis initially was to determine the obvious relationship between various weather parameters to the power generated.
+The focus of the exploratory analysis initially was to determine the obvious relationship between various weather parameters such as
 
-### Wind Exploratory Analysis
-It can be seen that relationship between wind speed to the power generated had some linear relationship however, wind speed coupled with southerly/northerly wind direction had a bigger impact on power generation.
+* Wind speed
+* Wind direction
+* Wind gusts
+* Humidity
+* Temperature
+* Sun hours (based on seasons)
+* Cloud cover percentage
 
-#### South West Wind vs MWH
-![](Resources/SouthWestWind.png)
+to the power generated.  In addition, statistical analysis of the above parameters and power generation was performed.
 
-#### North North West Wind vs MWH 
-![](Resources/NorthNorthWestWind.png)
+### Relationship of Wind Speed and Wind Direction to the MWH
+![](Resources/WindSpeedvsCompassvsMWH.png)
 
-#### Wind Compass Direction vs MWH
-![](Resources/windCompass.png)
-
-Wind gusts also seemed to have a have some level of linear relationship.
-#### Wind Gust vs MWH
-![](Resources/windGust.png)
-
-The time of day that had the best power output was between 9 AM to 4 AM and the least power generated was between Noon and 8 PM.
-#### Wind Speed and Time vs MWH
-![](Resources/SpeedTimeMWH.png)
-
-#### Hourly MWH
-![](Resources/HourlyMWH.png)
-
-### Solar Exploratory Analysis
-The months of June, July, August and September generated the most power due to longer sunny days.
-* Cloud cover vs MWH ??
+Further detail of this analysis can be found here.
 
 ## Preprocessing 
 * Python
@@ -306,6 +294,10 @@ The months of June, July, August and September generated the most power due to l
 * CSS
 * GoogleSlides
 * Microsoft Power Bi
+
+The final dashboard is able to display forecasted weather from any wind and solar farm location for the next few days and predict the power generation.  In addition, the current MWH power generation is presented for visualization.
+
+![](Resources/predictedMWH.png) ![](Resources/currentMWH.png)
 
 # Acknowledgements
 ---
