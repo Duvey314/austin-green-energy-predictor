@@ -257,18 +257,18 @@ A similar process was followed in converting the historical hourly power from Ha
 
 The focus of the exploratory analysis initially was to determine the obvious relationship between various weather parameters such as
 
-a) Wind speed
-b) Wind direction
-c) Wind gusts
-d) Humidity
-e) Temperature
-f) Sun hours (based on seasons)
-g) Cloud cover percentage
+* Wind speed
+* Wind direction
+* Wind gusts
+* Humidity
+* Temperature
+* Sun hours (based on seasons)
+* Cloud cover percentage
 
-to the power generated.  In addition, statistical analysis of the above parameters and power geenration was performed.
+to the power generated.  In addition, statistical analysis of the above parameters and power generation was performed.
 
 ### Relationship of Wind Speed and Wind Direction to the MWH
-![](Resources/WindSpeedvsCompassMWH.png)
+![](Resources/WindSpeedvsCompassvsMWH.png)
 
 Further detail of this analysis can be found here.
 
@@ -294,6 +294,10 @@ Further detail of this analysis can be found here.
 * CSS
 * GoogleSlides
 * Microsoft Power Bi
+
+The final dashboard is able to display forecasted weather from any wind and solar farm location for the next few days and predict the power generation.  In addition, the current MWH power generation is presented for visualization.
+
+![](Resources/predictedMWH.png) ![](Resources/currentMWH.png)
 
 # Acknowledgements
 ---
