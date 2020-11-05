@@ -255,7 +255,7 @@ A similar process was followed in converting the historical hourly power from Ha
 
 ## Exploratory Analysis 
 
-The focus of the exploratory analysis initially was to determine the obvious relationship between various weather parameters such as
+The exploratory analysis is to determine the relationship between various weather parameters such as
 
 * Wind speed
 * Wind direction
