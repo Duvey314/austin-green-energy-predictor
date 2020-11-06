@@ -122,7 +122,7 @@ to the power generated.  In addition, statistical analysis of the above paramete
 ### Relationship of Wind Speed and Wind Direction to the MWH
 ![](Resources/Images/WindSpeedvsCompassvsMWH.png)
 
-Deeper analysis can be found here.
+Deeper analysis can be found here (https://docs.google.com/document/d/1E3OqpVhLlet5KkGYFaULLPAGrmxt4cUYSkAvx2JLoBg/edit).
 
 
 ## Preprocessing
