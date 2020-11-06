@@ -103,16 +103,23 @@ The team performed the following steps to create an accurate machine learning mo
 - How were missing values identifed and handles?
 
 ## Exploratory Analysis
-- During our exploratory analysis, we used Microsoft Power Bi and Python for solar and wind energy. 
-- Graphs can be found in Google Slides! 
 
-Two graphs were created for:
+The focus of the exploratory analysis initially was to determine the obvious relationship between various weather parameters to the power generated.
+The focus of the exploratory analysis initially was to determine the obvious relationship between various weather parameters such as
 
-    -Average MWH vs Features by Month - Solar
-    
-    -Average MWH vs Features by Hour - Solar
-    
-    -Which month had the most sunhours- Solar
+### Wind Exploratory Analysis
+
+It can be seen that relationship between wind speed to the power generated had some linear relationship however, wind speed coupled with southerly/northerly wind direction had a bigger impact on power generation.
+* Wind speed
+* Wind direction
+* Wind gusts
+* Humidity
+* Temperature
+* Sun hours (based on seasons)
+* Cloud cover percentage
+
+### Solar Exploratory Analysis
+
 
 ## Preprocessing
 The data is largely already preprocessed. The only thing to do is to drop the \_id column which is an artifact of the mongodb atlas storage and encod the weather description using one hot encoding.
