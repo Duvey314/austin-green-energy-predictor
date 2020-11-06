@@ -102,10 +102,10 @@ Flat files containing, historical hourly power generated from Hackbarry Wind Far
 A similar process was followed in converting the historical hourly power from Hackbarry Wind Farm and Webberville Solar Farm to prepare the dataframe in the datetime format. These two dataframes could then be easily merged on the datetime to create a single dataframe with all the weather parameters needed for analysis along with the power generation in Mega Watt Hour (MWH). Once merged, the datetime was split into year, month, day and hour as a final dataframe for Exploratory Analysis, Preprocessing and Machine Learning. The dataframe was converted to JSON format and stored in MongoDB.
 
 ### Hackberry Wind MWH DataFrame
-![](Resources/HackberryWindMWH.png)
+![](Resources/Images/HackberryWindMWH.png)
 
 ### Webberville Solar MWH DataFrame
-![](Resources/WebbervilleSolarMWH.png)
+![](Resources/Images/WebbervilleSolarMWH.png)
 
 ## Exploratory Analysis
 
@@ -120,7 +120,7 @@ The focus of the exploratory analysis initially was to determine the obvious rel
 to the power generated.  In addition, statistical analysis of the above parameters and power generation as performed.
 
 ### Relationship of Wind Speed and Wind Direction to the MWH
-![](Resources/WindSpeedvsCompassvsMWH.png)
+![](Resources/Images/WindSpeedvsCompassvsMWH.png)
 
 Deeper analysis can be found here.
 
