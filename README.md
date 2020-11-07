@@ -98,22 +98,33 @@ The connection string is copied from the mongo db atlas databse. The username an
 The team performed the following steps to create an accurate machine learning model. 
 
 ## ETL: Extract, Transform, Load
-- Description of the data exploration phase of the project
-- How did we acquire the dataset?
-- What are the crucial libraries?
-- How were missing values identifed and handles?
+Flat files containing, historical hourly power generated from Hackbarry Wind Farm and Webberville Solar Farm was been provided by Austin Energy. Based on the historical dates of the power data, an API call was made at https://www.worldweatheronline.com/ to extract the historical weather data in an hourly format into a dataframe. The date and hourly time were merged in preparation of the dataframe in the datetime format (YYYY-MM-DD HH:MM:SS). The weather parameters were further cleaned up to convert them to integers.
+
+A similar process was followed in converting the historical hourly power from Hackbarry Wind Farm and Webberville Solar Farm to prepare the dataframe in the datetime format. These two dataframes could then be easily merged on the datetime to create a single dataframe with all the weather parameters needed for analysis along with the power generation in Mega Watt Hour (MWH). Once merged, the datetime was split into year, month, day and hour as a final dataframe for Exploratory Analysis, Preprocessing and Machine Learning. The dataframe was converted to JSON format and stored in MongoDB.
+
+### Hackberry Wind MWH DataFrame
+![](Resources/Images/HackberryWindMWH.png)
+
+### Webberville Solar MWH DataFrame
+![](Resources/Images/WebbervilleSolarMWH.png)
 
 ## Exploratory Analysis
-- During our exploratory analysis, we used Microsoft Power Bi and Python for solar and wind energy. 
-- Graphs can be found in Google Slides! 
 
-Two graphs were created for:
+The focus of the exploratory analysis initially was to determine the obvious relationship between various weather parameters such as
+* Wind speed
+* Wind direction
+* Humidity
+* Temperature
+* Sun hours (based on seasons)
+* Cloud cover percentage
 
-    -Average MWH vs Features by Month - Solar
-    
-    -Average MWH vs Features by Hour - Solar
-    
-    -Which month had the most sunhours- Solar
+to the power generated.  In addition, statistical analysis of the above parameters and power generation as performed.
+
+### Relationship of Wind Speed and Wind Direction to the MWH
+![](Resources/Images/WindSpeedvsCompassvsMWH.png)
+
+Deeper analysis can be found here (https://docs.google.com/document/d/1E3OqpVhLlet5KkGYFaULLPAGrmxt4cUYSkAvx2JLoBg/edit).
+
 
 ## Preprocessing
 The data is largely already preprocessed. The only thing to do is to drop the \_id column which is an artifact of the mongodb atlas storage and encod the weather description using one hot encoding.
