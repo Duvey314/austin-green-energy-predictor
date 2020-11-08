@@ -1,6 +1,6 @@
 //  MODULE 11 EXAMPLE OF D3 & USER INPUT TO FILTER A TABLE
 
-
+$('.dropdown-toggle').dropdown()
 
 
 // from data.js
