@@ -17,6 +17,7 @@
         {{ js_resources|indent(4)|safe }}
         {{ css_resources|indent(4)|safe }}
         {{ plot_script|indent(4)|safe }}
+        {{ date_picker_script|indent(4)|safe }}
     </head>
 
     <body>
@@ -126,8 +127,11 @@
             <!-- HOME SECTION -->
             <div id="home" class="jumbotron"> 
                 <h1>Austin Green Energy Predictor</h1>
-                <p class="lead">DATE PICKER
+                <p class="lead">PLOT
                     {{ plot_div|indent(4)|safe }}
+                </p>
+                <p class="lead">DATE PICKER
+                    {{ date_picker_div|indent(4)|safe }}
                 </p>
                 <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
             </div>
@@ -139,7 +143,7 @@
                     <!-- {% for table in tables %}
                         {{titles[loop.index]}}
                         {{ table|safe }}
-                    {% endfor %}> -->
+                    {% endfor %}> --> 
                 </p>
             </div>
 

@@ -40,18 +40,13 @@ collection = db.solar_data
 solar_df = pd.DataFrame(list(collection.find()))
 solar_df
 
-date_picker = DatePicker(title='Select date', value="2019-09-20", min_date="2019-08-01", max_date="2019-10-30")
-date_picker.js_on_change("value", CustomJS(code="""
-    console.log('date_picker: value=' + this.value, this.toString())
-"""))
-show(date_picker)
 
 output_file('output_file_test.html',
     title='Empty Bokeh Figure')
 
 fig = figure()
 
-show(fig)
+# show(fig)
 
 # @app.route("/", methods=("POST", "GET"))
 # def index():
@@ -59,8 +54,17 @@ show(fig)
 @app.route("/", methods=("POST", "GET"))
 def bokeh():
 
+    def date_picker_handler(attr, old, new):
+        print("Previous date: " + old)
+        print("Updated date: " + new)
+
+    date_picker = DatePicker(title='Select date', value="2019-09-20", min_date="2019-08-01", max_date="2019-10-30")
+    date_picker.on_change("value", date_picker_handler)
+    
+
     from dashboard import firstplot
-    p = firstplot()
+    p = firstplot(2017,4,20)
+
     # FirstPlot = json.dumps(json_item(p, "firstplot"))
     # grab the static resources
     js_resources = INLINE.render_js()
@@ -68,14 +72,18 @@ def bokeh():
 
     # render template
     script, div = components(p)
+    date_picker_script, date_picker_div = components(date_picker)
     html = render_template(
         'index.html',
         plot_script=script,
         plot_div=div,
         js_resources=js_resources,
         css_resources=css_resources,
+        date_picker_div=date_picker_div,
+        date_picker_script=date_picker_script
     )
     return html.encode(encoding='UTF-8')
+
 
 if __name__ == "__main__":
     app.run()

@@ -26,7 +26,7 @@ try:
 except:
     print("The Mongodb failed to connect. Check username/password in connection string.")
 
-
+ 
 # %%
 # Select database
 db = client.get_database('wind_solar_data')
@@ -39,16 +39,12 @@ solar_df = solar_df.drop('_id', axis=1)
 
 
 # %%
-YEAR = 2018
-MONTH = 4
-DAY = 20
-solarDayDF = solar_df.loc[(solar_df['Year'] == YEAR) & (solar_df['Month'] == MONTH) & (solar_df['Day'] == DAY)]
+def firstplot(YEAR=2018, MONTH=4, DAY=20):
 
-solarDayDS = ColumnDataSource(solarDayDF)
+    solarDayDF = solar_df.loc[(solar_df['Year'] == YEAR) & (solar_df['Month'] == MONTH) & (solar_df['Day'] == DAY)]
 
+    solarDayDS = ColumnDataSource(solarDayDF)
 
-def firstplot():
     p = figure(title='FirstPlot', x_axis_label='Hour', y_axis_label='MWH')
     p.line(x='Hour', y='MWH', source=solarDayDS)
-    # p.line(x=[1,2,3], y=[1,2,3])
     return p
