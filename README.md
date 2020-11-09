@@ -19,6 +19,9 @@
 ## Project Outline for Dashboard
 https://docs.google.com/document/d/1zy57lRIQJ1UBqlNrTapLSL0aPm6nbZYgNquwGzL_J9k/edit
 
+## Project Presentation
+Access the GoogleSlides at this link: https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS5LJlWrjyJesHR8705s/edit#slide=id.ga1bdb9328c_0_10
+
     
 # Overview
 --- 
@@ -174,9 +177,6 @@ The biggest limitation is the amount of historical data we have. It only has one
 ## Interactive Elements
 - Google Map with Aus. green energy locations mapped.  Popup markers contain additonal details on plant/farm
 
-## GoogleSlides
-Access the GoogleSlides at the link below:
-https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS5LJlWrjyJesHR8705s/edit#slide=id.ga1bdb9328c_0_10
 
 # Team
 ---
@@ -243,12 +243,6 @@ https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS5LJlWrjyJesHR87
     * X Role: 
         * Performed Market/ Technology Research with Austin Energy
 
-## Communication Protocols
-* The team has weekly Zoom meetings every Monday to discuss everyone's progress. [Duvey](https://github.com/Duvey314), the master branch coordinator, also reviews all changes made to individual branches and merges updates to the master branch. 
-* During Tuesday night classes, the team discusses and assigns weekly roles for each individual. The roles to fill each week are laid out by the project rubric as either a square, triangle, circle, or X role. Each shape is designed so team members are exposed to different roles.
-* [Collin](https://github.com/collinsculley) has taken on the role of historian and documents our weekly work.
-* [Trello](https://trello.com/b/S5ONp84B/ut-bootcamp-capstone), a project management tool, is used collectively by all team members to keep track of progress and aid the team in staying on course. 
-* The team is using an agile project methodology for this project. 
 
 # Technologies
 --- 
