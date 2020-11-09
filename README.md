@@ -14,6 +14,8 @@
 * [Acknowledgements](#acknowledgements)
 * [Resources](#resources)
 
+## Folder Structure 
+
 
 ## Project Outline for Dashboard
 https://docs.google.com/document/d/1zy57lRIQJ1UBqlNrTapLSL0aPm6nbZYgNquwGzL_J9k/edit
@@ -54,7 +56,7 @@ Our team is very fortunate for this opportunity to work with Austin Energy on th
 
 Hackberry Wind Farm is located west of Dallas, and Webberville Solar Farm is located just outside of Austin. The location of both renewable energy farms as well as Austin Energy's additional energy farms can be observed below:
 
-![Gen Map](https://github.com/Duvey314/austin-green-energy-predictor/blob/master/Resources/Gen%20Map.png)
+![Gen Map](https://github.com/Duvey314/austin-green-energy-predictor/blob/master/Resources/Images/Gen%20Map.png)
 
 Both of these datasets (found under "Resources") are provided directly by Austin Energy and contain the hourly output of the wind/solar farm in Mwh. Take a look below for additional information on each of these farms:
 
@@ -164,7 +166,7 @@ The biggest limitation is the amount of historical data we have. It only has one
 ## Benefits
 - Neural Network can be used by Austin Energy to test other farms they own with forecasted weather data to predict power generation. 
 
-# Dashboard
+## Dashboard
 ---
 - Preliminary Dashboard Deployed via Heroku:  https://austin-green-energy-predictor.herokuapp.com/
 
@@ -251,7 +253,7 @@ Flat files containing, historical hourly power generated from Hackbarry Wind Far
 A similar process was followed in converting the historical hourly power from Hackbarry Wind Farm and Webberville Solar Farm to prepare the dataframe in the datetime format.  These two dataframes could then be easily merged on the datetime to create a single dataframe with all the weather parameters needed for analysis along with the power generation in Mega Watt Hour (MWH).  Once merged, the datetime was split into year, month, day and hour as a final dataframe for Exploratory Analysis, Preprocessing and Machine Learning. The dataframe was converted to JSON format and stored in MongoDB.
 
 ### Hackberry Wind MWH DataFrame
-![](Resources/HackberryWindMWH.png)
+![](Resources/Images/HackberryWindMWH.png)
 
 ### Webberville Solar MWH DataFrame
 ![](Resources/Images/WebbervilleSolarMWH.png)
@@ -272,8 +274,6 @@ to the power generated.  In addition, statistical analysis of the above paramete
 
 ### Relationship of Wind Speed and Wind Direction to the MWH
 ![](Resources/Images/WindSpeedvsCompassvsMWH.png)
-
-Further detail of this analysis can be found here.
 
 ## Preprocessing 
 * Python
@@ -300,7 +300,9 @@ Further detail of this analysis can be found here.
 
 The final dashboard is able to display forecasted weather from any wind and solar farm location for the next few days and predict the power generation.  In addition, the current MWH power generation is presented for visualization.
 
-![](Resources/Images/predictedMWH.png) ![](Resources/Images/currentMWH.png)
+![](Resources/Images/predictedMWH.png)
+
+![](Resources/Images/currentMWH.png)
 
 # Acknowledgements
 ---
