@@ -11,7 +11,6 @@
 * [Model](#model)
 * [Dashboard](#dashboard)
 * [Team](#team)
-* [Technologies](#technologies)
 * [Acknowledgements](#acknowledgements)
 * [Resources](#resources)
 
@@ -81,7 +80,6 @@ Both of these datasets (found under "Resources") are provided directly by Austin
 The database used for this project is a MongoDB Atlas database hosted on an AWS server. The historical weather data and renewable energy outputs (Mwh) have been cleaned and merged on a DateTime stamp before inerting the data into the database. The main database is the wind-solar-database, which houses two collections - a wind data collection and a solar data collection. These collections can be accessed using the PyMongo driver and a connection string along with a username and password given to each member of the team.
 
 ## Schema
-- Insert Schema HERE
 
 ## Collections
 * wind_data collection
