@@ -254,7 +254,7 @@ A similar process was followed in converting the historical hourly power from Ha
 ![](Resources/HackberryWindMWH.png)
 
 ### Webberville Solar MWH DataFrame
-![](Resources/WebbervilleSolarMWH.png)
+![](Resources/Images/WebbervilleSolarMWH.png)
 
 ## Exploratory Analysis 
 
@@ -271,7 +271,7 @@ The exploratory analysis is to determine the relationship between various weathe
 to the power generated.  In addition, statistical analysis of the above parameters and power generation was performed.
 
 ### Relationship of Wind Speed and Wind Direction to the MWH
-![](Resources/WindSpeedvsCompassvsMWH.png)
+![](Resources/Images/WindSpeedvsCompassvsMWH.png)
 
 Further detail of this analysis can be found here.
 
@@ -300,7 +300,7 @@ Further detail of this analysis can be found here.
 
 The final dashboard is able to display forecasted weather from any wind and solar farm location for the next few days and predict the power generation.  In addition, the current MWH power generation is presented for visualization.
 
-![](Resources/predictedMWH.png) ![](Resources/currentMWH.png)
+![](Resources/Images/predictedMWH.png) ![](Resources/Images/currentMWH.png)
 
 # Acknowledgements
 ---
