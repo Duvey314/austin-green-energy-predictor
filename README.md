@@ -11,13 +11,17 @@
 * [Model](#model)
 * [Dashboard](#dashboard)
 * [Team](#team)
-* [Technologies](#technologies)
 * [Acknowledgements](#acknowledgements)
 * [Resources](#resources)
+
+## Folder Structure 
 
 
 ## Project Outline for Dashboard
 https://docs.google.com/document/d/1zy57lRIQJ1UBqlNrTapLSL0aPm6nbZYgNquwGzL_J9k/edit
+
+## Project Presentation
+Access the GoogleSlides at this link: https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS5LJlWrjyJesHR8705s/edit#slide=id.ga1bdb9328c_0_10
 
     
 # Overview
@@ -52,7 +56,7 @@ Our team is very fortunate for this opportunity to work with Austin Energy on th
 
 Hackberry Wind Farm is located west of Dallas, and Webberville Solar Farm is located just outside of Austin. The location of both renewable energy farms as well as Austin Energy's additional energy farms can be observed below:
 
-![Gen Map](https://github.com/Duvey314/austin-green-energy-predictor/blob/master/Resources/Gen%20Map.png)
+![Gen Map](https://github.com/Duvey314/austin-green-energy-predictor/blob/master/Resources/Images/Gen%20Map.png)
 
 Both of these datasets (found under "Resources") are provided directly by Austin Energy and contain the hourly output of the wind/solar farm in Mwh. Take a look below for additional information on each of these farms:
 
@@ -76,9 +80,6 @@ Both of these datasets (found under "Resources") are provided directly by Austin
 # Database 
 ---
 The database used for this project is a MongoDB Atlas database hosted on an AWS server. The historical weather data and renewable energy outputs (Mwh) have been cleaned and merged on a DateTime stamp before inerting the data into the database. The main database is the wind-solar-database, which houses two collections - a wind data collection and a solar data collection. These collections can be accessed using the PyMongo driver and a connection string along with a username and password given to each member of the team.
-
-## Schema
-- Insert Schema HERE
 
 ## Collections
 * wind_data collection
@@ -163,7 +164,7 @@ The biggest limitation is the amount of historical data we have. It only has one
 ## Benefits
 - Neural Network can be used by Austin Energy to test other farms they own with forecasted weather data to predict power generation. 
 
-# Dashboard
+## Dashboard
 ---
 - Preliminary Dashboard Deployed via Heroku:  https://austin-green-energy-predictor.herokuapp.com/
 
@@ -174,9 +175,6 @@ The biggest limitation is the amount of historical data we have. It only has one
 ## Interactive Elements
 - Google Map with Aus. green energy locations mapped.  Popup markers contain additonal details on plant/farm
 
-## GoogleSlides
-Access the GoogleSlides at the link below:
-https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS5LJlWrjyJesHR8705s/edit#slide=id.ga1bdb9328c_0_10
 
 # Team
 ---
@@ -243,12 +241,6 @@ https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS5LJlWrjyJesHR87
     * X Role: 
         * Performed Market/ Technology Research with Austin Energy
 
-## Communication Protocols
-* The team has weekly Zoom meetings every Monday to discuss everyone's progress. [Duvey](https://github.com/Duvey314), the master branch coordinator, also reviews all changes made to individual branches and merges updates to the master branch. 
-* During Tuesday night classes, the team discusses and assigns weekly roles for each individual. The roles to fill each week are laid out by the project rubric as either a square, triangle, circle, or X role. Each shape is designed so team members are exposed to different roles.
-* [Collin](https://github.com/collinsculley) has taken on the role of historian and documents our weekly work.
-* [Trello](https://trello.com/b/S5ONp84B/ut-bootcamp-capstone), a project management tool, is used collectively by all team members to keep track of progress and aid the team in staying on course. 
-* The team is using an agile project methodology for this project. 
 
 # Technologies
 --- 
@@ -259,10 +251,10 @@ Flat files containing, historical hourly power generated from Hackbarry Wind Far
 A similar process was followed in converting the historical hourly power from Hackbarry Wind Farm and Webberville Solar Farm to prepare the dataframe in the datetime format.  These two dataframes could then be easily merged on the datetime to create a single dataframe with all the weather parameters needed for analysis along with the power generation in Mega Watt Hour (MWH).  Once merged, the datetime was split into year, month, day and hour as a final dataframe for Exploratory Analysis, Preprocessing and Machine Learning. The dataframe was converted to JSON format and stored in MongoDB.
 
 ### Hackberry Wind MWH DataFrame
-![](Resources/HackberryWindMWH.png)
+![](Resources/Images/HackberryWindMWH.png)
 
 ### Webberville Solar MWH DataFrame
-![](Resources/WebbervilleSolarMWH.png)
+![](Resources/Images/WebbervilleSolarMWH.png)
 
 ## Exploratory Analysis 
 
@@ -279,9 +271,7 @@ The exploratory analysis is to determine the relationship between various weathe
 to the power generated.  In addition, statistical analysis of the above parameters and power generation was performed.
 
 ### Relationship of Wind Speed and Wind Direction to the MWH
-![](Resources/WindSpeedvsCompassvsMWH.png)
-
-Further detail of this analysis can be found here.
+![](Resources/Images/WindSpeedvsCompassvsMWH.png)
 
 ## Preprocessing 
 * Python
@@ -308,7 +298,9 @@ Further detail of this analysis can be found here.
 
 The final dashboard is able to display forecasted weather from any wind and solar farm location for the next few days and predict the power generation.  In addition, the current MWH power generation is presented for visualization.
 
-![](Resources/predictedMWH.png) ![](Resources/currentMWH.png)
+![](Resources/Images/predictedMWH.png)
+
+![](Resources/Images/currentMWH.png)
 
 # Acknowledgements
 ---
