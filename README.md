@@ -167,6 +167,7 @@ The biggest limitation is the amount of historical data we have. It only has one
 ## Dashboard
 ---
 - Preliminary Dashboard Deployed via Heroku:  https://austin-green-energy-predictor.herokuapp.com/
+![Dashboard Status](https://github.com/Duvey314/austin-green-energy-predictor/blob/master/static/img/dashboardStatus.png)
 
 ## Tools Used
 - HTML, Bootstrap, CSS, FLASK
