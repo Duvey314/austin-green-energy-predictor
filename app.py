@@ -9,8 +9,8 @@ import json
 from flask import Flask, render_template
 from flask_pymongo import PyMongo
 
-from bokeh.io import show, output_file
-from bokeh.plotting import figure, show
+# from bokeh.io import show, output_file
+from bokeh.plotting import figure, show, output_file
 from bokeh.models import CustomJS, DatePicker
 from bokeh.embed import components
 from bokeh.resources import INLINE
@@ -41,12 +41,10 @@ solar_df = pd.DataFrame(list(collection.find()))
 solar_df
 
 
-output_file('output_file_test.html',
-    title='Empty Bokeh Figure')
+# output_file('output_file_test.html',
+#     title='Empty Bokeh Figure')
 
 fig = figure()
-
-# show(fig)
 
 # @app.route("/", methods=("POST", "GET"))
 # def index():
@@ -58,12 +56,12 @@ def bokeh():
         print("Previous date: " + old)
         print("Updated date: " + new)
 
-    date_picker = DatePicker(title='Select date', value="2019-09-20", min_date="2019-08-01", max_date="2019-10-30")
+    date_picker = DatePicker(title='Select Date', value="2019-04-20", min_date="2017-01-01", max_date="2020-07-31")
     date_picker.on_change("value", date_picker_handler)
     
 
     from dashboard import firstplot
-    p = firstplot(2017,4,20)
+    p = firstplot(2019,4,20)
 
     # FirstPlot = json.dumps(json_item(p, "firstplot"))
     # grab the static resources

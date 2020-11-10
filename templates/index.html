@@ -11,7 +11,7 @@
         <link href="static/css/jumbotron.css" rel="stylesheet">
         <link rel="icon" href="../../favicon.ico">
         <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script> -->
         <link href="http://cdn.bokeh.org/bokeh/release/bokeh-0.11.1.min.css" rel="stylesheet" type="text/css">
         <script src="http://cdn.bokeh.org/bokeh/release/bokeh-0.11.1.min.js"></script>
         {{ js_resources|indent(4)|safe }}
@@ -24,8 +24,6 @@
         <!-- FIXED NavBar -->
         <div class="navbar-wrapper">
             <div class="container">
-
-
                 <nav class="navbar navbar-default navbar-fixed-top">
                     <div class="container">
                         <div class="navbar-header">
@@ -51,12 +49,14 @@
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                         <li><a href="https://github.com/Duvey314/austin-green-energy-predictor">GitHub Repository</a></li>
-                                        <li><a href="https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS5LJlWrjyJesHR8705s/edit#slide=id.ga1bdb9328c_0_10">GoogleSlides</a></li>
+                                        <li><a href="https://docs.google.com/presentation/d/1bD3JhPvRM_7ClN2xdoWEC1OZS5LJlWrjyJesHR8705s/edit#slide=id.ga1bdb9328c_0_10">Presentation Deck</a></li>
                                         <li><a href="#">Something else here</a></li>
                                         <li role="separator" class="divider"></li>
-                                        <li class="dropdown-header">Nav header</li>
-                                        <li><a href="#">Separated link</a></li>
-                                        <li><a href="#">One more separated link</a></li>
+                                        <li class="dropdown-header">Source Data</li>
+                                        <li><a href="https://austinenergy.com/ae/about/environment/renewable-power-generation">AustinEnergy Renewables</a></li>
+                                        <li><a href="https://www.worldweatheronline.com/developer/">Historical Weather</a></li>
+                                        <li><a href="https://www.thewindpower.net/windfarm_en_4012_hackberry.php">Hackberry Wind Farm</a></li>
+                                        <li><a href="http://webbervillesolar.com/">Webberville Solar Farm</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -72,50 +72,46 @@
 
 
         <!-- Rotating Image CAROUSEL -->
-        <div id="carousel" class="carousel slide">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
             <ol class="carousel-indicators">
-                <li class="item1 active"></li>
-                <li class="item2"></li>
-                <li class="item3"></li>
+                <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel" data-slide-to="1"></li>
+                <li data-target="#carousel" data-slide-to="2"></li>
             </ol>
             <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
+            <div class="carousel-inner">
                 <div class="item active">
-                    <img src="static/img/hackberryFarm.jpg" alt="First slide">
+                    <img class="first-slide" src="static/img/hackberryFarm.jpg" alt="First slide">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>Hackberry Wind Farm</h1>
-                            <!-- <p>Hackberry Wind Farm</p> -->
-                            <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p> -->
                         </div>
                     </div>
                 </div>
                 <div class="item">
-                    <img src="static/img/webbervilleFarm.jpg" alt="Second slide">
+                    <img class="second-slide" src="static/img/webbervilleFarm.jpg" alt="Second slide">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>Webberville Solar Farm</h1>
-                            <!-- <p>Webberville Solar Farm</p> -->
-                            <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p> -->
                         </div>
                     </div>
                 </div>
                 <div class="item">
-                    <img src="static/img/AEmap.png" alt="Third slide">
+                    <img class="third-slide" src="static/img/AEmap.png" alt="Third slide">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>Austin Energy Sources</h1>
-                            <!-- <p>Austin Energy Sources</p> -->
-                            <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p> -->
                         </div>
                     </div>
                 </div>
             </div>
-            <a class="left carousel-control" href="#carousel" role="button">
+            <!-- Carousel Controls -->
+            <a class="left carousel-control" href="#carousel" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="right carousel-control" href="#carousel" role="button">
+            <a class="right carousel-control" href="#carousel" data-slide="next">
                 <span class="glyphicon glyphicon-chevron-right"></span>
                 <span class="sr-only">Next</span>
             </a>
@@ -133,7 +129,6 @@
                 <p class="lead">DATE PICKER
                     {{ date_picker_div|indent(4)|safe }}
                 </p>
-                <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
             </div>
 
             <!-- ABOUT SECTION -->
@@ -160,8 +155,8 @@
             </div>
 
         </div>
-
-
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
     </body>
 </html>
 
