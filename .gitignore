@@ -4,3 +4,5 @@ config.py
 .DS_Store
 
 .env
+
+.vscode
