@@ -11,7 +11,7 @@ from flask_pymongo import PyMongo
 
 # from bokeh.io import show, output_file
 from bokeh.plotting import figure, show, output_file
-from bokeh.models import CustomJS, DatePicker
+from bokeh.models import CustomJS, DatePicker, ColumnDataSource
 from bokeh.embed import components
 from bokeh.resources import INLINE
 # from bokeh.util.string import encode_utf8
@@ -38,13 +38,34 @@ collection = db.solar_data
 
 # pull collection into dataframe
 solar_df = pd.DataFrame(list(collection.find()))
-solar_df
+solar_df = solar_df.drop('_id', axis=1)
 
 
-# output_file('output_file_test.html',
-#     title='Empty Bokeh Figure')
+# callback = CustomJS(args=dict(source=solarDayDS), code="""
+#         var data = solarDayDS.data;
+#         var f = cb_obj.value
+#         var x = solarDayDF['x']
+#         var y = solarDayDF['y']
+#         source.change.emit();
+#     """)
 
 fig = figure()
+
+def firstplot(YEAR=2018, MONTH=4, DAY=21):
+
+    solarDayDF = solar_df.loc[(solar_df['Year'] == YEAR) & (solar_df['Month'] == MONTH) & (solar_df['Day'] == DAY)]
+
+    solarDayDS = ColumnDataSource(solarDayDF)
+
+    p = figure(title='FirstPlot', x_axis_label='Hour', y_axis_label='MWH')
+    p.line(x='Hour', y='MWH', source=solarDayDS)
+
+    return p
+
+def date_picker_handler(attr, old, new):
+    print("Previous date: " + old)
+    print("Updated date: " + new)
+    # return ?????
 
 # @app.route("/", methods=("POST", "GET"))
 # def index():
@@ -52,16 +73,12 @@ fig = figure()
 @app.route("/", methods=("POST", "GET"))
 def bokeh():
 
-    def date_picker_handler(attr, old, new):
-        print("Previous date: " + old)
-        print("Updated date: " + new)
-
     date_picker = DatePicker(title='Select Date', value="2019-04-20", min_date="2017-01-01", max_date="2020-07-31")
     date_picker.on_change("value", date_picker_handler)
-    
+
 
     from dashboard import firstplot
-    p = firstplot(2019,4,20)
+    p = firstplot()
 
     # FirstPlot = json.dumps(json_item(p, "firstplot"))
     # grab the static resources
