@@ -77,7 +77,7 @@ def bokeh():
     date_picker.on_change("value", date_picker_handler)
 
 
-    from dashboard import firstplot
+    # from dashboard import firstplot
     p = firstplot()
 
     # FirstPlot = json.dumps(json_item(p, "firstplot"))
