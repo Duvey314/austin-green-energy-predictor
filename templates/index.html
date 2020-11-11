@@ -10,12 +10,9 @@
         <!-- Custom styles for this template -->
         <link href="static/css/jumbotron.css" rel="stylesheet">
         <link rel="icon" href="../../favicon.ico">
-        <link href="http://cdn.bokeh.org/bokeh/release/bokeh-0.11.1.min.css" rel="stylesheet" type="text/css">
-        <script src="http://cdn.bokeh.org/bokeh/release/bokeh-0.11.1.min.js"></script>
-        {{ js_resources|indent(4)|safe }}
-        {{ css_resources|indent(4)|safe }}
-        {{ plot_script|indent(4)|safe }}
-        {{ date_picker_script|indent(4)|safe }}
+        <!-- <link href="http://cdn.bokeh.org/bokeh/release/bokeh-0.11.1.min.css" rel="stylesheet" type="text/css">
+        <script src="http://cdn.bokeh.org/bokeh/release/bokeh-0.11.1.min.js"></script> -->
+        <!-- <script type="text/javascript" src="../static/js/carousel.js"></script> -->
     </head>
 
     <body>
@@ -146,12 +143,6 @@
             <div id="model" class="jumbotron">
                 <h1>Model Details</h1>
                 <p>Short Overview of Machine Learning Model</p>
-                <p class="lead">PLOT
-                    {{ plot_div|indent(4)|safe }}
-                </p>
-                <p class="lead">DATE PICKER
-                    {{ date_picker_div|indent(4)|safe }}
-                </p>
             </div>
 
             <!-- TEAM SECTION -->
@@ -252,6 +243,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
         <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
 
     </body>
 

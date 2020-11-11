@@ -1,74 +1,41 @@
-//  MODULE 11 EXAMPLE OF D3 & USER INPUT TO FILTER A TABLE
+// function init() {
+//   var selector = d3.select("#selDataset");
 
-$('.dropdown-toggle').dropdown()
+//   d3.json("samples.json").then((data) => {
+//     console.log(data);
+//     var sampleNames = data.names;
+//     sampleNames.forEach((sample) => {
+//       selector
+//         .append("option")
+//         .text(sample)
+//         .property("value", sample);
+//     });
+// })}
+ 
+// function optionChanged(newSample) {
+//   buildMetadata(newSample);
+//   buildBar(newSample);
+// }
 
 
-// from data.js
-const tableData = data;
+// function buildBar(sample) {
+//   d3.json("samples.json").then((data) =>{
+//     var samples = data.samples;
+//     var samplesArray = samples.filter(sampleObj => sampleObj.id == sample);
+//     var array = samplesArray[0];
+//     var sampleValues = array.sample_values;
+//     var otuIDs = array.otu_ids;
+//     var otuLabels = array.otu_labels;
 
-// get table references
-var tbody = d3.select("tbody");
+//       // barChart
+//       var BAR = d3.select("#bar");
+//       BAR.html("");
+//       var barChart = {
+//         x : [sampleValues[0], sampleValues[1], sampleValues[2], sampleValues[3], sampleValues[4], sampleValues[5], sampleValues[6], sampleValues[7], sampleValues[8], sampleValues[9]],
+//         y : [otuIDs[0], otuIDs[1], otuIDs[2], otuIDs[3], otuIDs[4], otuIDs[5], otuIDs[6], otuIDs[7], otuIDs[8], otuIDs[9]],
+//         type : 'bar',
+//         text : [otuLabels[0], otuLabels[1], otuLabels[2], otuLabels[3], otuLabels[4], otuLabels[5], otuLabels[6], otuLabels[7], otuLabels[8], otuLabels[9]],
+//         orientation : 'h',
+//         yaxis : {autotick:false}
+//       };
 
-function buildTable(data) {
-  // First, clear out any existing data
-  tbody.html("");
-
-  // Next, loop through each object in the data
-  // and append a row and cells for each value in the row
-  data.forEach((dataRow) => {
-    // Append a row to the table body
-    let row = tbody.append("tr");
-    
-    // Loop through each field in the dataRow and add
-    // each value as a table cell (td)
-    Object.values(dataRow).forEach((val) => {
-      let cell = row.append("td");
-      cell.text(val);
-      //console.log(cell.text(val));
-    });
-  });
-}
-
-// Keep track of all filters
-var filters = {};
-
-function updateFilters() {
-
-  let elementChange = d3.select(this);
-  let elementValue = elementChange.property("value");
-  let elementID = elementChange.attr("id");
-
-  if (elementValue) {
-    filters[elementID] = elementValue;
-  }
-  else {
-    delete filters[elementID];
-  }
-  filterTable();
-}
-
-function filterTable() {
-
-  // set the filteredData to the existing tableData
-  let filteredData = tableData;
-  // loop through all of the filters and keep any data that matches the filter values
-  //console.log(filters)
-  
-  Object.entries(filters).forEach(([key,value]) => {
-    //console.log('key: ', key, 'value: ', value)
-    filteredData = filteredData.filter(row => row[key] === value);
-  });
-  
-  //console.log(filteredData);
-  //Use .slice above!
-
-  // Finally, rebuild the table using the filtered Data
-buildTable(filteredData);
-}
-
-// Attach an event to listen for changes to each filter
-// Hint: You'll need to select the event and what it is listening for within each set of parenthesis
-d3.selectAll("input").on("change", updateFilters);
-
-// Build the table when the page loads
-buildTable(tableData);
