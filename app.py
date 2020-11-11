@@ -74,8 +74,7 @@ def date_picker_handler(attr, old, new):
 def bokeh():
 
     date_picker = DatePicker(title='Select Date', value="2019-04-20", min_date="2017-01-01", max_date="2020-07-31")
-    date_picker.on_change("value", date_picker_handler)
-
+    date_picker.js_on_change("value", date_picker_handler)
 
     # from dashboard import firstplot
     p = firstplot()
