@@ -31,4 +31,5 @@ $(document).ready(function(){
     $(".right").click(function(){
         $("#carousel").carousel("next");
     });
+    
 });

@@ -1,7 +1,7 @@
 /* Space out content a bit */
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
   
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -52,8 +52,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  min-width: 100%;
-  height: 500px;
+  min-width: 90%;
+  height: 600px;
 }
 
 
