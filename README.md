@@ -3,6 +3,12 @@
 ![Austin Energy](https://media-exp1.licdn.com/dms/image/C560BAQFwCAuAfk5AqA/company-logo_200_200/0?e=1611187200&v=beta&t=r1dOWcgLGes2ZNJEx7RSXYUk1JmWB3vaRIcpxES6s2M)
 
 ---
+
+## Introduction to Project
+
+The objective of our project, Austin Energy Predictor, is to determine renewable energy output (Megawatt-hour or MWH) per energy farm, specifically wind and solar. Our team is collaborating with Austin Energy to help produce vital data insights into their renewable energy farms. By using hourly megawatt data from Austin Energy's Hackberry Wind Farm and Webberville Solar Farm from 2019, we were able to train our machine learning model. The combination of hourly megawatt output and forecasted weather data allows our model to predict energy output based on weather factors- such as temperature, wind speed and direction, and cloud coverage. 
+
+
 # Table of Contents
 * [Overview](#overview)
 * [Datasets](#datasets)
