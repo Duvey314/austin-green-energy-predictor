@@ -10,14 +10,9 @@
         <!-- Custom styles for this template -->
         <link href="static/css/jumbotron.css" rel="stylesheet">
         <link rel="icon" href="../../favicon.ico">
-        <!-- Latest compiled and minified JavaScript -->
-        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script> -->
-        <link href="http://cdn.bokeh.org/bokeh/release/bokeh-0.11.1.min.css" rel="stylesheet" type="text/css">
-        <script src="http://cdn.bokeh.org/bokeh/release/bokeh-0.11.1.min.js"></script>
-        {{ js_resources|indent(4)|safe }}
-        {{ css_resources|indent(4)|safe }}
-        {{ plot_script|indent(4)|safe }}
-        {{ date_picker_script|indent(4)|safe }}
+        <!-- <link href="http://cdn.bokeh.org/bokeh/release/bokeh-0.11.1.min.css" rel="stylesheet" type="text/css">
+        <script src="http://cdn.bokeh.org/bokeh/release/bokeh-0.11.1.min.js"></script> -->
+        <!-- <script type="text/javascript" src="../static/js/carousel.js"></script> -->
     </head>
 
     <body>
@@ -63,7 +58,7 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <a class="navbar-brand" href="#">Austin Green Energy Project</a>
                             </ul>
-                        </div><!--/.nav-collapse -->
+                        </div>
                     </div>
                 </nav>
 
@@ -72,7 +67,7 @@
 
 
         <!-- Rotating Image CAROUSEL -->
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div id="carousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#carousel" data-slide-to="0" class="active"></li>
@@ -82,7 +77,7 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <img class="first-slide" src="static/img/hackberryFarm.jpg" alt="First slide">
+                    <img src="static/img/hackberryFarm.jpg" alt="First slide">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>Hackberry Wind Farm</h1>
@@ -90,7 +85,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img class="second-slide" src="static/img/webbervilleFarm.jpg" alt="Second slide">
+                    <img src="static/img/webbervilleFarm.jpg" alt="Second slide">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>Webberville Solar Farm</h1>
@@ -98,7 +93,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img class="third-slide" src="static/img/AEmap.png" alt="Third slide">
+                    <img src="static/img/AEmap.png" alt="Third slide">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>Austin Energy Sources</h1>
@@ -107,14 +102,14 @@
                 </div>
             </div>
             <!-- Carousel Controls -->
-            <a class="left carousel-control" href="#carousel" data-slide="prev">
+            <!-- <a class="left carousel-control" href="#carousel" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left"></span>
                 <span class="sr-only">Previous</span>
             </a>
             <a class="right carousel-control" href="#carousel" data-slide="next">
                 <span class="glyphicon glyphicon-chevron-right"></span>
                 <span class="sr-only">Next</span>
-            </a>
+            </a> -->
         </div> <!-- End Carousel -->
 
 
@@ -130,40 +125,130 @@
 
             <!-- ABOUT SECTION -->
             <div id="about" class="jumbotron">
+                <!-- <div class="container"> -->
                 <h1>About The Project</h1>
-                <p>The objective of the Austin Energy Predictor is to determine energy output (megawatt-hour, Mwh) per renewable energy farm, specifically wind and solar. Our team is collaborating with Austin Energy to help produce vital data insights into their renewable energy farms. By utilizing a machine learning model, Austin Energy will have a more refined understanding of its overall energy output. Therefore, Austin Energy can forecast energy production from their various plants and thus better schedule power generation.</p>
-                <p>Austin Energy has provided the team with hourly megawatt (Mwh) data from their Hackberry Wind Farm and Webberville Solar Farm over all of 2019 to train the machine learning model. Also, hourly historical weather data for each farm is included in training the model. The combination of hourly megawatt (Mwh) and weather data allows the model to predict energy output based on weather factors - such as temperature, wind speed and direction, and cloud coverage.</p>
-                <p>By training the model on a full years' data, the model comprises weather variations that are observed across different seasons. Therefore, the team used January - July 2020 hourly megawatt (Mwh) and weather data for the above renewable energy farms to test the model and evaluate its accuracy.</p>
-                <p>The data insights generated by the model are vital since renewable energy generation varies continuously throughout the day based on available wind and sunshine. The goal is to eventually utilize the model on all of Austin Energy's renewable energy farms and expand the model to include peak power generation times. Therefore, Austin Energy will be able to predict when renewable energy being generated will be highest.</p>
-                <p>Potential additional ways forward also include expanding this model for consumer applications. For consumers who want to be energy conscious, they could choose when to run their products and appliances off of mainly renewable energy. By knowing when the grid mix is predominantly renewables, energy consumption could be scheduled around these times.</p>
-                <p>Add Image of Farm Maps</p>
+                <p> _ _ _ </p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="static/img/farmMap.png" class="img-responsive" style="padding-left: 50px" alt="AustinEnergyFarmMap">
+                    </div>
+                    <div class="col-md-6">
+                        <p style="padding-top: 80px; padding-left: 50px; padding-right: 50px">The objective of the Austin Energy Predictor is to determine energy output (megawatt-hour, Mwh) per renewable energy farm, specifically wind and solar. Our team is collaborating with Austin Energy to help produce vital data insights into their renewable energy farms. By utilizing a machine learning model, Austin Energy will have a more refined understanding of its overall energy output. Therefore, Austin Energy can forecast energy production from their various plants and thus better schedule power generation.</p>
+                        <p>Austin Energy has provided the team with hourly megawatt (Mwh) data from their Hackberry Wind Farm and Webberville Solar Farm over all of 2019 to train the machine learning model. Also, hourly historical weather data for each farm is included in training the model. The combination of hourly megawatt (Mwh) and weather data allows the model to predict energy output based on weather factors - such as temperature, wind speed and direction, and cloud coverage.</p>
+                    </div>
+                </div>
+                <!-- </div> -->
             </div>
 
             <!-- MODEL SECTION -->
             <div id="model" class="jumbotron">
                 <h1>Model Details</h1>
                 <p>Short Overview of Machine Learning Model</p>
-                <p class="lead">PLOT
-                    {{ plot_div|indent(4)|safe }}
-                </p>
-                <p class="lead">DATE PICKER
-                    {{ date_picker_div|indent(4)|safe }}
-                </p>
             </div>
 
             <!-- TEAM SECTION -->
             <div id="team" class="jumbotron">
-                <h1>5 Star Team</h1>
-                <p class="lead">Reference Google Slides 'Teams' Page</p>
+                <div class="container">
+                    <h1>TEAM</h1>
+                    <p>This project was created, scaled, and executed by the collective efforts of our team. Learn more about the individuals who made it possible.</p>
+                    <p> _ _ _ </p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="headshot" src="static/img/headshot.png" class="img-responsive" alt="">
+                        </div>
+                        <div class="col-md-8">
+                            <h3>Team Member Name</h3>
+                            <p style="padding-left: 20px; padding-right: 20px">Team Member Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <a href="https://github.com/Duvey314/austin-green-energy-predictor">Team Member GitHub Profile</a>
+                            <p> </p>
+                            <a href="https://www.linkedin.com/">Team Member LinkedIn Profile</a>
+                        </div>
+                    </div>
+                    <p> _ _ _ </p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="headshot" src="static/img/headshot.png" class="img-responsive" alt="">
+                        </div>
+                        <div class="col-md-8">
+                            <h3>Team Member Name</h3>
+                            <p style="padding-left: 20px; padding-right: 20px">Team Member Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <a href="https://github.com/Duvey314/austin-green-energy-predictor">Team Member GitHub Profile</a>
+                            <p> </p>
+                            <a href="https://www.linkedin.com/">Team Member LinkedIn Profile</a>
+                        </div>
+                    </div>
+                    <p> _ _ _ </p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="headshot" src="static/img/headshot.png" class="img-responsive" alt="">
+                        </div>
+                        <div class="col-md-8">
+                            <h3>Team Member Name</h3>
+                            <p style="padding-left: 20px; padding-right: 20px">Team Member Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <a href="https://github.com/Duvey314/austin-green-energy-predictor">Team Member GitHub Profile</a>
+                            <p> </p>
+                            <a href="https://www.linkedin.com/">Team Member LinkedIn Profile</a>
+                        </div>
+                    </div>
+                    <p> _ _ _ </p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="headshot" src="static/img/headshot.png" class="img-responsive" alt="">
+                        </div>
+                        <div class="col-md-8">
+                            <h3>Team Member Name</h3>
+                            <p style="padding-left: 20px; padding-right: 20px">Team Member Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <a href="https://github.com/Duvey314/austin-green-energy-predictor">Team Member GitHub Profile</a>
+                            <p> </p>
+                            <a href="https://www.linkedin.com/">Team Member LinkedIn Profile</a>
+                        </div>
+                    </div>
+                    <p> _ _ _ </p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="headshot" src="static/img/headshot.png" class="img-responsive" alt="">
+                        </div>
+                        <div class="col-md-8">
+                            <h3>Team Member Name</h3>
+                            <p style="padding-left: 20px; padding-right: 20px">Team Member Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <a href="https://github.com/Duvey314/austin-green-energy-predictor">Team Member GitHub Profile</a>
+                            <p> </p>
+                            <a href="https://www.linkedin.com/">Team Member LinkedIn Profile</a>
+                        </div>
+                    </div>
+                    <p> _ _ _ </p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="headshot" src="static/img/headshot.png" class="img-responsive" alt="">
+                        </div>
+                        <div class="col-md-8">
+                            <h3>Team Member Name</h3>
+                            <p style="padding-left: 20px; padding-right: 20px">Team Member Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <a href="https://github.com/Duvey314/austin-green-energy-predictor">Team Member GitHub Profile</a>
+                            <p> </p>
+                            <a href="https://www.linkedin.com/">Team Member LinkedIn Profile</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
+            <!-- FOOTER -->
+            <div id="footer" class="jumbotron">
+                <div class="container">
+                    <a href="#">BACK TO TOP</a>
+                </div>
+            </div>
         </div>
+
         <script src="http://code.jquery.com/jquery.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
-    </body>
-</html>
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="app.js"></script>
 
-                    <!-- {% for table in tables %}
-                        {{titles[loop.index]}}
-                        {{ table|safe }}
-                    {% endfor %}> --> 
+    </body>
+
+</html>
