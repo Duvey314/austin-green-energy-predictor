@@ -1,8 +1,8 @@
 # Austin Energy Predictor
 
 ![Austin Energy](https://media-exp1.licdn.com/dms/image/C560BAQFwCAuAfk5AqA/company-logo_200_200/0?e=1611187200&v=beta&t=r1dOWcgLGes2ZNJEx7RSXYUk1JmWB3vaRIcpxES6s2M)
-
 ---
+
 # Table of Contents
 * [Overview](#overview)
 * [Datasets](#datasets)
@@ -13,9 +13,6 @@
 * [Team](#team)
 * [Acknowledgements](#acknowledgements)
 * [Resources](#resources)
-
-## Folder Structure 
-
 
 ## Project Outline for Dashboard
 https://docs.google.com/document/d/1zy57lRIQJ1UBqlNrTapLSL0aPm6nbZYgNquwGzL_J9k/edit
@@ -242,37 +239,6 @@ The biggest limitation is the amount of historical data we have. It only has one
     * X Role: 
         * Performed Market/ Technology Research with Austin Energy
 
-
-# Technologies
---- 
-## ETL: Extract, Transform, Load
-
-Flat files containing, historical hourly power generated from Hackbarry Wind Farm and Webberville Solar Farm was been provided by Austin Energy.  Based on the historical dates of the power data, an API call was made at https://www.worldweatheronline.com/ to extract the historical weather data in an hourly format into a dataframe.  The date and hourly time were merged in preparation of the dataframe in the datetime format (YYYY-MM-DD HH:MM:SS).  The weather parameters were further cleaned up to convert them to integers.
-
-A similar process was followed in converting the historical hourly power from Hackbarry Wind Farm and Webberville Solar Farm to prepare the dataframe in the datetime format.  These two dataframes could then be easily merged on the datetime to create a single dataframe with all the weather parameters needed for analysis along with the power generation in Mega Watt Hour (MWH).  Once merged, the datetime was split into year, month, day and hour as a final dataframe for Exploratory Analysis, Preprocessing and Machine Learning. The dataframe was converted to JSON format and stored in MongoDB.
-
-### Hackberry Wind MWH DataFrame
-![](Resources/Images/HackberryWindMWH.png)
-
-### Webberville Solar MWH DataFrame
-![](Resources/Images/WebbervilleSolarMWH.png)
-
-## Exploratory Analysis 
-
-The exploratory analysis is to determine the relationship between various weather parameters such as
-
-* Wind speed
-* Wind direction
-* Wind gusts
-* Humidity
-* Temperature
-* Sun hours (based on seasons)
-* Cloud cover percentage
-
-to the power generated.  In addition, statistical analysis of the above parameters and power generation was performed.
-
-### Relationship of Wind Speed and Wind Direction to the MWH
-![](Resources/Images/WindSpeedvsCompassvsMWH.png)
 
 ## Preprocessing 
 * Python
