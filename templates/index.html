@@ -9,10 +9,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <!-- Custom styles for this template -->
         <link href="static/css/jumbotron.css" rel="stylesheet">
-        <link rel="icon" href="../../favicon.ico">
-        <!-- <link href="http://cdn.bokeh.org/bokeh/release/bokeh-0.11.1.min.css" rel="stylesheet" type="text/css">
-        <script src="http://cdn.bokeh.org/bokeh/release/bokeh-0.11.1.min.js"></script> -->
-        <!-- <script type="text/javascript" src="../static/js/carousel.js"></script> -->
+        <!-- <link rel="icon" href="../../favicon.ico"> -->
     </head>
 
     <body>
@@ -101,15 +98,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Carousel Controls -->
-            <!-- <a class="left carousel-control" href="#carousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#carousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Next</span>
-            </a> -->
         </div> <!-- End Carousel -->
 
 
@@ -117,10 +105,17 @@
         <div>
             <!-- HOME SECTION -->
             <div id="home" class="jumbotron"> 
-                <h1>Austin Green Energy Predictor</h1>
-                <p>Predicted Wind Graph (2 Days)</p>
-                <p>Predicted Solar Graph (2 Days)</p>
-                <p>Short Description Of Above Outputs</p>
+                <div class="row">
+                    <h1>Austin Green Energy Predictor</h1>
+                    <p>Predicted Wind Graph (2 Days)</p>
+                    <p>Predicted Solar Graph (2 Days)</p>
+                    <p>Short Description Of Above Outputs</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="somePlot" style="padding-left: 100px; padding-right: 100px"></div>
+                    </div>
+                </div>
             </div>
 
             <!-- ABOUT SECTION -->
@@ -133,8 +128,8 @@
                         <img src="static/img/farmMap.png" class="img-responsive" style="padding-left: 50px" alt="AustinEnergyFarmMap">
                     </div>
                     <div class="col-md-6">
-                        <p style="padding-top: 80px; padding-left: 50px; padding-right: 50px">The objective of the Austin Energy Predictor is to determine energy output (megawatt-hour, Mwh) per renewable energy farm, specifically wind and solar. Our team is collaborating with Austin Energy to help produce vital data insights into their renewable energy farms. By utilizing a machine learning model, Austin Energy will have a more refined understanding of its overall energy output. Therefore, Austin Energy can forecast energy production from their various plants and thus better schedule power generation.</p>
-                        <p>Austin Energy has provided the team with hourly megawatt (Mwh) data from their Hackberry Wind Farm and Webberville Solar Farm over all of 2019 to train the machine learning model. Also, hourly historical weather data for each farm is included in training the model. The combination of hourly megawatt (Mwh) and weather data allows the model to predict energy output based on weather factors - such as temperature, wind speed and direction, and cloud coverage.</p>
+                        <p style="padding-top: 50px; padding-left: 50px; padding-right: 50px">The objective of the Austin Energy Predictor is to determine energy output (megawatt-hour, Mwh) per renewable energy farm, specifically wind and solar. Our team is collaborating with Austin Energy to help produce vital data insights into their renewable energy farms. By utilizing a machine learning model, Austin Energy will have a more refined understanding of its overall energy output. Therefore, Austin Energy can forecast energy production from their various plants and thus better schedule power generation.</p>
+                        <p style="padding-left: 50px; padding-right: 50px">Austin Energy has provided the team with hourly megawatt (Mwh) data from their Hackberry Wind Farm and Webberville Solar Farm over all of 2019 to train the machine learning model. Also, hourly historical weather data for each farm is included in training the model. The combination of hourly megawatt (Mwh) and weather data allows the model to predict energy output based on weather factors - such as temperature, wind speed and direction, and cloud coverage.</p>
                     </div>
                 </div>
                 <!-- </div> -->
@@ -244,10 +239,9 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
         <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-        <script src="https://d3js.org/d3.v4.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-        <script src="app.js"></script>
+        <script src="../static/js/app.js"></script>
 
     </body>
 
