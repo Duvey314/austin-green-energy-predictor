@@ -7,12 +7,10 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Austin Green Energy Predictor</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js" integrity="sha512-FHsFVKQ/T1KWJDGSbrUhTJyS1ph3eRrxI228ND0EGaEp6v4a/vGwPWd3Dtd/+9cI7ccofZvl/wulICEurHN1pg==" crossorigin="anonymous"></script>
         <!-- Custom styles for this template -->
         <link href="static/css/jumbotron.css" rel="stylesheet">
-        <link rel="icon" href="../../favicon.ico">
-        <!-- <link href="http://cdn.bokeh.org/bokeh/release/bokeh-0.11.1.min.css" rel="stylesheet" type="text/css">
-        <script src="http://cdn.bokeh.org/bokeh/release/bokeh-0.11.1.min.js"></script> -->
-        <!-- <script type="text/javascript" src="../static/js/carousel.js"></script> -->
+        <!-- <link rel="icon" href="../../favicon.ico"> -->
     </head>
 
     <body>
@@ -101,15 +99,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Carousel Controls -->
-            <!-- <a class="left carousel-control" href="#carousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#carousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Next</span>
-            </a> -->
         </div> <!-- End Carousel -->
 
 
@@ -117,10 +106,17 @@
         <div>
             <!-- HOME SECTION -->
             <div id="home" class="jumbotron"> 
-                <h1>Austin Green Energy Predictor</h1>
-                <p>Predicted Wind Graph (2 Days)</p>
-                <p>Predicted Solar Graph (2 Days)</p>
-                <p>Short Description Of Above Outputs</p>
+                <div class="row">
+                    <h1>Austin Green Energy Predictor</h1>
+                    <p>Predicted Wind Graph (2 Days)</p>
+                    <p>Predicted Solar Graph (2 Days)</p>
+                    <p>Short Description Of Above Outputs</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="somePlot" style="padding-left: 100px; padding-right: 100px"></div>
+                    </div>
+                </div>
             </div>
 
             <!-- ABOUT SECTION -->
@@ -247,7 +243,8 @@
         <script src="https://d3js.org/d3.v4.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-        <script src="app.js"></script>
+        <script src="../static/js/app.js"></script>
+        <script src="../static/json/wind_data.json"></script>
 
     </body>
 
