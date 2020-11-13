@@ -1,42 +1,94 @@
-d3.json("../static/json/wind_data.json").then((data) => {
-  var windData = data
+// var data = $.ajax({ 
+//     type: "POST",
+//     url: "/getwind",
+//     data: data,
+//     success: success,
+//     dataType: dataType
+// });
 
-    var dateTime = [];
-    for (var i = 0; i < windData.data.length; i ++){
-        dateTime[i] = windData.data[i]["Date_Time"];
-    };
-    // console.log(dateTime)
+$.post( "/getwind", function( data ) {
+    var windData = JSON.parse(data);
 
-    var mwh = [];
-    for (var i = 0; i < windData.data.length; i ++){
-        mwh[i] = windData.data[i]["MWH"];
-    };
-    // console.log(mwh)
+    var windDataTwo = windData["data"];
+        var dateTime = [];
+        for (var i = 0; i < windData.data.length; i ++){
+            dateTime[i] = windData.data[i]["Date_Time"];
+        };
+        // console.log(dateTime)
 
-    var trace1 = {
-        x: dateTime,
-        y: mwh,
-        type: "bar"
-    };
+        var mwh = [];
+        for (var i = 0; i < windData.data.length; i ++){
+            mwh[i] = windData.data[i]["MWH"];
+        };
+        // console.log(mwh)
 
-    var layout1 = {
-        title: {text: "Date vs MWH"},
-        xaxis: {
-            title: "Date"
-        },
-        yaxis: {
-            title: "MWH"
-        }
-    };
+        var trace1 = {
+            x: dateTime,
+            y: mwh,
+            type: "bar"
+        };
+
+        var layout1 = {
+            title: {text: "Date vs MWH"},
+            xaxis: {
+                title: "Date"
+            },
+            yaxis: {
+                title: "MWH"
+            }
+        };
 
     Plotly.newPlot("somePlot", [trace1], layout1);
+    console.log(windDataTwo);
 
-});
+    // $( "#somePlot" ).html( windDataTwo );
+})
 
 
 
+$("#somePlot").click
 
 
+// d3.requests("/getwind").then((data) => {
+//     var windData = data
+
+//         var dateTime = [];
+//         for (var i = 0; i < windData.data.length; i ++){
+//             dateTime[i] = windData.data[i]["Date_Time"];
+//         };
+//         // console.log(dateTime)
+
+//         var mwh = [];
+//         for (var i = 0; i < windData.data.length; i ++){
+//             mwh[i] = windData.data[i]["MWH"];
+//         };
+//         // console.log(mwh)
+
+//         var trace1 = {
+//             x: dateTime,
+//             y: mwh,
+//             type: "bar"
+//         };
+
+//         var layout1 = {
+//             title: {text: "Date vs MWH"},
+//             xaxis: {
+//                 title: "Date"
+//             },
+//             yaxis: {
+//                 title: "MWH"
+//             }
+//         };
+
+//     Plotly.newPlot("somePlot", [trace1], layout1);
+        
+// });
+
+
+    // d3.request("/getsolar").then((data) => {
+
+
+  
 // function init() {
 //     var selector = d3.select("#selDataset");
   

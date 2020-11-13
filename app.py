@@ -1,4 +1,4 @@
-# FLAST APP
+# FLASK APP
 
 # Import Dependencies
 import os
@@ -26,16 +26,35 @@ except:
 
 # select database
 db = client.get_database('wind_solar_data')
-# select collection
+
+# SOLAR collection
 collection = db.solar_data
 
-# pull collection into dataframe
+# pull SOLAR collection into dataframe
 solar_df = pd.DataFrame(list(collection.find()))
 solar_df = solar_df.drop('_id', axis=1)
+
+# WIND collection
+collection = db.wind_data
+# pull WIND collection into DF
+wind_df = pd.DataFrame(list(collection.find()))
+wind_df = wind_df.drop('_id', axis=1)
+
 
 @app.route("/")
 def index():
     return render_template("index.html")
+
+# @app.route("/getsolar")
+# def getSolarData():
+#     return solar_df.to_json(orient='table',index=False)
+
+@app.route("/getwind", methods=['POST', 'GET'])
+def getWindData():
+    return wind_df.to_json(orient='table',index=False)
+
+# @app.route("/getwind/<startDate>/<endDate>", methods=['POST'])
+# def getWindData(startDate='2020-01-01', endDate='2020-01-31'):
 
 if __name__ == "__main__":
     app.run()
