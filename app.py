@@ -6,6 +6,8 @@ import pymongo
 import pandas as pd
 import json
 
+import config
+
 from flask import Flask, render_template, jsonify
 from flask_pymongo import PyMongo
 # from forecast import forecastFunction
@@ -19,8 +21,8 @@ app = Flask(__name__)
 
 # set string variables
 DEFAULT_DATABASE = 'wind_solar_data' 
-USERNAME = os.environ.get('USERNAME')
-PASSWORD = os.environ.get('PASSWORD')
+USERNAME = config.USERNAME
+PASSWORD = config.PASSWORD
 
 #create connection to database
 client = pymongo.MongoClient(f"mongodb+srv://{USERNAME}:{PASSWORD}@austin-green-energy.pwzpm.mongodb.net/{DEFAULT_DATABASE}?retryWrites=true&w=majority")
@@ -61,17 +63,33 @@ def getWindData():
 
 @app.route("/solarPredict/<YEAR>/<MONTH>/<DAY>", methods=['POST', 'GET'])
 def solarPredict(YEAR=2019, MONTH=4, DAY=20):
+    MONTH = int(MONTH)
+    DAY = int(DAY)
+    YEAR = int(YEAR)
     solarDayDF = solar_df.loc[(solar_df['Year'] == YEAR) & (solar_df['Month'] == MONTH) & (solar_df['Day'] == DAY)]
-    date = (YEAR + MONTH + DAY)
-# load in the scaler
-scaler = load(open('../Solar/solar_ml_model/scaler.pkl', 'rb'))
-print(scaler.get_params())
 
-# # how to load the model
-load_nn = tf.keras.models.load_model('../Solar/solar_ml_model/solar_model')
-load_nn.summary()
+    # load in the scaler
+    scaler = load(open('Solar/solar_ml_model/scaler.pkl', 'rb'))
 
-    return (date)
+    # how to load the model
+    load_nn = tf.keras.models.load_model('Solar/solar_ml_model/solar_model')
+
+    X = solarDayDF.drop(['Date_Time', 'Weather_Description','Day','Year','MWH'], axis=1)
+ 
+    # Scaling the data.
+    X_scaled = scaler.transform(X)
+    
+    # Predict values for test set
+    y_pred = load_nn.predict(X_scaled)
+    y_pred = y_pred.ravel()
+    # Create dataframe for results
+    nn_results = pd.DataFrame()
+    nn_results['pred'] = y_pred
+    nn_results['Hour'] = solarDayDF['Hour']
+    nn_results['Day'] = solarDayDF['Day']
+    nn_results['Date_Time'] = solarDayDF['Date_Time']
+    return nn_results.to_json(orient='table',index=False)
+    # return solarDayDF.to_json(orient='table',index=False)
 
 
 # @app.route("/getwind/<startDate>/<endDate>", methods=['POST'])
