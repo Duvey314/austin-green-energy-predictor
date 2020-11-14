@@ -4,6 +4,9 @@ import pandas as pd
 import numpy as np
 import Forecast
 from config import weather_api_key
+from pickle import load
+from sklearn.preprocessing import StandardScaler
+import tensorflow as tf
 
 # %%
 # Request parameters
@@ -64,10 +67,10 @@ hourly_weather_DF = hourly_weather_DF[["Date_Time", "Year", "Month", "Day", "Hou
 forecasted_solar_DF = pd.merge(hourly_weather_DF, daily_weather_DF, on='Day', how='inner')
 forecasted_solar_DF = forecasted_solar_DF[["Date_Time", "Year", "Month", "Day", "Hour", "Temperature_F", "Humidity_percent", "Sunhour", "CloudCover_percent", "uvIndex", "Weather_Description"]]
 
-forecasted_solar_DF.head()
-
 # %%
-# Check the data types
-# forecasted_solar_DF.dtypes
+# Load the model
+scaler = load(open('Solar/solar_ml_model/scaler.pkl', 'rb'))
+load_nn = tf.keras.models.load_model('Solar/solar_ml_model/solar_model')
 
-# %%
+# %% 
+nn_results = Forecast.modelPrediction(forecasted_solar_DF, scaler, load_nn)
