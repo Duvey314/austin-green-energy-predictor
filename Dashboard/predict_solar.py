@@ -72,5 +72,12 @@ forecasted_solar_DF = forecasted_solar_DF[["Date_Time", "Year", "Month", "Day", 
 scaler = load(open('Solar/solar_ml_model/scaler.pkl', 'rb'))
 load_nn = tf.keras.models.load_model('Solar/solar_ml_model/solar_model')
 
+# %%
+# Define the features (X) and transform the data
+X = forecasted_solar_DF.drop(['Date_Time', 'Weather_Description','Day','Year'], axis=1)
+
+# Transform the data
+X_scaled = scaler.transform(X)
+
 # %% 
-nn_results = Forecast.modelPrediction(forecasted_solar_DF, scaler, load_nn)
+nn_results = Forecast.modelPrediction(forecasted_solar_DF, X_scaled, load_nn)
