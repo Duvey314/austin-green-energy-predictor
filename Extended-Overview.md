@@ -125,25 +125,62 @@ The data is split by using the 2019 data to train and the 2020 data to test. The
 ### Machine Learning Model Selection Process
 The goal of the project is to predict the energy generation of renewable energy farms using weather forcast data. This means that we are looking for a model with a continuous output and therefore need some type of regression model. The two we have decided to use are a multiple linear regression and a neural network. Both models will be trained on the solar and wind data sperately.
 
+### Features
+The wind and solar models have different features that they use to predict output though there is some overlap.
+
+Wind
+* Temperature (F)
+* Wind Speed (mph)
+* Humidity (%)
+* Wind Direction (degrees)
+* Time
+
+Solar
+* Temperature (F)
+* Cloud Cover (%)
+* Humidity (%)
+* UV Index (0-1)
+* Sunhour (hrs)
+* Time
+* Month
+
 ## Multiple Linear Regression
 The linear regression model we are using is the linear model from sklearn. This allows us to perform a multiple linear regression on the weather data to predict a continuous output. This model is good at handling linear relationships between data but cannot handle other types of relationships without more data preprocessing. This resulted in a low accuracy for both models. The loss metric is the mean absolute error.
 
-The solar linear regression acheived an accuracy of ~60%. This closely resembled the shape of the data but could not predict the value of the power generated very well. This is likey because the relationship between the data points is more complicated than the regression model can handle. In addition, the linear regression can output negative values. This is problematic because this is impossible for a solar panel. To compensate for this all negative values have been coerced to 0. The optimizer used is a stocastic gradient decent (SGD). There are three hidden layers to the model all using a RELU activation function.
+![Solar Linear Regression](https://github.com/Duvey314/austin-green-energy-predictor/blob/master/Solar/solar_linear_regression.png)
 
-The wind linear regression acheived an accuracy of ~30% and had many of the same pitfalls of the solar regression. The output of the regression gave an imporession of the shape but did not get close to the correct values. The output of the wind farm is not as easily predicted as the solar farm likey due to the major impact of the sun on the solar panels. The optimizer used is ADAM. There are 2 hidden layers allusing an activation function.
+The solar linear regression acheived an accuracy of ~60%. This closely resembled the shape of the data but could not predict the value of the power generated very well. This is likey because the relationship between the data points is more complicated than the regression model can handle. In addition, the linear regression can output negative values. This is problematic because this is impossible for a solar panel. To compensate for this all negative values have been coerced to 0.
+
+![Wind Linear Regression](https://github.com/Duvey314/austin-green-energy-predictor/blob/master/Wind/wind_linear_regression.png)
+
+The wind linear regression acheived an accuracy of ~30% and had many of the same pitfalls of the solar regression. The output of the regression gave an imporession of the shape but did not get close to the correct values. The output of the wind farm is not as easily predicted as the solar farm likey due to the major impact of the sun on the solar panels.
 
 ## Neural Network
 The neural network we are using is the sequential model from tensor flow. This is able to handle more complex relationships between the data. The two models are very similar. Both use a relu function output to ensure that the output is continuous and non negative. This is particularly important for the solar data because it has more values close to zero because it is not generating at night.
 
-The solar model has a mean absolute error of about 1.5 MWH. It can predict very well the output during the day and is nearly perfect at predicting when the panels will start producing.
+![Solar Neural Network](https://github.com/Duvey314/austin-green-energy-predictor/blob/master/Solar/solar_neural_network.png)
 
-The wind model has a mean absolute error of about 25 MWH. This means that the data take the shape of the output well but sometime is off my a fair amount.
+The solar model was trained on The solar model has a mean absolute error of about 1.5 MWH. It can predict very well the output during the day and is nearly perfect at predicting when the panels will start producing. The optimizer used is a stocastic gradient decent (SGD). There are three hidden layers to the model all using a RELU activation function.
 
-### Limitations
-The biggest limitation is the amount of historical data we have. It only has one data point for each date and so having more data would help this greatly. This would also help to take into account the degradation of the solar panels to make the model more accurate for future years.
+![Wind Linear Regression](https://github.com/Duvey314/austin-green-energy-predictor/blob/master/Wind/wind_neural_network.png)
 
-## Benefits
-- Neural Network can be used by Austin Energy to test other farms they own with forecasted weather data to predict power generation. 
+The wind model has a mean absolute error of about 25 MWH. This means that the data take the shape of the output but sometime is off by a fair amount. The optimizer used is ADAM. There are 2 hidden layers allusing a relu activation function.
+
+## Model Analysis
+The solar neural network works very well. Because of the high dependance on the time of day it could get the shape of the data every time and knew when it was producing vs not producing. Because solar power is instantaneously generated, the model to predict the output can be simpler. This is why the regression model while not perfect can give a good estimation of the same of the data.
+
+The wind model does not work as well as the solar model. I think this is because the output of a wind turbine is not instantaneous power generation. The wind turbine must get up to speed first, has frictional forces trying to slow it down along with other losses in the generation process, and the relationship between windspeed and output is not as simple as the average over an hour for an entire farm. 
+
+### Further Developement
+The models currently used are very simple. We are using only a handful of variables to predict the output for an entire farm. These models have room for improvement in a number of ways.
+
+Past Data-The first step is to include some measure of previous data in each row. For instance, including the wind speed of the previous hour could help give a better understanding of how the previous hours output effects the current hours output giving a better model of the inertia of the wind turbine. Another use of past data would be to look at when there was some sort of wind or rain last at the solar farm to see if these events increase the panel efficiency by cleaning the panels.
+
+Weather Description - One piece of the model that we couldn't include is the weather description. This 
+
+New features - 
+
+More advanced models
 
 ## Dashboard
 ---
