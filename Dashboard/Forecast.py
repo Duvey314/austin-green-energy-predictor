@@ -135,3 +135,22 @@ def forecasted_hourly_solar(responseJson):
     
     return hourly_weather_DF
 
+def modelPrediction(forecasted_weather_df, scaler, load_nn):
+    # Define the features (X) and transform the data
+    X = forecasted_weather_df.drop(['Date_Time', 'Weather_Description','Day','Year'], axis=1)
+
+    # Transform the data
+    X_scaled = scaler.transform(X)
+    
+    # Predict values for test set
+    y_pred = load_nn.predict(X_scaled)
+    y_pred = y_pred.ravel()
+
+    # Create dataframe for results
+    nn_results = pd.DataFrame()
+    nn_results['pred'] = y_pred
+    nn_results['Hour'] = forecasted_weather_df['Hour']
+    nn_results['Day'] = forecasted_weather_df['Day']
+    nn_results['Date_Time'] = forecasted_weather_df['Date_Time']
+    
+    return nn_results
