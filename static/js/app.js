@@ -1,10 +1,4 @@
-// var data = $.ajax({ 
-//     type: "POST",
-//     url: "/getwind",
-//     data: data,
-//     success: success,
-//     dataType: dataType
-// });
+
 
 $.post( "/getwind", function( data ) {
     var windData = JSON.parse(data);
@@ -45,8 +39,19 @@ $.post( "/getwind", function( data ) {
 })
 
 
+$("#button").click(function() {
+    var currentDate = $( "#datepicker" ).datepicker( "getDate" );
+        day  = currentDate.getDate(),  
+        month = currentDate.getMonth() + 1,              
+        year =  currentDate.getFullYear();
+    $.get( `/solarPredict/${year}/${month}/${day}`, function( data ) {
+    console.log( data );
+    });
+})
 
 $("#somePlot").click
+
+$("datePicker").change
 
 
 // d3.requests("/getwind").then((data) => {
