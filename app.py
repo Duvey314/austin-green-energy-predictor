@@ -123,9 +123,11 @@ def getSolarData():
     # Transform the data
     X_scaled = scaler.transform(X)
 
-    # Predict values for test set
-    nn_results = Forecast.modelPrediction(forecasted_solar_DF, X_scaled, load_nn)
-    return nn_results.to_json(orient='table',index=False)
+    y_pred = load_nn.predict(X_scaled)
+    y_pred = y_pred.ravel()
+
+    forecasted_solar_DF['pred'] = y_pred
+    return forecasted_solar_DF.to_json(orient='table',index=False)
     
 
 @app.route("/getwind", methods=['POST', 'GET'])
@@ -165,10 +167,12 @@ def getWindData():
     # Transform the data
     X_scaled = scaler.transform(X)
     
-    # Make the MWH predictions using the forecasted weather dataframe and model parameters
-    nn_results = Forecast.modelPrediction(forecasted_wind_DF, X_scaled, load_nn)
+    y_pred = load_nn.predict(X_scaled)
+    y_pred = y_pred.ravel()
 
-    return nn_results.to_json(orient='table',index=False)
+    forecasted_wind_DF['pred'] = y_pred
+
+    return forecasted_wind_DF.to_json(orient='table',index=False)
 
 @app.route("/solarPredict/<YEAR>/<MONTH>/<DAY>", methods=['POST', 'GET'])
 def solarPredict(YEAR=2019, MONTH=4, DAY=20):

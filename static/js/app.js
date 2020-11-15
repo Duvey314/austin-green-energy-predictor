@@ -2,69 +2,90 @@ $( "#datepicker" ).datepicker( "setDate", "04/20/2018" );
 
 $.post( "/getwind", function( data ) {
     var windData = JSON.parse(data);
+    var startDate = `${windData.data[0]["Month"]}/${windData.data[0]["Day"]}/${windData.data[0]["Year"]} ${windData.data[0]["Hour"]}:00`
+    var endDate = `${windData.data[47]["Month"]}/${windData.data[47]["Day"]}/${windData.data[47]["Year"]} ${windData.data[47]["Hour"]}:00`
 
         var dateTime = [];
         for (var i = 0; i < windData.data.length; i ++){
             dateTime[i] = windData.data[i]["Date_Time"];
         };
-        // console.log(dateTime)
 
         var mwh = [];
         for (var i = 0; i < windData.data.length; i ++){
             mwh[i] = windData.data[i]["pred"];
         };
-        // console.log(mwh)
+        
+        var weatherDescription = [];
+        for (var i = 0; i < windData.data.length; i ++){
+            weatherDescription[i] = windData.data[i]["Weather_Description"];
+        };
 
         var trace1 = {
             x: dateTime,
             y: mwh,
-            type: "line"
+            type: "scatter",
+            mode: 'lines+markers',
+            name: 'Prediction',
+            hovertemplate: '<b>Output</b>: %{y:.2f} MWH' +
+                        '<br><b>Time</b>: %{x}<br>' +
+                        '<b>Weather</b>: %{text}',
+            text: weatherDescription
+
         };
 
         var layout1 = {
-            title: {text: "Wind Prediction"},
+            title: {text: `Wind Prediction (${startDate} - ${endDate})`},
             xaxis: {
-                title: "Date"
+                title: "Time"
             },
             yaxis: {
-                title: "MWH"
+                title: "Output (MWH)"
             }
         };
 
     Plotly.newPlot("windPredictPlot", [trace1], layout1);
 
-    // $( "#somePlot" ).html( windDataTwo );
 });
 
 $.get( "/getSolar", function( data ) {
     
         var solarData = JSON.parse(data);
-        console.log(solarData);
+        var startDate = `${solarData.data[0]["Month"]}/${solarData.data[0]["Day"]}/${solarData.data[0]["Year"]} ${solarData.data[0]["Hour"]}:00`
+        var endDate = `${solarData.data[47]["Month"]}/${solarData.data[47]["Day"]}/${solarData.data[47]["Year"]} ${solarData.data[47]["Hour"]}:00`
         var dateTime = [];
         for (var i = 0; i < solarData.data.length; i ++){
             dateTime[i] = solarData.data[i]["Date_Time"];
         };
-        // console.log(dateTime)
 
         var mwh = [];
         for (var i = 0; i < solarData.data.length; i ++){
             mwh[i] = solarData.data[i]["pred"];
         };
-        // console.log(mwh)
+        
+        var weatherDescription = [];
+        for (var i = 0; i < solarData.data.length; i ++){
+            weatherDescription[i] = solarData.data[i]["Weather_Description"];
+        };
 
         var trace1 = {
             x: dateTime,
             y: mwh,
-            type: "line"
+            type: "scatter",
+            mode: 'lines+markers',
+            name: 'Prediction',
+            hovertemplate: '<b>Output</b>: %{y:.2f} MWH' +
+                        '<br><b>Time</b>: %{x}<br>' +
+                        '<b>Weather</b>: %{text}',
+            text: weatherDescription
         };
 
         var layout1 = {
-            title: {text: "Solar Prediction"},
+            title: {text: `Solar Prediction (${startDate} - ${endDate})`},
             xaxis: {
                 title: "Time"
             },
             yaxis: {
-                title: "MWH"
+                title: "Output (MWH)"
             }
         };
 
@@ -80,45 +101,57 @@ $("#button").click(function() {
     $.get( `/solarPredict/${year}/${month}/${day}`, function( data ) {
         var solarData = JSON.parse(data);
 
-        console.log(solarData);
-
         var dateTime = [];
         for (var i = 0; i < 24; i ++){
-            dateTime[i] = i;
+            dateTime[i] = solarData.data[i]["Date_Time"];
         };
-        console.log(dateTime);
 
         var predMWH = [];
         for (var i = 0; i < solarData.data.length; i ++){
             predMWH[i] = solarData.data[i]["pred"];
         };
-        console.log(predMWH);
 
         var actualMWH = [];
         for (var i = 0; i < solarData.data.length; i ++){
             actualMWH[i] = solarData.data[i]["MWH"];
         };
-        console.log(actualMWH);
+
+        var weatherDescription = [];
+        for (var i = 0; i < solarData.data.length; i ++){
+            weatherDescription[i] = solarData.data[i]["Weather_Description"];
+        };
 
         var trace1 = {
             x: dateTime,
             y: predMWH,
-            type: "line"
+            type: "scatter",
+            mode: 'lines+markers',
+            name:'Predicted',
+            hovertemplate: '<b>Output</b>: %{y:.2f} MWH' +
+                        '<br><b>Time</b>: %{x}<br>' +
+                        '<b>Weather</b>: %{text}',
+            text: weatherDescription
         };
 
         var trace2 = {
             x: dateTime,
             y: actualMWH,
-            type: "line"
+            type: "scatter",
+            mode: 'lines+markers',
+            name:'Actual',
+            hovertemplate: '<b>Output</b>: %{y:.2f} MWH' +
+                        '<br><b>Time</b>: %{x}<br>' +
+                        '<b>Weather</b>: %{text}',
+            text: weatherDescription
         };
 
         var layout1 = {
-            title: {text: "Date vs MWH"},
+            title: {text: "Solar: Model Prediction vs Actual Output"},
             xaxis: {
-                title: "Date"
+                title: "Time"
             },
             yaxis: {
-                title: "MWH"
+                title: "Output (MWH)"
             }
         };
 
@@ -130,7 +163,7 @@ $("#button").click(function() {
 
         var dateTime = [];
         for (var i = 0; i < 24; i ++){
-            dateTime[i] = i;
+            dateTime[i] = windData.data[i]["Date_Time"];
         };
 
         var predMWH = [];
@@ -142,27 +175,44 @@ $("#button").click(function() {
         for (var i = 0; i < windData.data.length; i ++){
             actualMWH[i] = windData.data[i]["MWH"];
         };
-        console.log(actualMWH);
+
+        var weatherDescription = [];
+        for (var i = 0; i < windData.data.length; i ++){
+            weatherDescription[i] = windData.data[i]["Weather_Description"];
+        };
 
         var trace1 = {
             x: dateTime,
             y: predMWH,
-            type: "line"
+            type: "scatter",
+            mode: 'lines+markers',
+            name:'Predicted',
+            hovertemplate: '<b>Output</b>: %{y:.2f} MWH' +
+                        '<br><b>Time</b>: %{x}<br>' +
+                        '<b>Weather</b>: %{text}',
+            text: weatherDescription
+
         };
 
         var trace2 = {
             x: dateTime,
             y: actualMWH,
-            type: "line"
+            type: "scatter",
+            mode: 'lines+markers',
+            name: 'Actual',
+            hovertemplate: '<b>Output</b>: %{y:.2f} MWH' +
+                        '<br><b>Time</b>: %{x}<br>' +
+                        '<b>Weather</b>: %{text}',
+            text: weatherDescription
         };
 
         var layout1 = {
-            title: {text: "Date vs MWH"},
+            title: {text: "Wind: Model Prediction vs Actual Output"},
             xaxis: {
-                title: "Date"
+                title: "Time"
             },
             yaxis: {
-                title: "MWH"
+                title: "Output (MWH)"
             }
         };
 
