@@ -10,3 +10,5 @@ config.py
 config.json
 
 node_modules
+
+__pycache__
