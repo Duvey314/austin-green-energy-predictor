@@ -15,7 +15,7 @@
         <link href="static/css/jumbotron.css" rel="stylesheet">
         <script>
             $( function() {
-              $( "#datepicker" ).datepicker();
+              $( "#datepicker" ).datepicker({ minDate: new Date(2017,01-1,01), maxDate: new Date(2020,07-1,31), changeMonth: true, changeYear: true,defaultDate: new Date(2018,05-1,20) });
             } );
         </script>
     </head>
@@ -120,8 +120,11 @@
                     <p>Short Description Of Above Outputs</p>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
-                        <div id="somePlot" style="padding-left: 100px; padding-right: 100px"></div>
+                    <div class="col-md-6">
+                        <div id="solarPredictPlot" style="padding-left: 100px; padding-right: 100px"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="windPredictPlot" style="padding-left: 100px; padding-right: 100px"></div>
                     </div>
                 </div>
             </div>
@@ -151,8 +154,11 @@
                     <p>Short Overview of Machine Learning Model</p>
                     <p>Date: <input type="text" id="datepicker"></p>
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <div id="solarHistoryPlot" style="padding-left: 100px; padding-right: 100px"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="windHistoryPlot" style="padding-left: 100px; padding-right: 100px"></div>
                         </div>
                     </div>
                 </div>
@@ -166,79 +172,79 @@
                     <p> _ _ _ </p>
                     <div class="row">
                         <div class="col-md-4">
-                            <img class="headshot" src="static/img/headshot.png" class="img-responsive" alt="">
+                            <img class="headshot" src="static/img/mel.png" style='width:400px' alt="">
                         </div>
                         <div class="col-md-8">
-                            <h3>Team Member Name</h3>
-                            <p style="padding-left: 20px; padding-right: 20px">Team Member Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <a href="https://github.com/Duvey314/austin-green-energy-predictor">Team Member GitHub Profile</a>
+                            <h3>Melina Indrasena</h3>
+                            <p style="padding-left: 20px; padding-right: 20px">Melina works as a Reservations/Revenue Analyst at the AT&T Hotel and Conference Center and University of Texas, Austin. She graduated from Boston University in 2014 majoring in Hospitality Administration with a passion for Revenue and Asset Management. Melina joined the Data Analysis & Visualization Bootcamp with UT in order to gain more knowledge on analyzing big data and using that to make informed decisions. Melina worked as a project coordinator, keeping the team up to date with submissions, as well as worked on exploratory analysis and visualization elements for the presentation and dashboard.</p>
+                            <a href="https://github.com/msindrasena">GitHub Profile</a>
                             <p> </p>
-                            <a href="https://www.linkedin.com/">Team Member LinkedIn Profile</a>
+                            <a href="https://www.linkedin.com/in/melina-indrasena">LinkedIn Profile</a>
                         </div>
                     </div>
                     <p> _ _ _ </p>
                     <div class="row">
                         <div class="col-md-4">
-                            <img class="headshot" src="static/img/headshot.png" class="img-responsive" alt="">
+                            <img class="headshot" src="static/img/LinkedIn_Profile_Shayna.jpg" style='width:400px' alt="">
                         </div>
                         <div class="col-md-8">
-                            <h3>Team Member Name</h3>
+                            <h3>Shayna Sims</h3>
                             <p style="padding-left: 20px; padding-right: 20px">Team Member Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <a href="https://github.com/Duvey314/austin-green-energy-predictor">Team Member GitHub Profile</a>
+                            <a href="https://github.com/shayna-UT">GitHub Profile</a>
                             <p> </p>
-                            <a href="https://www.linkedin.com/">Team Member LinkedIn Profile</a>
+                            <a href="https://www.linkedin.com/in/shaynasims">LinkedIn Profile</a>
                         </div>
                     </div>
                     <p> _ _ _ </p>
                     <div class="row">
                         <div class="col-md-4">
-                            <img class="headshot" src="static/img/headshot.png" class="img-responsive" alt="">
+                            <img class="headshot" src="static/img/rahul.jpg" style='width:400px' alt="">
                         </div>
                         <div class="col-md-8">
-                            <h3>Team Member Name</h3>
-                            <p style="padding-left: 20px; padding-right: 20px">Team Member Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <a href="https://github.com/Duvey314/austin-green-energy-predictor">Team Member GitHub Profile</a>
+                            <h3>Rahul Madarapu</h3>
+                            <p style="padding-left: 20px; padding-right: 20px">Rahul is a consulting engineer in the energy industry.  He has 22 years of global experience in the upstream segment of the energy industry (Oil & Gas).  He has held diverse roles during his career leading to a technical advisory capacity.  He graduated with a masters in Petroleum Engineering from the University of Alaska Fairbanks.  </p>
+                            <a href="https://github.com/madarahr">GitHub Profile</a>
                             <p> </p>
-                            <a href="https://www.linkedin.com/">Team Member LinkedIn Profile</a>
+                            <a href="https://www.linkedin.com/in/rahul-m-a2aa687/">LinkedIn Profile</a>
                         </div>
                     </div>
                     <p> _ _ _ </p>
                     <div class="row">
                         <div class="col-md-4">
-                            <img class="headshot" src="static/img/headshot.png" class="img-responsive" alt="">
+                            <img class="headshot" src="static/img/oshadiheadshot.jpg" style='width:400px' alt="">
                         </div>
                         <div class="col-md-8">
-                            <h3>Team Member Name</h3>
+                            <h3>Oshadi Wimalarathne</h3>
                             <p style="padding-left: 20px; padding-right: 20px">Team Member Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <a href="https://github.com/Duvey314/austin-green-energy-predictor">Team Member GitHub Profile</a>
+                            <a href="https://github.com/oshadiw">GitHub Profile</a>
                             <p> </p>
-                            <a href="https://www.linkedin.com/">Team Member LinkedIn Profile</a>
+                            <a href="https://www.linkedin.com/in/oshadiw/">LinkedIn Profile</a>
                         </div>
                     </div>
                     <p> _ _ _ </p>
                     <div class="row">
                         <div class="col-md-4">
-                            <img class="headshot" src="static/img/headshot.png" class="img-responsive" alt="">
+                            <img class="headshot" src="static/img/CSheadshot.jpg" style='width:400px' alt="">
                         </div>
                         <div class="col-md-8">
-                            <h3>Team Member Name</h3>
+                            <h3>Collin Sculley</h3>
                             <p style="padding-left: 20px; padding-right: 20px">Team Member Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <a href="https://github.com/Duvey314/austin-green-energy-predictor">Team Member GitHub Profile</a>
+                            <a href="https://github.com/collinsculley">GitHub Profile</a>
                             <p> </p>
-                            <a href="https://www.linkedin.com/">Team Member LinkedIn Profile</a>
+                            <a href="https://www.linkedin.com/in/collinsculley78745">LinkedIn Profile</a>
                         </div>
                     </div>
                     <p> _ _ _ </p>
                     <div class="row">
                         <div class="col-md-4">
-                            <img class="headshot" src="static/img/headshot.png" class="img-responsive" alt="">
+                            <img class="headshot" src="static/img/DuveyHeadshot.jpg" style='width:400px' alt="">
                         </div>
                         <div class="col-md-8">
-                            <h3>Team Member Name</h3>
-                            <p style="padding-left: 20px; padding-right: 20px">Team Member Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <a href="https://github.com/Duvey314/austin-green-energy-predictor">Team Member GitHub Profile</a>
+                            <h3>David Rudow</h3>
+                            <p style="padding-left: 20px; padding-right: 20px">David is physics masters graduate of Appalachian State University. He has 8+ years of programming experience in object-oriented and functional environments, experience with renewable energies and team management, and a passion for game and puzzle design. </p>
+                            <a href="https://github.com/Duvey314/">GitHub Profile</a>
                             <p> </p>
-                            <a href="https://www.linkedin.com/">Team Member LinkedIn Profile</a>
+                            <a href="https://www.linkedin.com/in/davidmrudow">LinkedIn Profile</a>
                         </div>
                     </div>
                 </div>
