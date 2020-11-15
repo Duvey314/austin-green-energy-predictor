@@ -6,7 +6,6 @@ import pymongo
 import pandas as pd
 import json
 
-import config
 
 from flask import Flask, render_template, jsonify
 from flask_pymongo import PyMongo
@@ -21,8 +20,8 @@ app = Flask(__name__)
 
 # set string variables
 DEFAULT_DATABASE = 'wind_solar_data' 
-USERNAME = config.USERNAME
-PASSWORD = config.PASSWORD
+USERNAME = os.environ.get('USERNAME')
+PASSWORD = os.environ.get('PASSWORD')
 
 #create connection to database
 client = pymongo.MongoClient(f"mongodb+srv://{USERNAME}:{PASSWORD}@austin-green-energy.pwzpm.mongodb.net/{DEFAULT_DATABASE}?retryWrites=true&w=majority")
