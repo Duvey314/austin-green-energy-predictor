@@ -104,9 +104,25 @@ def makeAPIRequest(lat, lon, weather_api_key):
         errorCode = response.status_code
         return print(f"The Error Status Code is: {errorCode}")
 
+def current_solar_weather(responseJson):
+    # Convert the json response to a pandas dataframe
+    current_weather_DF = pd.DataFrame([{
+        "UTC_Time": responseJson["current"]["dt"],
+        "Temperature_F": responseJson["current"]["temp"], 
+        "Humidity_percent": responseJson["current"]["humidity"],
+        "CloudCover_percent": responseJson["current"]["clouds"],
+        "uvIndex": responseJson["current"]["uvi"],
+        "Sunrise": responseJson["current"]["sunrise"],
+        "Weather_Description": responseJson["current"]["weather"][0]["description"]
+    }])
+
+    return current_weather_DF
+
 def forecasted_daily_solar(responseJson):
+    # Initiate list
     forecasted_daily_weather = []
 
+    # Append json response to list
     for day in np.arange(0, 8, 1):
         forecasted_daily_weather.append({
             "UTC_Time": responseJson["daily"][day]["dt"],
@@ -115,13 +131,16 @@ def forecasted_daily_solar(responseJson):
             "uvIndex": responseJson["daily"][day]["uvi"]
         })
 
+    # Convert list to pandas dataframe
     daily_weather_DF = pd.DataFrame(forecasted_daily_weather)
     
     return daily_weather_DF
 
 def forecasted_hourly_solar(responseJson):
+    # Initiate list
     forecasted_hourly_weather = []
 
+    # Append json response to list
     for hour in np.arange(0, 48, 1):
         forecasted_hourly_weather.append({
             "UTC_Time": responseJson["hourly"][hour]["dt"],
@@ -131,13 +150,29 @@ def forecasted_hourly_solar(responseJson):
             "Humidity_percent": responseJson["hourly"][hour]["humidity"]
         })
 
+    # Convert list to pandas dataframe
     hourly_weather_DF = pd.DataFrame(forecasted_hourly_weather)
     
     return hourly_weather_DF
 
+def current_wind_weather(responseJson):
+    # Convert the json response to a pandas dataframe
+    current_weather_DF = pd.DataFrame([{
+        "UTC_Time": responseJson["current"]["dt"],
+        "Temperature_F": responseJson["current"]["temp"], 
+        "Weather_Description": responseJson["current"]["weather"][0]["description"],
+        "Humidity_percent": responseJson["current"]["humidity"],
+        "WindSpeed_mph": responseJson["current"]["wind_speed"],
+        "WindDirection_degrees": responseJson["current"]["wind_deg"]
+    }])
+
+    return current_weather_DF
+
 def forecasted_hourly_wind(responseJson):
+    # Initiate list
     forecasted_hourly_weather = []
 
+    # Append json response to list
     for hour in np.arange(0, 48, 1):
         forecasted_hourly_weather.append({
             "UTC_Time": responseJson["hourly"][hour]["dt"],
@@ -148,6 +183,7 @@ def forecasted_hourly_wind(responseJson):
             "WindDirection_degrees": responseJson["hourly"][hour]["wind_deg"]
         })
 
+    # Convert list to pandas dataframe
     hourly_weather_DF = pd.DataFrame(forecasted_hourly_weather)
     
     return hourly_weather_DF
