@@ -7,7 +7,7 @@ import pandas as pd
 import json
 import numpy as np
 
-import config
+# import config
 
 from flask import Flask, render_template, jsonify
 from flask_pymongo import PyMongo
@@ -20,10 +20,15 @@ import tensorflow as tf
 app = Flask(__name__)
 
 
+# # set string variables
+# DEFAULT_DATABASE = 'wind_solar_data' 
+# USERNAME = config.USERNAME
+# PASSWORD = config.PASSWORD
+
 # set string variables
 DEFAULT_DATABASE = 'wind_solar_data' 
-USERNAME = config.USERNAME
-PASSWORD = config.PASSWORD
+USERNAME = os.environ.get('USERNAME')
+PASSWORD = os.environ.get('PASSWORD')
 
 #create connection to database
 client = pymongo.MongoClient(f"mongodb+srv://{USERNAME}:{PASSWORD}@austin-green-energy.pwzpm.mongodb.net/{DEFAULT_DATABASE}?retryWrites=true&w=majority")
@@ -61,7 +66,7 @@ def getSolarData():
     lon = "-97.508611"
 
     # Make API call to get weather data and turn response to JSON object
-    responseJson = Forecast.makeAPIRequest(lat, lon, config.weather_api_key)
+    responseJson = Forecast.makeAPIRequest(lat, lon, os.environ.get('weather_api_key'))
 
     # Get the daily weather variables from json response and store as pandas dataframe
     daily_solar_DF = Forecast.forecasted_daily_solar(responseJson)
@@ -137,7 +142,7 @@ def getWindData():
     lon = "-99.476444"
 
     # Make API call to get weather data and turn response to JSON object
-    responseJson = Forecast.makeAPIRequest(lat, lon, config.weather_api_key)
+    responseJson = Forecast.makeAPIRequest(lat, lon, os.environ.get('weather_api_key'))
     
     # Store JSON object as pandas dataframe
     hourly_wind_DF = Forecast.forecasted_hourly_wind(responseJson)
