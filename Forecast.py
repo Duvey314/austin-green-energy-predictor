@@ -124,12 +124,20 @@ def forecasted_daily_solar(responseJson):
 
     # Append json response to list
     for day in np.arange(0, 8, 1):
-        forecasted_daily_weather.append({
-            "UTC_Time": responseJson["daily"][day]["dt"],
-            "Sunrise": responseJson["daily"][day]["sunrise"],
-            "Sunset": responseJson["daily"][day]["sunset"],
-            "uvIndex": responseJson["daily"][day]["uvi"]
-        })
+        try:
+            forecasted_daily_weather.append({
+                "UTC_Time": responseJson["daily"][day]["dt"],
+                "Sunrise": responseJson["daily"][day]["sunrise"],
+                "Sunset": responseJson["daily"][day]["sunset"],
+                "uvIndex": responseJson["daily"][day]["uvi"]
+            })
+        except KeyError:
+            forecasted_daily_weather.append({
+                "UTC_Time": responseJson["daily"][day]["dt"],
+                "Sunrise": responseJson["daily"][day]["sunrise"],
+                "Sunset": responseJson["daily"][day]["sunset"],
+                "uvIndex": 1
+            })
 
     # Convert list to pandas dataframe
     daily_weather_DF = pd.DataFrame(forecasted_daily_weather)
