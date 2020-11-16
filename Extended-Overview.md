@@ -218,23 +218,6 @@ More advanced models
 * GoogleSlides
 * Microsoft Power Bi
 
-## Exploratory Analysis 
-
-The exploratory analysis is to determine the relationship between various weather parameters such as
-
-* Wind speed
-* Wind direction
-* Wind gusts
-* Humidity
-* Temperature
-* Sun hours (based on seasons)
-* Cloud cover percentage
-
-to the power generated.  In addition, statistical analysis of the above parameters and power generation was performed.
-
-### Relationship of Wind Speed and Wind Direction to the MWH
-![](Resources/Images/WindSpeedvsCompassvsMWH.png)
-
 
 The final dashboard is able to display forecasted weather from any wind and solar farm location for the next few days and predict the power generation.  In addition, the current MWH power generation is presented for visualization.
 
