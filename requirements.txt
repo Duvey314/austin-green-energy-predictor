@@ -27,7 +27,7 @@ gmaps==0.9.0
 google-pasta==0.2.0
 grpcio
 gunicorn==20.0.4
-h5py
+h5py==2.10.0
 holoviews==1.13.4
 hvplot==0.6.0
 idna
