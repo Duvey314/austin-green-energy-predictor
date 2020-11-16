@@ -6,18 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Austin Green Energy Predictor</title>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
         <!-- Custom styles for this template -->
         <link href="static/css/jumbotron.css" rel="stylesheet">
-        <link rel="icon" href="../../favicon.ico">
-        <!-- Latest compiled and minified JavaScript -->
-        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script> -->
-        <link href="http://cdn.bokeh.org/bokeh/release/bokeh-0.11.1.min.css" rel="stylesheet" type="text/css">
-        <script src="http://cdn.bokeh.org/bokeh/release/bokeh-0.11.1.min.js"></script>
-        {{ js_resources|indent(4)|safe }}
-        {{ css_resources|indent(4)|safe }}
-        {{ plot_script|indent(4)|safe }}
-        {{ date_picker_script|indent(4)|safe }}
+        <script>
+            $( function() {
+              $( "#datepicker" ).datepicker({ minDate: new Date(2017,01-1,01), maxDate: new Date(2020,07-1,31), changeMonth: true, changeYear: true,defaultDate: new Date(2018,05-1,20) });
+            } );
+        </script>
     </head>
 
     <body>
@@ -37,8 +37,8 @@
                         </div>
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="#home">HOME</a></li>
-                                <li><a href="#about">ABOUT</a></li>
+                                <li class="active"><a href="#about">ABOUT</a></li>
+                                <li><a href="#predictor">PREDICTOR</a></li>
                                 <li><a href="#model">MODEL</a></li>
                                 <li><a href="#team">TEAM</a></li>
                                 <!-- Optional Source Dropdown.  See dropdowns.html & proper js files that need to be added at end of </body> -->
@@ -63,7 +63,7 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <a class="navbar-brand" href="#">Austin Green Energy Project</a>
                             </ul>
-                        </div><!--/.nav-collapse -->
+                        </div>
                     </div>
                 </nav>
 
@@ -72,7 +72,7 @@
 
 
         <!-- Rotating Image CAROUSEL -->
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div id="carousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#carousel" data-slide-to="0" class="active"></li>
@@ -82,7 +82,15 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <img class="first-slide" src="static/img/hackberryFarm.jpg" alt="First slide">
+                    <img src="static/img/austin-skyline-768x512.png" alt="First slide">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Austin Energy</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="static/img/hackberryFarm.jpg" alt="Second slide">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>Hackberry Wind Farm</h1>
@@ -90,73 +98,184 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img class="second-slide" src="static/img/webbervilleFarm.jpg" alt="Second slide">
+                    <img src="static/img/webbervilleFarm.jpg" alt="Third slide">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>Webberville Solar Farm</h1>
                         </div>
                     </div>
                 </div>
-                <div class="item">
-                    <img class="third-slide" src="static/img/AEmap.png" alt="Third slide">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>Austin Energy Sources</h1>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <!-- Carousel Controls -->
-            <a class="left carousel-control" href="#carousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#carousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div> <!-- End Carousel -->
 
 
         <!-- TAB SOURCES -->
         <div>
-            <!-- HOME SECTION -->
-            <div id="home" class="jumbotron"> 
-                <h1>Austin Green Energy Predictor</h1>
-                <p class="lead">PLOT
-                    {{ plot_div|indent(4)|safe }}
-                </p>
-                <p class="lead">DATE PICKER
-                    {{ date_picker_div|indent(4)|safe }}
-                </p>
-            </div>
-
+            
             <!-- ABOUT SECTION -->
             <div id="about" class="jumbotron">
+                <div class="container">
                 <h1>About The Project</h1>
-                <p> TEST Section For DF Reference
-                    <!-- {% for table in tables %}
-                        {{titles[loop.index]}}
-                        {{ table|safe }}
-                    {% endfor %}> --> 
-                </p>
+                <p> _ _ _ </p>
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="static/img/farmMap.png" style="width: 600px" alt="AustinEnergyFarmMap">
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-8">
+                        <p>The Austin Energy Predictor can be used to determine energy output in Megawatt-Hours (MWH) per renewable energy farm, specifically wind and solar farms. Our team collaborated with Austin Energy, a publicly owned utility that provides electrical power to the city of Austin and other surrounding areas in Texas. This project uses 2017-2020 hourly megawatt data from Austin Energy’s farms: Hackberry Wind Farm and Webberville Solar Farm as well as hourly historical weather data to train a machine learning model. </p>
+                        <p>The combination of MWH output and weather data allows the model to predict energy output based on weather factors - such as temperature, wind speed and direction, and cloud coverage. As the model was trained on three years’ data, the model comprises weather variations that are observed across different seasons. We were able to take January-July 2020 output and weather data for the above farms to test the model and evaluate its accuracy. </p>
+                        <p>The data insights generated by the model are vital since renewable energy generation varies continuously throughout the day and based on available wind and sunshine. We hope to utilize the model on all of Austin Energy’s renewable energy farms and expand the model to include peak power generation times. With this model, Austin Energy will have a more refined understanding of its overall energy output and when renewable energy generated will be at its highest. </p>
+                    </div>
+                </div>
+                </div>
             </div>
+            
+            <!-- HOME SECTION -->
+            <div id="predictor" class="jumbotron"> 
+                <div class="row">
+                    <h1>Austin Green Energy Predictor</h1>
+                    <p>Welcome to the Austin Energy Predictor! The predictor uses forecasted weather data, historical energy output data, and a neural network machine learning model to make its predictions. Use the predictor to generate the predicted energy output (megawatt-hour, Mwh) for the Hackberry Wind Farm and Webberville Solar Farm for the next 48 hours.</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="solarPredictPlot" style="padding-left: 100px; padding-right: 100px"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="windPredictPlot" style="padding-left: 100px; padding-right: 100px"></div>
+                    </div>
+                </div>
+            </div>
+
 
             <!-- MODEL SECTION -->
             <div id="model" class="jumbotron">
-                <h1>Model Details</h1>
-                <p class="lead">Description of the Model and methods used.</p>
+                <div class="container">
+                    <h1>Model Details</h1>
+                    <p>Please select a date using the date picker and press the Show Data button. Two graphs will display showing the predicted output from our model and actual output from the historical data. Hover over an data point to see more information. </p>
+                    <div class = 'row'>
+                        <div class = 'col-md-3'></div>
+                        <div class = 'col-md-3'>
+                            <p>Date: <input type="text" id="datepicker"></p>
+                        </div>
+                        <div class = 'col-md-3'>
+                            <button id="button" type="button" class="btn btn-primary">Show Data</button>
+                        </div>
+                        <div class = 'col-md-3'></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div id="solarHistoryPlot" style="padding-left: 50px; padding-right: 50px"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="windHistoryPlot" style="padding-left: 50px; padding-right: 50px"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- TEAM SECTION -->
             <div id="team" class="jumbotron">
-                <h1>5 Star Team</h1>
-                <p class="lead">Headshot/info/contributions/etc.</p>
+                <div class="container">
+                    <h1>TEAM</h1>
+                    <p>This project was created, scaled, and executed by the collective efforts of our team. Learn more about the individuals who made it possible.</p>
+                    <p> _ _ _ </p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="headshot" src="static/img/mel.png" style='width:300px' alt="">
+                        </div>
+                        <div class="col-md-8">
+                            <h3>Melina Indrasena</h3>
+                            <p style="padding-left: 20px; padding-right: 20px">Melina works as a Reservations/Revenue Analyst at the AT&T Hotel and Conference Center and University of Texas, Austin. She graduated from Boston University in 2014 majoring in Hospitality Administration with a passion for Revenue and Asset Management. Melina joined the Data Analysis & Visualization Bootcamp with UT in order to gain more knowledge on analyzing big data and using that to make informed decisions. Melina worked as a project coordinator, keeping the team up to date with submissions, as well as worked on exploratory analysis and visualization elements for the presentation and dashboard.</p>
+                            <a href="https://github.com/msindrasena">GitHub Profile</a>
+                            <p> </p>
+                            <a href="https://www.linkedin.com/in/melina-indrasena">LinkedIn Profile</a>
+                        </div>
+                    </div>
+                    <p> _ _ _ </p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="headshot" src="static/img/LinkedIn_Profile_Shayna.jpg" style='width:300px' alt="">
+                        </div>
+                        <div class="col-md-8">
+                            <h3>Shayna Sims</h3>
+                            <p style="padding-left: 20px; padding-right: 20px">Team Member Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <a href="https://github.com/shayna-UT">GitHub Profile</a>
+                            <p> </p>
+                            <a href="https://www.linkedin.com/in/shaynasims">LinkedIn Profile</a>
+                        </div>
+                    </div>
+                    <p> _ _ _ </p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="headshot" src="static/img/Rahul.jpg" style='width:300px' alt="">
+                        </div>
+                        <div class="col-md-8">
+                            <h3>Rahul Madarapu</h3>
+                            <p style="padding-left: 20px; padding-right: 20px">Rahul is a consulting engineer in the energy industry.  He has 22 years of global experience in the upstream segment of the energy industry (Oil & Gas).  He has held diverse roles during his career leading to a technical advisory capacity.  He graduated with a masters in Petroleum Engineering from the University of Alaska Fairbanks.  </p>
+                            <a href="https://github.com/madarahr">GitHub Profile</a>
+                            <p> </p>
+                            <a href="https://www.linkedin.com/in/rahul-m-a2aa687/">LinkedIn Profile</a>
+                        </div>
+                    </div>
+                    <p> _ _ _ </p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="headshot" src="static/img/oshadiheadshot.jpg" style='width:300px' alt="">
+                        </div>
+                        <div class="col-md-8">
+                            <h3>Oshadi Wimalarathne</h3>
+                            <p style="padding-left: 20px; padding-right: 20px">Oshadi is a molecular biology research scientist with experience in confocal microscopy and human tissue cell culture. She graduated with a bachelor’s degree in Biology and a certificate in Business Foundations from the University of Texas at Austin in 2018. Oshadi completed the Data Analysis and Visualization Boot Camp through UT Austin in the Fall of 2020 and is excited to utilize her new knowledge and skills in the ever-growing data science industry. </p>
+                            <a href="https://github.com/oshadiw">GitHub Profile</a>
+                            <p> </p>
+                            <a href="https://www.linkedin.com/in/oshadiw/">LinkedIn Profile</a>
+                        </div>
+                    </div>
+                    <p> _ _ _ </p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="headshot" src="static/img/CSheadshot.jpg" style='width:300px' alt="">
+                        </div>
+                        <div class="col-md-8">
+                            <h3>Collin Sculley</h3>
+                            <p style="padding-left: 20px; padding-right: 20px">Team Member Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <a href="https://github.com/collinsculley">GitHub Profile</a>
+                            <p> </p>
+                            <a href="https://www.linkedin.com/in/collinsculley78745">LinkedIn Profile</a>
+                        </div>
+                    </div>
+                    <p> _ _ _ </p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="headshot" src="static/img/DuveyHeadshot.jpg" style='width:300px' alt="">
+                        </div>
+                        <div class="col-md-8">
+                            <h3>David Rudow</h3>
+                            <p style="padding-left: 20px; padding-right: 20px">David is physics masters graduate of Appalachian State University. He has 8+ years of programming experience in object-oriented and functional environments, experience with renewable energies and team management, and a passion for game and puzzle design. </p>
+                            <a href="https://github.com/Duvey314/">GitHub Profile</a>
+                            <p> </p>
+                            <a href="https://www.linkedin.com/in/davidmrudow">LinkedIn Profile</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
+            <!-- FOOTER -->
+            <div id="footer" class="jumbotron">
+                <div class="container">
+                    <a href="#">BACK TO TOP</a>
+                </div>
+            </div>
         </div>
-        <script src="http://code.jquery.com/jquery.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
-    </body>
-</html>
 
+        <!-- <script src="http://code.jquery.com/jquery.js"></script> -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="../static/js/app.js"></script>
+
+    </body>
+
+</html>

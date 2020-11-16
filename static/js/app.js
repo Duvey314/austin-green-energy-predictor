@@ -1,74 +1,221 @@
-//  MODULE 11 EXAMPLE OF D3 & USER INPUT TO FILTER A TABLE
+$( "#datepicker" ).datepicker( "setDate", "04/20/2018" );
 
-$('.dropdown-toggle').dropdown()
+$.post( "/getwind", function( data ) {
+    var windData = JSON.parse(data);
+    var startDate = `${windData.data[0]["Month"]}/${windData.data[0]["Day"]}/${windData.data[0]["Year"]} ${windData.data[0]["Hour"]}:00`
+    var endDate = `${windData.data[47]["Month"]}/${windData.data[47]["Day"]}/${windData.data[47]["Year"]} ${windData.data[47]["Hour"]}:00`
 
+        var dateTime = [];
+        for (var i = 0; i < windData.data.length; i ++){
+            dateTime[i] = windData.data[i]["Date_Time"];
+        };
 
-// from data.js
-const tableData = data;
+        var mwh = [];
+        for (var i = 0; i < windData.data.length; i ++){
+            mwh[i] = windData.data[i]["pred"];
+        };
+        
+        var weatherDescription = [];
+        for (var i = 0; i < windData.data.length; i ++){
+            weatherDescription[i] = windData.data[i]["Weather_Description"];
+        };
 
-// get table references
-var tbody = d3.select("tbody");
+        var trace1 = {
+            x: dateTime,
+            y: mwh,
+            type: "scatter",
+            mode: 'lines+markers',
+            name: 'Prediction',
+            hovertemplate: '<b>Output</b>: %{y:.2f} MWH' +
+                        '<br><b>Time</b>: %{x}<br>' +
+                        '<b>Weather</b>: %{text}',
+            text: weatherDescription
 
-function buildTable(data) {
-  // First, clear out any existing data
-  tbody.html("");
+        };
 
-  // Next, loop through each object in the data
-  // and append a row and cells for each value in the row
-  data.forEach((dataRow) => {
-    // Append a row to the table body
-    let row = tbody.append("tr");
+        var layout1 = {
+            title: {text: `Wind Prediction (${startDate} - ${endDate})`},
+            xaxis: {
+                title: "Time"
+            },
+            yaxis: {
+                title: "Output (MWH)"
+            }
+        };
+
+    Plotly.newPlot("windPredictPlot", [trace1], layout1);
+
+});
+
+$.get( "/getSolar", function( data ) {
     
-    // Loop through each field in the dataRow and add
-    // each value as a table cell (td)
-    Object.values(dataRow).forEach((val) => {
-      let cell = row.append("td");
-      cell.text(val);
-      //console.log(cell.text(val));
+        var solarData = JSON.parse(data);
+        var startDate = `${solarData.data[0]["Month"]}/${solarData.data[0]["Day"]}/${solarData.data[0]["Year"]} ${solarData.data[0]["Hour"]}:00`
+        var endDate = `${solarData.data[47]["Month"]}/${solarData.data[47]["Day"]}/${solarData.data[47]["Year"]} ${solarData.data[47]["Hour"]}:00`
+        var dateTime = [];
+        for (var i = 0; i < solarData.data.length; i ++){
+            dateTime[i] = solarData.data[i]["Date_Time"];
+        };
+
+        var mwh = [];
+        for (var i = 0; i < solarData.data.length; i ++){
+            mwh[i] = solarData.data[i]["pred"];
+        };
+        
+        var weatherDescription = [];
+        for (var i = 0; i < solarData.data.length; i ++){
+            weatherDescription[i] = solarData.data[i]["Weather_Description"];
+        };
+
+        var trace1 = {
+            x: dateTime,
+            y: mwh,
+            type: "scatter",
+            mode: 'lines+markers',
+            name: 'Prediction',
+            hovertemplate: '<b>Output</b>: %{y:.2f} MWH' +
+                        '<br><b>Time</b>: %{x}<br>' +
+                        '<b>Weather</b>: %{text}',
+            text: weatherDescription
+        };
+
+        var layout1 = {
+            title: {text: `Solar Prediction (${startDate} - ${endDate})`},
+            xaxis: {
+                title: "Time"
+            },
+            yaxis: {
+                title: "Output (MWH)"
+            }
+        };
+
+    Plotly.newPlot("solarPredictPlot", [trace1], layout1);
+});
+
+$("#button").click(function() {
+    var currentDate = $( "#datepicker" ).datepicker( "getDate" );
+        day  = currentDate.getDate(),  
+        month = currentDate.getMonth() + 1,              
+        year =  currentDate.getFullYear();
+
+    $.get( `/solarPredict/${year}/${month}/${day}`, function( data ) {
+        var solarData = JSON.parse(data);
+
+        var dateTime = [];
+        for (var i = 0; i < 24; i ++){
+            dateTime[i] = solarData.data[i]["Date_Time"];
+        };
+
+        var predMWH = [];
+        for (var i = 0; i < solarData.data.length; i ++){
+            predMWH[i] = solarData.data[i]["pred"];
+        };
+
+        var actualMWH = [];
+        for (var i = 0; i < solarData.data.length; i ++){
+            actualMWH[i] = solarData.data[i]["MWH"];
+        };
+
+        var weatherDescription = [];
+        for (var i = 0; i < solarData.data.length; i ++){
+            weatherDescription[i] = solarData.data[i]["Weather_Description"];
+        };
+
+        var trace1 = {
+            x: dateTime,
+            y: predMWH,
+            type: "scatter",
+            mode: 'lines+markers',
+            name:'Predicted',
+            hovertemplate: '<b>Output</b>: %{y:.2f} MWH' +
+                        '<br><b>Time</b>: %{x}<br>' +
+                        '<b>Weather</b>: %{text}',
+            text: weatherDescription
+        };
+
+        var trace2 = {
+            x: dateTime,
+            y: actualMWH,
+            type: "scatter",
+            mode: 'lines+markers',
+            name:'Actual',
+            hovertemplate: '<b>Output</b>: %{y:.2f} MWH' +
+                        '<br><b>Time</b>: %{x}<br>' +
+                        '<b>Weather</b>: %{text}',
+            text: weatherDescription
+        };
+
+        var layout1 = {
+            title: {text: "Solar: Model Prediction vs Actual Output"},
+            xaxis: {
+                title: "Time"
+            },
+            yaxis: {
+                title: "Output (MWH)"
+            }
+        };
+
+    Plotly.newPlot("solarHistoryPlot", [trace1, trace2], layout1);
     });
-  });
-}
 
-// Keep track of all filters
-var filters = {};
+    $.get( `/windPredict/${year}/${month}/${day}`, function( data ) {
+        var windData = JSON.parse(data);
 
-function updateFilters() {
+        var dateTime = [];
+        for (var i = 0; i < 24; i ++){
+            dateTime[i] = windData.data[i]["Date_Time"];
+        };
 
-  let elementChange = d3.select(this);
-  let elementValue = elementChange.property("value");
-  let elementID = elementChange.attr("id");
+        var predMWH = [];
+        for (var i = 0; i < windData.data.length; i ++){
+            predMWH[i] = windData.data[i]["pred"];
+        };
 
-  if (elementValue) {
-    filters[elementID] = elementValue;
-  }
-  else {
-    delete filters[elementID];
-  }
-  filterTable();
-}
+        var actualMWH = [];
+        for (var i = 0; i < windData.data.length; i ++){
+            actualMWH[i] = windData.data[i]["MWH"];
+        };
 
-function filterTable() {
+        var weatherDescription = [];
+        for (var i = 0; i < windData.data.length; i ++){
+            weatherDescription[i] = windData.data[i]["Weather_Description"];
+        };
 
-  // set the filteredData to the existing tableData
-  let filteredData = tableData;
-  // loop through all of the filters and keep any data that matches the filter values
-  //console.log(filters)
-  
-  Object.entries(filters).forEach(([key,value]) => {
-    //console.log('key: ', key, 'value: ', value)
-    filteredData = filteredData.filter(row => row[key] === value);
-  });
-  
-  //console.log(filteredData);
-  //Use .slice above!
+        var trace1 = {
+            x: dateTime,
+            y: predMWH,
+            type: "scatter",
+            mode: 'lines+markers',
+            name:'Predicted',
+            hovertemplate: '<b>Output</b>: %{y:.2f} MWH' +
+                        '<br><b>Time</b>: %{x}<br>' +
+                        '<b>Weather</b>: %{text}',
+            text: weatherDescription
 
-  // Finally, rebuild the table using the filtered Data
-buildTable(filteredData);
-}
+        };
 
-// Attach an event to listen for changes to each filter
-// Hint: You'll need to select the event and what it is listening for within each set of parenthesis
-d3.selectAll("input").on("change", updateFilters);
+        var trace2 = {
+            x: dateTime,
+            y: actualMWH,
+            type: "scatter",
+            mode: 'lines+markers',
+            name: 'Actual',
+            hovertemplate: '<b>Output</b>: %{y:.2f} MWH' +
+                        '<br><b>Time</b>: %{x}<br>' +
+                        '<b>Weather</b>: %{text}',
+            text: weatherDescription
+        };
 
-// Build the table when the page loads
-buildTable(tableData);
+        var layout1 = {
+            title: {text: "Wind: Model Prediction vs Actual Output"},
+            xaxis: {
+                title: "Time"
+            },
+            yaxis: {
+                title: "Output (MWH)"
+            }
+        };
+
+    Plotly.newPlot("windHistoryPlot", [trace1,trace2], layout1);
+    });
+});

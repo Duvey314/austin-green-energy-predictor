@@ -6,3 +6,9 @@ config.py
 .env
 
 .vscode
+
+config.json
+
+node_modules
+
+__pycache__
