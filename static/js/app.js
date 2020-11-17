@@ -25,6 +25,9 @@ $.post( "/getwind", function( data ) {
             y: mwh,
             type: "scatter",
             mode: 'lines+markers',
+            line: {
+                color: "#489437"
+            },
             name: 'Prediction',
             hovertemplate: '<b>Output</b>: %{y:.2f} MWH' +
                         '<br><b>Time</b>: %{x}<br>' +
@@ -72,6 +75,9 @@ $.get( "/getSolar", function( data ) {
             y: mwh,
             type: "scatter",
             mode: 'lines+markers',
+            line: {
+                color: "#d84100"
+            },
             name: 'Prediction',
             hovertemplate: '<b>Output</b>: %{y:.2f} MWH' +
                         '<br><b>Time</b>: %{x}<br>' +
@@ -126,6 +132,9 @@ $("#button").click(function() {
             y: predMWH,
             type: "scatter",
             mode: 'lines+markers',
+            line: {
+                color: "#d84100"
+            },
             name:'Predicted',
             hovertemplate: '<b>Output</b>: %{y:.2f} MWH' +
                         '<br><b>Time</b>: %{x}<br>' +
@@ -138,6 +147,9 @@ $("#button").click(function() {
             y: actualMWH,
             type: "scatter",
             mode: 'lines+markers',
+            line: {
+                color: "#0066d8"
+            },
             name:'Actual',
             hovertemplate: '<b>Output</b>: %{y:.2f} MWH' +
                         '<br><b>Time</b>: %{x}<br>' +
@@ -186,6 +198,9 @@ $("#button").click(function() {
             y: predMWH,
             type: "scatter",
             mode: 'lines+markers',
+            line: {
+                color: "#489437"
+            },
             name:'Predicted',
             hovertemplate: '<b>Output</b>: %{y:.2f} MWH' +
                         '<br><b>Time</b>: %{x}<br>' +
@@ -199,6 +214,9 @@ $("#button").click(function() {
             y: actualMWH,
             type: "scatter",
             mode: 'lines+markers',
+            line: {
+                color: "#0066d8"
+            },
             name: 'Actual',
             hovertemplate: '<b>Output</b>: %{y:.2f} MWH' +
                         '<br><b>Time</b>: %{x}<br>' +

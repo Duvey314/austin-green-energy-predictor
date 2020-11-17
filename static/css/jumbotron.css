@@ -4,7 +4,8 @@ body {
   padding-bottom: 10px;
   padding-right: 20px;
   padding-left: 20px;
-  font-family: "Times New Roman"
+  font-family: "Times New Roman";
+  background-color: #6c776a;
 }
 
   
@@ -19,7 +20,7 @@ body {
 /* Custom page header */
 .header {
   padding-bottom: 20px;
-  border-bottom: 1px solid #717171;
+  border-bottom: 1px solid #3f6842;
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
@@ -91,12 +92,14 @@ body {
   right: 0;
   left: 0;
   z-index: 20;
+  background-color: #d1f2d3;
 }
 
 /* Flip around the padding for proper display in narrow viewports */
 .navbar-wrapper > .container {
   padding-right: 0;
   padding-left: 0;
+  background-color: #d1f2d3;
 }
 .navbar-wrapper .navbar {
   padding-right: 15px;
