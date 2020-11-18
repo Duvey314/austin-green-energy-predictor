@@ -260,11 +260,10 @@ The biggest limitation is the amount of historical data we have. It only has one
 * GoogleSlides
 * Microsoft Power Bi
 
-The final dashboard is able to display forecasted weather from any wind and solar farm location for the next few days and predict the power generation.  In addition, the current MWH power generation is presented for visualization.
+The final dashboard is able to display forecasted weather from Hackberry wind farm and Webberville solar farm for the next two days and predict the power generation.
 
 ![](Resources/Images/predictedMWH.png)
 
-![](Resources/Images/currentMWH.png)
 
 # Acknowledgements
 ---
