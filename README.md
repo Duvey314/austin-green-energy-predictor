@@ -158,6 +158,9 @@ The biggest limitation is the amount of historical data we have. It only has one
 ## Benefits
 - Neural Network can be used by Austin Energy to test other farms they own with forecasted weather data to predict power generation. 
 
+### Further Reading
+For more information about the model please see our extended analysis.
+
 ## Dashboard
 ---
 - Preliminary Dashboard Deployed via Heroku:  https://austin-green-energy-predictor.herokuapp.com/
