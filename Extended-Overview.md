@@ -108,17 +108,10 @@ Deeper analysis can be found here (https://docs.google.com/document/d/1E3OqpVhLl
 
 
 ## Preprocessing
-The data is largely already preprocessed. The only thing to do is to drop the \_id column which is an artifact of the mongodb atlas storage and encod the weather description using one hot encoding.
+The data is largely already preprocessed. The only thing to do is to drop the \_id column which is an artifact of the mongodb atlas storage.
 
-The data is split by using the 2019 data to train and the 2020 data to test. The data is then scaled using sklearn standard scaler.
+The data is split by using the 2017-2019 data to train and the 2020 data to test. The data is then scaled using sklearn standard scaler.
 
-- Description of Preprocessing
-- Takes in data from database
-- Output label for input data
-- Feature selection
-- Encoding 
-- Scaling 
-- How data was split into training / testing sets
 
 # Model
 ---
@@ -143,6 +136,10 @@ Solar
 * Sunhour (hrs)
 * Time
 * Month
+
+### Train Test Split
+The data is split using the 2017-2019 data to train and the 2020 data to test. This is to ensure that the model has all kinds of waether and that is sees multiple data points for every day of the year.  
+
 
 ## Multiple Linear Regression
 The linear regression model we are using is the linear model from sklearn. This allows us to perform a multiple linear regression on the weather data to predict a continuous output. This model is good at handling linear relationships between data but cannot handle other types of relationships without more data preprocessing. This resulted in a low accuracy for both models. The loss metric is the mean absolute error.
@@ -176,11 +173,11 @@ The models currently used are very simple. We are using only a handful of variab
 
 Past Data-The first step is to include some measure of previous data in each row. For instance, including the wind speed of the previous hour could help give a better understanding of how the previous hours output effects the current hours output giving a better model of the inertia of the wind turbine. Another use of past data would be to look at when there was some sort of wind or rain last at the solar farm to see if these events increase the panel efficiency by cleaning the panels.
 
-Weather Description - One piece of the model that we couldn't include is the weather description. This 
+Weather Description - One piece of the model that we couldn't include is the weather description. This is beacause the descriptions from our predicted data did not match the historical data. These could be combined in the future.
 
-New features - 
+New features - Adding new features to the model would create a more complex model for power generation. These could come from weather data or could come from the turbines themselves.
 
-More advanced models
+More advanced models - The largest change would be to create a model advanced model to calculate things like solar irradiance or wind speed at height based on avg speed. This means using other data sources to create new features to include in the model.
 
 ## Dashboard
 ---
