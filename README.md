@@ -14,18 +14,6 @@
 * [Acknowledgements](#acknowledgements)
 * [Resources](#resources)
 
-
-FUTURE ANALYSIS & RECOMMENDATIONS:
-
-Given that we only had 5 weeks to complete the project, there are definitely some things we would have loved to explore more. For future analysis, we would like to connect different weather data points to the historical data we already have. Ideally, we would like to also add more features to further develop the accuracy of the machine learning model. Lastly, we would like to develop a more advanced model for both solar and wind power generation. Our team would like to continue working with energy companies to predict energy output and give them an advantage in the energy marketplace. We also hope to empower consumers to make energy choices based on forecasted renewable energy output. 
-
-TECHNOLOGIES USED:
-Html, Flask, CSS, JavaScript, MongoDB, PyMongo, Matplotlib, Seaborn, Plotly, hvPlot, Scikit-Learn Library, TensorFlow Library, Pickle Module, Heroku
-
-TEAM:(link to webpage)
-
-
-    
 # Overview
 --- 
 This model is a culmination of a 5-week capstone project for the UT Austin Data Analytics & Visualization Bootcamp. Using our proficiencies in core Python, we retrieved weather data from online resources, organized it into easily-accessible data formats and interpreted the data relationships. 
@@ -53,7 +41,6 @@ Energy Output Data:
 Our team utilized energy output data provided by Austin energy for two of their renewable energy farms: Hackberry Wind Farm and Webberville Solar Farm. The data consists of hourly power generation for each of the renewable energy farms from 2017 through July of 2020. https://www.nj.gov/emp/energy/faq.html
 
 The Hackberry Wind Farm is located west of Dallas, and Webberville Solar Farm is located just outside of Austin. The location of both renewable energy farms as well as Austin Energy’s additional energy farms can be observed below:
-
 
 ![Gen Map](https://github.com/Duvey314/austin-green-energy-predictor/blob/master/Resources/Images/Gen%20Map.png)
 
@@ -92,10 +79,8 @@ The database used for this project is a MongoDB Atlas database hosted on an AWS 
 ### Webberville Solar MWH DataFrame
 ![](Resources/Images/WebbervilleSolarMWH.png)
 
-
 # Model
 ---
-
 ## Machine Learning Model Selection
 The goal of the project is to predict the energy generation of renewable energy farms using weather forcast data. This means that we are looking for a model with a continuous output and therefore need some type of regression model. The two we have decided to use are a multiple linear regression and a neural network. Both models will be trained on the solar and wind data sperately.
 
@@ -108,29 +93,26 @@ The neural network is able to handle more complex relationships between the data
 # Future Recomendations 
 Given that we only had 5 weeks to complete the project, there are definitely some things we would have loved to explore more. For future analysis, we would like to connect different weather data points to the historical data we already have. Ideally, we would like to also add more features to further develop the accuracy of the machine learning model. Lastly, we would like to develop a more advanced model for both solar and wind power generation. Our team would like to continue working with energy companies to predict energy output and give them an advantage in the energy marketplace. We also hope to empower consumers to make energy choices based on forecasted renewable energy output. 
 
-## Dashboard
-
-
 ## Tech Stack
 Html, Flask, CSS, JavaScript, MongoDB, PyMongo, Matplotlib, Seaborn, Plotly, hvPlot, Scikit-Learn Library, TensorFlow Library, Pickle Module, Heroku
 
 # Team
 ---
 ## Team Members
-* [Oshadi Wimalarathne](https://github.com/oshadiw) [linkedin](https://www.linkedin.com/in/oshadiw/)
+* [Oshadi Wimalarathne](https://www.linkedin.com/in/oshadiw/) - [GitHub](https://github.com/oshadiw)
 
-* [Melina indrasena](https://github.com/msindrasena) [linkedin](https://www.linkedin.com/in/melina-indrasena/)
+* [Melina indrasena](https://www.linkedin.com/in/melina-indrasena/) - [GitHub](https://github.com/msindrasena)
 
-* [Rahul Madarapu](https://github.com/madarahr) [linkedin](https://www.linkedin.com/in/rahul-m-a2aa687/)
+* [Rahul Madarapu](https://www.linkedin.com/in/rahul-m-a2aa687/) - [GitHub](https://github.com/madarahr)
     
-* [Collin Sculley](https://github.com/collinsculley) [linkedin](https://www.linkedin.com/in/collinsculley78745/)
+* [Collin Sculley](https://www.linkedin.com/in/collinsculley78745/) - [GitHub](https://github.com/collinsculley)
     
-* [Shayna Sims](https://github.com/shayna-UT) [linkedin](https://www.linkedin.com/in/shaynasims/)
+* [Shayna Sims](https://www.linkedin.com/in/shaynasims/) - [GitHub](https://github.com/shayna-UT)
 
-* [David Rudow](https://github.com/Duvey314) [linkedin](https://www.linkedin.com/in/davidmrudow/)
+* [David Rudow](https://www.linkedin.com/in/davidmrudow/) - [GitHub](https://github.com/Duvey314)
  
 
-![](Resources/Images/predictedMWH.png)
+
 
 # Acknowledgements
 ---
