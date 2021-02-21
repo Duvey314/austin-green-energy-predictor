@@ -1,6 +1,6 @@
 # Austin Energy Predictor
 
-![Austin Energy](https://media-exp1.licdn.com/dms/image/C560BAQFwCAuAfk5AqA/company-logo_200_200/0?e=1611187200&v=beta&t=r1dOWcgLGes2ZNJEx7RSXYUk1JmWB3vaRIcpxES6s2M)
+![Austin Energy](https://austinenergy.com/wcm/connect/5f1c9e35-5964-489f-ac58-46cd0c865727/AELogo_RGB.jpg?MOD=AJPERES&CVID=mUt6-Xx)
 ---
 
 # Table of Contents
